@@ -1,0 +1,16 @@
+body {
+    font-family: 'Georgia', serif;
+    padding-top: 50px;
+}
+
+.info-text {
+    margin-top: -20px;
+}
+
+@font-face {
+    font-family: "HanyiKaiti";
+    src: url("../fonts/HanyiKaiti.ttf") format("truetype");
+}
+.kaishu {
+    font-family: "HanyiKaiti"
+}

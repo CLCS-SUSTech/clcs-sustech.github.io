@@ -1,0 +1,47 @@
+doctype html
+html(lang="en-US")
+    head
+        title = Yang Xu : Homepage
+        meta(charset="utf-8")
+        meta(name="author", content="Yang Xu")
+        meta(name="keywords", content="Yang Xu, PSU, Penn State, psycholinguistics, computational linguistics")
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/style.css")
+
+    body
+        //- nav.navbar.navbar-default.navbar-fixed-top
+        //-     .container-fluid
+        //-         .navbar-header
+        //-             button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar-collapse-items",
+        //-                 aria-expanded="false")
+        //-                 span.sr-only Toggle navigation
+        //-                 span.icon-bar
+        //-                 span.icon-bar
+        //-                 span.icon-bar
+        //-             a.navbar-brand(href="#") Yang Xu
+        //-         .collapse.navbar-collapse#navbar-collapse-items
+        //-             ul.nav.navbar-nav
+        //-                 li.active
+        //-                     a(href="#") Home
+        //-                         span.sr-only (current)
+        //-                 li
+        //-                     a(href="#") Publications
+        .container.personal-info
+            .row
+                .col-md-3
+                    p
+                        img(src="img/xu.jpg", height="300/")
+                .col-md-6.info-text
+                    h1
+                        span.kaishu 徐炀
+                        span Yang Xu
+
+        .container
+            .nav
+                a(href="#").active About
+                a(href="/research.html") Research
+                a(href="/pubs.html") Publications
+                a(href="/cv-xu.pdf") CV
+
+        .container
+            p Hello, there!
