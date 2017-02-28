@@ -14,3 +14,7 @@ body {
 .kaishu {
     font-family: "HanyiKaiti"
 }
+
+.nav a {
+    font-style: italic;
+}
