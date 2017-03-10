@@ -7,6 +7,13 @@ html(lang="en-US")
         meta(name="keywords", content="Yang Xu, PSU, Penn State, psycholinguistics, computational linguistics")
         link(rel="stylesheet", href="css/bootstrap.min.css")
         link(rel="stylesheet", href="css/style.css")
+        script(src="js/jquery-3.1.1.min.js", type="text/javascript")
+        script.
+            $(function () {
+                $('.showbib').on('click', function() {
+                    $(this).closest('.pub-entry').next('.bib-text').toggle();
+                });
+            });
 
     body
         .container
@@ -35,7 +42,19 @@ html(lang="en-US")
                 #[br]
                 #[span.booktitle In #[i Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics]]
                 #[br]
-                #[span.links #[a(href="pubs/xu_reitter_ACL2016long_anthology.pdf") pdf] &nbsp; #[a() bib] &nbsp; #[a(href="https://github.com/innerfirexy/acl2016long") code]]
+                #[span.links #[a(href="pubs/xu_reitter_ACL2016long_anthology.pdf") pdf] &nbsp; #[a.showbib bib] &nbsp; #[a(href="https://github.com/innerfirexy/acl2016long") code]]
+            p.bib-text.
+                @InProceedings{xu_reitter2016entropy,#[br]
+                  &emsp;author    = {Xu, Yang and Reitter, David},#[br]
+                  &emsp;title     = {Entropy converges between dialogue participants: Explanations from an information-theoretic perspective},#[br]
+                  &emsp;booktitle = {Proceedings of the 54th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 1: {Long} {Papers})},#[br]
+                  &emsp;year      = {2016},#[br]
+                  &emsp;address   = {Berlin, Germany},#[br]
+                  &emsp;publisher = {Association for Computational Linguistics},#[br]
+                  &emsp;pages     = {537--546},#[br]
+                  &emsp;url       = {http://www.aclweb.org/anthology/P16-1051}#[br]
+                }
+
             .pub-entry.
                 #[span.title 2016. Convergence of syntactic complexity in conversation]
                 #[br]
@@ -43,4 +62,34 @@ html(lang="en-US")
                 #[br]
                 #[span.booktitle In #[i Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (short paper)]]
                 #[br]
-                #[span.links #[a(href="pubs/xu_reitter_syncomplexity_ACL2016.pdf") pdf] &nbsp; #[a() bib] &nbsp; #[a(href="https://github.com/innerfirexy/acl2016short") code]]
+                #[span.links #[a(href="pubs/xu_reitter_syncomplexity_ACL2016.pdf") pdf] &nbsp; #[a.showbib bib] &nbsp; #[a(href="https://github.com/innerfirexy/acl2016short") code]]
+            p.bib-text.
+                @InProceedings{xu_reitter2016complexity,#[br]
+                  &emsp;author    = {Xu, Yang  and  Reitter, David},#[br]
+                  &emsp;title     = {Convergence of Syntactic Complexity in Conversation},#[br]
+                  &emsp;booktitle = {Proceedings of the 54th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 2: {Short} {Papers})},#[br]
+                  &emsp;year      = {2016},#[br]
+                  &emsp;address   = {Berlin, Germany},#[br]
+                  &emsp;publisher = {Association for Computational Linguistics},#[br]
+                  &emsp;pages     = {443--448},#[br]
+                  &emsp;url       = {http://anthology.aclweb.org/P16-2072}#[br]
+                }
+            
+            .pub-entry.
+                #[span.title 2016. An evaluation and comparison of linguistic alignment measures]
+                #[br]
+                #[span.authors #[b Yang Xu], David Reiter]
+                #[br]
+                #[span.booktitle In #[i Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (short paper)]]
+                #[br]
+                #[span.links #[a(href="") pdf] &nbsp; #[a.showbib bib]]
+            p.bib-text.
+                @InProceedings{xu_reitter2015evaluation,#[br]
+                  &emsp;title={An evaluation and comparison of linguistic alignment measures},#[br]
+                  &emsp;author={Xu, Yang and Reitter, David},#[br]
+                  &emsp;journal={Proceedings of CMCL},#[br]
+                  &emsp;pages={58--67},#[br]
+                  &emsp;year={2015},#[br]
+                  &emsp;publisher = {Association for Computational Linguistics},#[br]
+                  &emsp;address = {Denver, CO}#[br]
+                }

@@ -65,3 +65,13 @@ body {
 .links {
     margin-left: 2.8em;
 }
+
+.bib-text {
+    display: none;
+    font-family: monospace;
+    font-size: 12px;
+    margin-left: 3.5em;
+    background-color: #eee;
+    padding: 10px;
+    margin-bottom: 30px;
+}
