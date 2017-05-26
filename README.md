@@ -1,7 +1,10 @@
 # Personal website of Yang Xu
 # yang.xu@psu.edu
 
-## Usage
+## Generate html files
 ```
-$ pug index.pug
+$ pug index.pug pubs.pug
 ```
+
+## Upload
+https://explorer.pass.psu.edu/
