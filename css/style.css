@@ -4,6 +4,14 @@ body {
     padding-top: 50px;
 }
 
+.introduction p {
+    text-align: left;
+}
+
+p.last-update {
+    color: grey;
+}
+
 .info-text {
     margin-top: -20px;
 }
