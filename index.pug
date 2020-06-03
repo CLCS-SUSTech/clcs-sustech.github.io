@@ -21,9 +21,9 @@ html(lang="en-US")
                 });
             });
     body
-        .container.personal-info
+        .container.head
             .row
-                .col-md-3
+                .col-md-4.logo-area
                     .logo
                         .zi.kaishu
                             p.
@@ -45,50 +45,34 @@ html(lang="en-US")
                                 #[span 学]：科学#[br]
                                 Science
                             img(src="img/27_5B78.svg")
-                .col-md-4.info-text
+                .col-md-8.info-text
                     .name-section
-                        span.small The
-                        br
-                        span Computational 
-                        br
-                        span Linguistics
-                        br
-                        span.small and 
-                        br
-                        span Cognitive
-                        br
-                        span Sciences
-                        br
-                        span.small Lab
+                        span The Computational Linguistics and Cognitive Sciences Lab
+                        //- .small The
+                        //- span Computational Linguistics
+                        //- br
+                        //- .small and 
+                        //- span Cognitive Sciences
+                        //- br
+                        //- .small Lab
                         //- span Yang Xu
                         //- span.name-sep &asymp;
                         //- span.kaishu 徐炀
+                        //- Ph.D., Assistant Professor of Computer Science 
                     p.
-                        Ph.D., Assistant Professor of Computer Science 
                         #[br]
                         #[a(href="http://www.cs.sdsu.edu/") Department of Computer Science]
                         #[br]
                         #[a(href="http://www.sdsu.edu/") San Diego State University]
                         #[br]
+                        Director: Yang Xu, Ph.D.
+                        #[br]
                         Email: yang.xu AT sdsu DOT edu
                         #[br]
-                        Office: Room 545 GMCS Building, San Diego,  CA 92115
-                .col-md-5
-                    h3 What's new
-                    .pre-scrollable#whatsnew
-                        ul
-                            li 5/2019: Our paper on #[i subword embeddings modeling language change] is accepted to the 1st International Workshop on Computational Approaches to Historical Language Change (LChange'19) colocated at ACL 2019!
-                            li 4/2019: We have an abtract and poster on #[i modeling language change in Chinese] accepted to CogSci 2019!
-                            li 11/2018: Our extened poster on #[i alignment is affected by lexical surprisal] is accepted to SCiL 2019!
-                            li 5/2018: Our paper on #[i how social power influence alignment (or not) in dialogue] is accepted to ACL 2018!
-                            li 2/2018: Give an invited talk at Department of CS, SDSU!
-                            //- li 8/2017: Give an oral presentation at ACL 2017.
-                            //- li 5/2017: Our paper on spectral analysis of dialogue is accepted to ACL 2017 @Vancouver!
-                            //- li 2/2017: Our paper on information density in dialogue is accepted to #[i Cognition] journal!
-                            //- li 8/2016: Give an oral and poster presentation at ACL 2016.
-                            //- li 5/2016: Two papers are accepted to ACL 2016!
+                        Location: Room 403 GMCS Building, San Diego,  CA 92115
+                //- .col-md-5
 
-        .container
+        .container.menu
             .nav
                 a(href="index.html").active Home
                 span.nav-item-sep |
@@ -117,18 +101,33 @@ html(lang="en-US")
                 p.
                     #[strong I am recruiting] 1 to 2 highly self-motivated Ph.D. students starting from Fall semester 2020. Please click #[a(href="files/xu_hire_2018_en_zh.pdf") here] or #[a(href="files/xu_hire_2019_zh.pdf") here] for more information.
 
-                hr
-                h4.text-primary Bio
-                p.
-                    2018 -- Now: Assistant Professor of Computer Science, San Diego State University #[br]
-                    2018: Ph.D., Information Sciences and Technology, The Pennsylvania State University #[br]
-                    2013: M.S., Psychology, Tsinghua University #[br]
-                    2010: B.S., Electronic Engineering, Tsinghua University
+                //- hr
+                //- h4.text-primary Bio
+                //- p.
+                //-     2018 -- Now: Assistant Professor of Computer Science, San Diego State University #[br]
+                //-     2018: Ph.D., Information Sciences and Technology, The Pennsylvania State University #[br]
+                //-     2013: M.S., Psychology, Tsinghua University #[br]
+                //-     2010: B.S., Electronic Engineering, Tsinghua University
                 //- I obtained my Ph.D in Summer 2018, from the #[a(href="https://ist.psu.edu/") College of Information Sciences and Technology], the Pennsylvania State University, advised Dr. #[a(href="http://www.david-reitter.com/") David Reitter]. 
                 //- Before joining Penn State, I received a Master degree from #[a(href="http://www.tsinghua.edu.cn/publish/psyen/") Department of Psychology] at #[a(href="http://www.tsinghua.edu.cn/publish/newthuen/index.html")] Tsinghua University in 2013. 
                 //- I received my Bachelor degree from #[a(href="http://www.tsinghua.edu.cn/publish/eeen/") Department of Electronic Engineering] at Tsinghua in 2010.
-                
                 hr
+        .container
+            h3 News
+            .pre-scrollable#whatsnew
+                ul
+                    li 5/2020: We have a paper on #[i sentence embedding and syntactic structure] accepted to the 42nd Annual Virtual Meeting of the Cognitive Science Society (CogSci2020)!
+                    li 5/2019: Our paper on #[i subword embeddings modeling language change] is accepted to the 1st International Workshop on Computational Approaches to Historical Language Change (LChange'19) colocated at ACL 2019!
+                    li 4/2019: We have an abtract and poster on #[i modeling language change in Chinese] accepted to CogSci 2019!
+                    li 11/2018: Our extened poster on #[i alignment is affected by lexical surprisal] is accepted to SCiL 2019!
+                    //- li 5/2018: Our paper on #[i how social power influence alignment (or not) in dialogue] is accepted to ACL 2018!
+                    //- li 2/2018: Give an invited talk at Department of CS, SDSU!
+                    //- li 8/2017: Give an oral presentation at ACL 2017.
+                    //- li 5/2017: Our paper on spectral analysis of dialogue is accepted to ACL 2017 @Vancouver!
+                    //- li 2/2017: Our paper on information density in dialogue is accepted to #[i Cognition] journal!
+                    //- li 8/2016: Give an oral and poster presentation at ACL 2016.
+                    //- li 5/2016: Two papers are accepted to ACL 2016!
+            hr
         .container
             p.last-update Last updated time: November 2019
             script(src="//t1.extreme-dm.com/f.js", id="eXF-yvx5085-0", async, defer)

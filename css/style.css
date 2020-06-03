@@ -22,15 +22,13 @@ p.last-update {
 }
 
 .name-section{
-    padding-top: .5em;
-    margin-bottom: 1.5em;
+    padding-top: 40px;
+    margin-bottom: 0em;
     font-size: 40px;
 }
-
-.name-section span.small {
-    font-size: 30px;
+.name-section .small {
+    font-size: 20px;
 }
-
 .name-sep {
     padding-left: 10px;
     padding-right: 10px;
@@ -39,6 +37,9 @@ p.last-update {
     font-family: "HanyiKaiti"
 }
 
+.menu {
+    margin-top: 30px;
+}
 .nav {
     padding-top: 10px;
     padding-bottom: 20px;
@@ -52,21 +53,22 @@ p.last-update {
     padding-right: 15px;
 }
 
-.logo {
-    margin-top: 20px;
+.logo-area {
+    padding-left: 55px;
+    padding-top: 20px;
 }
-
+.logo {
+    margin-top: 10px;
+}
 .zi {
     width: 120px;
     float: left;
     position: relative;
 }
-
 .zi img {
     border: 2px solid #CCCCCC;
     margin: 2px;
 }
-
 .zi p {
     float: inline-start;
     position: absolute;
@@ -74,10 +76,10 @@ p.last-update {
     left: .5em;
     display: none;
 }
-
 .zi p span {
     font-size: 24px;
 }
+
 
 /* For pubs.html */
 .pubs-container {
