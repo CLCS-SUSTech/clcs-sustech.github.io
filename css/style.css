@@ -24,7 +24,13 @@ p.last-update {
 .name-section{
     padding-top: .5em;
     margin-bottom: 1.5em;
+    font-size: 40px;
 }
+
+.name-section span.small {
+    font-size: 30px;
+}
+
 .name-sep {
     padding-left: 10px;
     padding-right: 10px;
@@ -46,7 +52,34 @@ p.last-update {
     padding-right: 15px;
 }
 
-/* pubs */
+.logo {
+    margin-top: 20px;
+}
+
+.zi {
+    width: 120px;
+    float: left;
+    position: relative;
+}
+
+.zi img {
+    border: 2px solid #CCCCCC;
+    margin: 2px;
+}
+
+.zi p {
+    float: inline-start;
+    position: absolute;
+    top: 2em;
+    left: .5em;
+    display: none;
+}
+
+.zi p span {
+    font-size: 24px;
+}
+
+/* For pubs.html */
 .pubs-container {
     padding-top: 20px;
 }
