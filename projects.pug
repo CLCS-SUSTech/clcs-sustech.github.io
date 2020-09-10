@@ -1,8 +1,31 @@
 doctype html
 html(lang="en-US")
     head
-        title CLCS: Projects
-    
+        title The Computational Linguistics and Cognitive Sciences (CLCS) Lab : Projects
+        meta(charset="utf-8")
+        meta(name="author", content="Yang Xu")
+        meta(name="keywords", content="computational linguistics, cognitive sciences, psycholinguistics, NLP, Computer Science, SDSU, San Diego State University, Yang Xu")
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/style.css") 
+
     body
-        p.
-            This page is under construction and coming soon.
+        .container.menu
+            .nav
+                a(href="index.html").active Home
+                span.nav-item-sep |
+                a(href="projects.html") Projects
+                span.nav-item-sep |
+                a(href="people.html") People
+                span.nav-item-sep |
+                a(href="publications.html") Publications
+
+        .container
+            .project.col-md-12
+                h1 Multi-modal machine learning models for online educational conversations
+                p.
+                    The world is in great demand of convenient technology to support large scale online learning and conferences, especially under the impact of COVID-19.
+                p.
+                    However, there is still large space for improvement in the current remote conference technology. The biggest challenge is information overload – there is too many faces shown in one screen that the instructor cannot easily recognize those who need help or special attention. Secondly, many critical details, such as micro expression, intonation, are not easily captured, which sometimes leaves the actual intention of students not conveyed. 
+                img(src="img/multi_participants_emotions.jpg", alt="", style="height:80%;width:80%")
+                p.
+                    The state-of-the-art artificial intelligence (A.I.) technology is capable of capturing the subjectivity in human activities. We propose to develop an AI-based system that helps the instructor obtain a better awareness of the overall communication situation, so as to create a more inclusive/engaging learning experience.

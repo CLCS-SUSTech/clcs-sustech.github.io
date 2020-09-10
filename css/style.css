@@ -121,3 +121,10 @@ p.last-update {
 
 
 /* for people.html */
+.person {
+    margin-bottom: 20pt;
+}
+.portray img {
+    width: 70%;
+    height: 70%;
+}
