@@ -77,7 +77,17 @@ p.last-update {
 }
 .zi img {
     border: 2px solid #CCCCCC;
-    margin: 2px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+.zi:hover img {
+    visibility: hidden;
+}
+.zi:hover p {
+    visibility: visible;
+    display: inline;
 }
 .zi p {
     float: inline-start;
