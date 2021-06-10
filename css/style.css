@@ -148,3 +148,6 @@ p.last-update {
     width: 70%;
     height: 70%;
 }
+.hidden {
+    visibility: hidden;
+}
