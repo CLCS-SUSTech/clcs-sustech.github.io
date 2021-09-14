@@ -1,7 +1,10 @@
 # Website for the Computational Linguistics and Cognitive Sciences (CLCS) Lab 
-Url: [https://clcs.sdsu.edu/]
-Director: Dr. Yang Xu [yang.xu@sdsu.edu]
+Website: <https://clcs.sdsu.edu/>
+
+Contact: Dr. Yang Xu <yang.xu@sdsu.edu>
+
 Department of Computer Science
+
 San Diego State University
 
 ## Generate html files
