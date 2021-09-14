@@ -1,10 +1,15 @@
-# Personal website of Yang Xu
-# yang.xu@psu.edu
+# Website for the Computational Linguistics and Cognitive Sciences (CLCS) Lab 
+Url: [https://clcs.sdsu.edu/]
+Director: Dr. Yang Xu [yang.xu@sdsu.edu]
+Department of Computer Science
+San Diego State University
 
 ## Generate html files
 ```
-$ pug index.pug pubs.pug
+$ pug index.pug publications.pug ...
 ```
 
 ## Upload
-https://explorer.pass.psu.edu/
+```
+$ ./upload_clcs.sh index.html ...
+```
