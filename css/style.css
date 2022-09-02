@@ -151,3 +151,7 @@ p.last-update {
 .hidden {
     visibility: hidden;
 }
+
+
+/* smooth scroll to anchor link */
+*{scroll-behavior: smooth;}
