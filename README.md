@@ -1,11 +1,10 @@
-# Website for the Computational Linguistics and Cognitive Sciences (CLCS) Lab 
-Website: <https://clcs.sdsu.edu/>
+## Website for the Computational Linguistics and Consciousness Sciences (CLCS) Lab at SUSTech
 
-Contact: Dr. Yang Xu <yang.xu@sdsu.edu>
+Contact: Dr. Yang Xu <xuyang@sustech.edu.cn>
 
-Department of Computer Science
+Department of Computer Science and Engineering
 
-San Diego State University
+Southern University of Science and Technology, Shenzhen, China
 
 ## Generate html files
 ```
