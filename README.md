@@ -7,11 +7,11 @@ Department of Computer Science and Engineering
 Southern University of Science and Technology, Shenzhen, China
 
 ## Generate html files
+Run `pug` command to generate each single html file:
 ```
 $ pug index.pug publications.pug ...
 ```
-
-## Upload
+or run `build.sh` to generate all necessary pages:
 ```
-$ ./upload_clcs.sh index.html ...
+$ ./build.sh
 ```
