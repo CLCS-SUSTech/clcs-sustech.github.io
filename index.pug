@@ -1,123 +1,11 @@
 doctype html
 html(lang="en-US")
-    head
-        title The Computational Linguistics and Consciousness Sciences (CLCS) Lab : Homepage
-        meta(charset="utf-8")
-        meta(name="author", content="Yang Xu")
-        meta(name="keywords", content="computational linguistics, cognitive sciences, psycholinguistics, NLP, Computer Science, SUSTech, Southern University of Science and Technology, Yang Xu")
-        link(rel="stylesheet", href="css/bootstrap.min.css")
-        link(rel="stylesheet", href="css/styles.css")
-        script(src="js/jquery-3.1.1.min.js", type="text/javascript")
-        script.
-            $(function () {
-                //- $('.lastModifiedTime').text(document.lastModified);
-                //- $(".zi").mouseover(function() {
-                //-     $("img", this).css("visibility", "hidden");
-                //-     $("p", this).show(duration=100);
-                //- });
-                //- $(".zi").mouseleave(function() {
-                //-     $("p", this).hide(duration=100);
-                //-     $("img", this).css("visibility", "visible");
-                //- });
-            });
+    include head.pug
     body
-        .container.head
-            .row
-                .col-md-6.logo-area
-                    .logo
-                        .zi.kaishu 
-                            p. 
-                                #[span 计]：计数#[br]
-                                count/compute
-                            img(src="img/计-qin.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 算]：计数#[br]
-                                compute/calculate
-                            img(src="img/算-chu.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 语]：说、话#[br]
-                                language/saying
-                            img(src="img/语-zhuan.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 言]：讲、说#[br]
-                                words/speech
-                            img(src="img/言-zhuan.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 意]：心思#[br]
-                                thought/idea
-                            img(src="img/意-qin.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 識]：认识、知道#[br]
-                                recognize/know
-                            img(src="img/識-qin.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 科]：分类#[br]
-                                science
-                            img(src="img/科-zhuan.svg")
-                        .zi.kaishu
-                            p.
-                                #[span 學]：学习、学问#[br]
-                                study/learning
-                            img(src="img/學-zhuan.svg")
-                .col-md-6.info-text
-                    .name-section
-                        span 计算语言学与意識科学实验室
-                        br
-                        span 
-                            span.small The 
-                            span.name-highlight C
-                            |omputational 
-                            span.name-highlight L
-                            |inguistics 
-                            span.small and 
-                            span.name-highlight C
-                            |onciousness 
-                            span.name-highlight S
-                            |ciences 
-                            span.small Lab
-                        //- .small The
-                        //- span Computational Linguistics
-                        //- br
-                        //- .small and 
-                        //- span Cognitive Sciences
-                        //- br
-                        //- .small Lab
-                        //- span Yang Xu
-                        //- span.name-sep &asymp;
-                        //- span.kaishu 徐炀
-                        //- Ph.D., Assistant Professor of Computer Science 
-                    .home-contact
-                        p.
-                            #[br]
-                            负责人：徐炀 | PI: Yang Xu, Ph.D.
-                            #[br]
-                            #[a(href="") 计算机科学与工程系 | CSE Department]
-                            #[br]
-                            #[a(href="http://www.sdsu.edu/") 南方科技大学 | Southern University of Science and Technology]
-                            #[br]
-                            Contact: xuyang AT sustech DOT edu DOT cn
-                            #[br]
-                            Location: Room 517 Engineering Building South
-                //- .col-md-5
-
-        .container.menu
-            .nav
-                a(href="index.html").active  首页 | Home
-                span.nav-item-sep |
-                a(href="projects.html") 项目 | Projects
-                span.nav-item-sep |
-                a(href="people.html") 人员 | People
-                span.nav-item-sep |
-                a(href="publications.html") 发表物 | Publications
-
+        include nav.pug 
+        include lab-info.pug
         .container
-            .col-md-12.introduction
+            .col-md-12.intro
                 p.
                     We are a group of active researchers in the areas of natural language processing (NLP), machine learning, cognitive sciences, and psycholinguistics. We explore the scientific principles behind human being's capability of comprehending and producing complex languages.  
                 p(style="color: #E41A1C;").
@@ -132,53 +20,9 @@ html(lang="en-US")
                     li Long-term langauge change/evolution.
                 p.
                     Please go to the #[a(href="projects.html") projects] page for detailed introduction to ongoing and past projects.
-                //- I use computational methods to examine how people interact (linguistically and behaviorally) at multiple representation levels, from lower levels such as lexical and syntactic elements, to higher levels such as information content etc.
-                //- By taking into account the interactions that occur across the broad spectrum of these representation levels, I look forward to obtain a unified perspective of dialogue that better captures the nature of human interaction. 
-                //- I am particularly interested in the interactive and collaborative nature of human dialogue. 
-                //- For details about my current research work, see my #[a(href="pubs/research_statement_xu.pdf") research statement].
-                //- p.
-                //-     My current research projects include: historical change of languages in the world, modeling dialogical interaction with distributed representations, the balance between predictability and uncertainty in language, and so on.
-
-                //- hr
-                //- h4.text-primary Bio
-                //- p.
-                //-     2018 -- Now: Assistant Professor of Computer Science, San Diego State University #[br]
-                //-     2018: Ph.D., Information Sciences and Technology, The Pennsylvania State University #[br]
-                //-     2013: M.S., Psychology, Tsinghua University #[br]
-                //-     2010: B.S., Electronic Engineering, Tsinghua University
-                //- I obtained my Ph.D in Summer 2018, from the #[a(href="https://ist.psu.edu/") College of Information Sciences and Technology], the Pennsylvania State University, advised Dr. #[a(href="http://www.david-reitter.com/") David Reitter]. 
-                //- Before joining Penn State, I received a Master degree from #[a(href="http://www.tsinghua.edu.cn/publish/psyen/") Department of Psychology] at #[a(href="http://www.tsinghua.edu.cn/publish/newthuen/index.html")] Tsinghua University in 2013. 
-                //- I received my Bachelor degree from #[a(href="http://www.tsinghua.edu.cn/publish/eeen/") Department of Electronic Engineering] at Tsinghua in 2010.
                 hr
-        .container
-            h3 News
-            .pre-scrollable#whatsnew
-                ul
-                    li 5/2023: Our we have a paper on spontaneous gestures in speech accepted to ACL 2023 (to appear)!
-                    li 10/2022: Our COLING2022 paper is covered by #[a(href="https://jina.ai/news/coling2022/") Jina.ai news] in the post COLING2022 Summary on Multimodal AI.
-                    li 8/2022: Our paper #[i Gestures Are Used Rationally: Information Theoretic Evidence from Neural Sequential Models] is accepted to COLING 2022 (October 12-17, 2022, Gyeongju, Republic of Korea)!
-                    li 8/2022: Our student volunteer Richard Wang won the 1st prize of #[a(href="https://caspa.com/caspa-2022-science-and-engineering-fair-registration/") CASPA 2022 Science And Engineering Fair] (supervised by Dr. Yang Xu)! 
-                        br
-                        | See the #[a(href="https://www.youtube.com/watch?v=Eb8mCNq1Axo") video] and #[a(href="https://drive.google.com/file/d/1n6E86mCVeegXPZtHNGTzK0kdgiIRejjy/view?usp=sharing") slides] here.
-                    li 8/2022: Dr. Yang Xu gave an invited talk to the #[a(href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/") SOCIAL AND INTELLIGENT ROBOTICS RESEARCH LABORATORY (SIRRL)] at University of Waterloo. 
-                        | See the #[a(href="https://drive.google.com/file/d/1n3rgjS-RE6-d2orzb6K-TUUq_Twn6Dv9/view?usp=sharing") slides] here. 
-                    li 5/2022: We have a journal paper accepted to #[i Microvascular Research]!
-                    //- li 3/2022: We have one #[a(href="https://drive.google.com/file/d/1b5CQAfKbe9StoQX3udrhDjGd52DGvOgT/view?usp=sharing", style={color:'red'}) open postdoc position] available!
-                    li 4/2021: 🎉 Dr. Yang Xu have received an National Science Foundation (NSF) award for the project "Modeling computer-mediated task-oriented dialogues with multi-modality information theoretic approaches"!
-                    //- li 12/2020: We have a paper on #[i global divergence and local convergence of utterance semantic representations in dialogue] accepted to the Annual Meeting of the Society for Computation in Linguisitcs (#[a(href="https://blogs.umass.edu/scil/scil-2021-call-for-papers/") SCiL 2021])!
-                    //- li 9/2020: Dr. Yang Xu has a book chapter on #[i Historical Changes in Semantic Weights of Sub-word Units] published!
-                    //- li 5/2020: We have a paper on #[i sentence embedding and syntactic structure] accepted to the 42nd Annual Virtual Meeting of the Cognitive Science Society (#[a(href="https://cognitivesciencesociety.org/cogsci-2020/") CogSci 2020])!
-                    //- li 5/2019: Our paper on #[i subword embeddings modeling language change] is accepted to the 1st International Workshop on Computational Approaches to Historical Language Change (LChange'19) colocated at ACL 2019!
-                    //- li 4/2019: We have an abtract and poster on #[i modeling language change in Chinese] accepted to CogSci 2019!
-                    //- li 11/2018: Our extened poster on #[i alignment is affected by lexical surprisal] is accepted to SCiL 2019!
-                    //- li 5/2018: Our paper on #[i how social power influence alignment (or not) in dialogue] is accepted to ACL 2018!
-                    //- li 2/2018: Give an invited talk at Department of CS, SDSU!
-                    //- li 8/2017: Give an oral presentation at ACL 2017.
-                    //- li 5/2017: Our paper on spectral analysis of dialogue is accepted to ACL 2017 @Vancouver!
-                    //- li 2/2017: Our paper on information density in dialogue is accepted to #[i Cognition] journal!
-                    //- li 8/2016: Give an oral and poster presentation at ACL 2016.
-                    //- li 5/2016: Two papers are accepted to ACL 2016!
-            hr
-        .container
-            p.last-update Last updated time: August 2022
-            script(src="//t1.extreme-dm.com/f.js", id="eXF-yvx5085-0", async, defer)
+        include news.pug
+        hr
+        //- .container.foot
+        //-     p.last-update Last updated time: August 2022
+        //-     script(src="//t1.extreme-dm.com/f.js", id="eXF-yvx5085-0", async, defer)

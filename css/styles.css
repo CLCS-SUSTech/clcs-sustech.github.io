@@ -1,15 +1,16 @@
 body {
-    font-family: 'Georgia', serif;
+    /* font-family: 'Georgia', serif; */
+    /* font-family: 'Verdana', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     padding-top: 50px;
 }
 
-.introduction p {
-    text-align: left;
+.intro {
+    margin-top: 2em;
 }
-
-p.last-update {
-    color: grey;
+.intro p {
+    text-align: left;
 }
 
 .info-text {
@@ -36,7 +37,7 @@ p.last-update {
     /* font-style: italic; */
     /* text-decoration: underline; */
     color: white;
-    background-color: black;
+    background-color: gainsboro;
 }
 .name-section .small {
     font-size: 20px;
@@ -53,31 +54,36 @@ p.last-update {
     font-family: "STKaiti";
 }
 
+/*navigation bar*/
 .menu {
-    margin-top: 30px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 .nav {
     padding-top: 10px;
     padding-bottom: 20px;
 }
 .nav a {
-    font-style: italic;
-    font-size: 18px;
+    font-size: 14px;
 }
 .nav-item-sep {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 1em;
+}
+
+.info {
+    margin-bottom: 1em;
 }
 
 .logo-area {
-    padding-left: 55px;
+    padding-left: 85px;
     padding-top: 20px;
 }
 .logo {
     margin-top: 10px;
 }
 .zi {
-    width: 120px;
+    width: 140px;
     float: left;
     position: relative;
 }
