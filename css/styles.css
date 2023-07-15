@@ -6,16 +6,6 @@ body {
     padding-top: 50px;
 }
 
-.intro {
-    margin-top: 2em;
-}
-.intro p {
-    text-align: left;
-}
-
-.info-text {
-    margin-top: -20px;
-}
 
 @font-face {
     font-family: "HanyiKaiti";
@@ -74,6 +64,9 @@ body {
 .info {
     margin-bottom: 1em;
 }
+.info-text {
+    margin-top: -20px;
+}
 
 .logo-area {
     padding-left: 85px;
@@ -110,6 +103,15 @@ body {
 }
 .zi p span {
     font-size: 24px;
+}
+
+/*实验室介绍段落*/
+.intro {
+    margin-top: 2em;
+}
+.intro p {
+    text-align: left;
+    width: 80%;
 }
 
 
