@@ -1,13 +1,7 @@
 doctype html
 html(lang="en-US")
+    include head.pug
     head
-        title Yang Xu : Publications
-        meta(charset="utf-8")
-        meta(name="author", content="Yang Xu")
-        meta(name="keywords", content="Yang Xu, PSU, Penn State, psycholinguistics, computational linguistics")
-        link(rel="stylesheet", href="css/bootstrap.min.css")
-        link(rel="stylesheet", href="css/styles.css")
-        script(src="js/jquery-3.1.1.min.js", type="text/javascript")
         script.
             $(function () {
                 $('.showbib').on('click', function() {
@@ -16,17 +10,23 @@ html(lang="en-US")
             });
 
     body
-        .container.menu
-            .nav
-                a(href="index.html").active Home
-                span.nav-item-sep |
-                a(href="projects.html") Projects
-                span.nav-item-sep |
-                a(href="people.html") People
-                span.nav-item-sep |
-                a(href="publications.html") Publications
-        
+        include nav.pug
         .container.pubs-container 
+            .pub-entry. 
+                #[span.title #[a(href="#2023Spontaneous") 2023]. #[a(href="#") Spontaneous Gestures in Language Modeling: A Computational Study]]
+                #[br]
+                #[span.authors #[b Yang Xu], Yang Cheng]
+                #[br]
+                #[span.journal ] Proceedings of the 2023 Annual Conference of the Association for Computational Linguistics (ACL 2023)
+                #[br]
+            p.bib-text. 
+                @inproceedings{xu2023spontaneous,#[br]
+                    &emsp;title={Spontaneous Gestures in Language Modeling: A Computational Study},#[br]
+                    &emsp;author={Xu, Yang and Cheng, Yang},#[br]
+                    &emsp;booktitle={Proceedings of the 2023 Annual Conference of the Association for Computational Linguistics},#[br]
+                    &emsp;year={2023}#[br]
+                }
+
             .pub-entry. 
                 #[span.title #[a(href="#2022Gestures1") 2022]. #[a(href="#") Gestures Are Used Rationally: Information Theoretic Evidence from Neural Sequential Models]]
                 #[br]

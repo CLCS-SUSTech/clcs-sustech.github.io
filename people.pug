@@ -1,164 +1,66 @@
 doctype html
 html(lang="en-US")
-    head
-        title The Computational Linguistics and Cognitive Sciences (CLCS) Lab : People
-        meta(charset="utf-8")
-        meta(name="author", content="Yang Xu")
-        meta(name="keywords", content="computational linguistics, cognitive sciences, psycholinguistics, NLP, Computer Science, SDSU, San Diego State University, Yang Xu")
-        link(rel="stylesheet", href="css/bootstrap.min.css")
-        link(rel="stylesheet", href="css/styles.css") 
+    include head.pug
     body
-        .container.menu
-            .nav
-                a(href="index.html").active Home
-                span.nav-item-sep |
-                a(href="projects.html") Projects
-                span.nav-item-sep |
-                a(href="people.html") People
-                span.nav-item-sep |
-                a(href="publications.html") Publications
+        include nav.pug
 
         .container
             .col-md-12
-                h1 Current Lab Members
+                h2 实验室成员 | Current Lab Members
                 hr
                 .person.col-md-12
                     .portray.col-md-3
-                        img(src="img/xu_fun.JPG", alt="Yang Xu", style="width:70%;height:70%;")
+                        img(src="img/Xu_SUSTech.jpeg", alt="Yang Xu", style="width:70%;height:70%;")
                     .short-bio.col-md-9
                         p.
-                            Principal Investigator: Yang Xu, Ph.D.
+                            Principal Investigator: Yang Xu, Ph.D., #[a(href="./files/cv_xu.pdf") CV]
                         p.
-                            Assistant Professor at #[a(href="http://www.cs.sdsu.edu/") Department of Computer Science], #[a(href="https://www.sdsu.edu/") San Diego State University]. 
-                        p(style="color: #E41A1C;").
-                            I will join #[a(href="https://www.sustech.edu.cn/en/") Southern University of Science and Technology (SUSTech)] at Shenzhen, China, in Fall 2023. 
-                            #[br] You can contact me by my personal email address: innerfirexy AT gmail DOT com 
+                            Associate Professor at #[a(href="https://cse.sustech.edu.cn/") Department of Computer Science and Engineering]
+                            #[br]
+                            #[a(href="https://www.sustech.edu.cn/") Southern University of Science and Technology]. 
                         p.
                             DBLP page: #[a(href="https://dblp.org/pid/61/3906-24.html") https://dblp.org/pid/61/3906-24.html]
-                        p.
-                            My research interest lies in the intersection of natural language processing, machine learning, psycholinguistics, and cognitive sciences. 
-                            The research activities/questions that interest me include (but are not limited to): developing multi-modal machine learning models for huamn language, developing computational methods for the short-term adaptation in dialogue, designing human-centered interaction systems, and studying long-term change in language.
-                        p.
-                            You can find more information in my #[a(href="./files/cv-xu.pdf") CV]
-                        p.
-                            #[strong I am actively recruiting] highly self-motivated Ph.D. students. Please visit #[a(href="http://www.csrc.sdsu.edu/csrc/doctoral.html") CSRC, Computational Science and Research Center] for more information about the program.
+                            #[br]
+                            Google Scholar page: #[a(href="https://scholar.google.com/citations?user=DnivueEAAAAJ&hl=en") url]
+                        p(style="color: #E41A1C;"). 
+                            我们实验室招收博士后、博士、硕士、本科生，欢迎有志于从事计算语言学、人工智能、认知科学、心理语言学等领域研究的同学加入。联系方式：发送你的简历至邮箱 xuyang [at] sustech [dot] edu [dot] cn
 
                 .col-md-12
-                    hr
-                
-                //- .person.col-md-12.hidden
+                    hr   
+                //- .person.col-md-12 
                 //-     .portray.col-md-3
-                //-         img(src="img/BryceChudomelka.jpg", alt="Bryce Chudomelka", style="width:70%;height:70%;")
+                //-         img(src="img/Wang_pic.JPG", alt="Richard Wang", style="width:70%;height:70%;")
                 //-     .short-bio.col-md-9
                 //-     p.
-                //-         Bryce Chudomelka (brycechudomelka AT gmail DOT com)
+                //-         Richard Wang (richardcwang2020 AT gmail DOT com)
                 //-     p.
-
-
-                
-                .person.col-md-12
-                    .portray.col-md-3
-                        img(src="img/ChengYang.jpg", alt="Yang Cheng", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Yang Cheng (chengyang2156 AT gmail DOT com)
-                    p.
-                        Master student of Computer Science, at University of Southern California.
-                    p. 
-                        Working on multi-modal language models for joint learning task of verbal and gestural communication signals.
-                .col-md-12
-                    hr
-                
-                .person.col-md-12 
-                    .portray.col-md-3
-                        img(src="img/Wang_pic.JPG", alt="Richard Wang", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Richard Wang (richardcwang2020 AT gmail DOT com)
-                    p.
-                        Hight student volunteer. 
-                    p. 
-                        Working on information theoretical models of writing system of Chinese language. 
-                        Worked on microfluidics video data processing, blood cells recognition and clumping detection. 
-                .col-md-12
-                    hr
+                //-         Hight student volunteer. 
+                //-     p. 
+                //-         Working on information theoretical models of writing system of Chinese language. 
+                //-         Worked on microfluidics video data processing, blood cells recognition and clumping detection. 
+                //- .col-md-12
+                //-     hr
                     
                 
-                .col-md-12
-                    hr
-                h2 Previous members
-                hr
+                //- .col-md-12
+                //-     hr
+                //- h2 Previous members
+                //- hr
 
-                .person.col-md-12 
-                    .portray.col-md-3
-                        img(src="img/Twinkal_Gada.png", alt="Twinkal Kantilal Gada ", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Twinkal Kantilal Gada (tgada9137 AT sdsu DOT edu)
-                    p.
-                        Master student of Computer Science, at San Diego State University.
-                    p. 
-                        Worked on medical image processing; blood vessel segmentation. 
-                .col-md-12
-                    hr
-
-                .person.col-md-12 
-                    .portray.col-md-3
-                        img(src="img/AlexLu_pic.png", alt="Alex Lu", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Alex Lu (maodou1258 AT gmail DOT com)
-                    p.
-                        Hight student volunteer. 
-                    p.
-                        Worked on blood vessel segmentation project.
-
-                .person.col-md-12
-                    .portray.col-md-3
-                        img(src="img/KavyaLnu.jpg", alt="Kavya Lnu", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Kavya Lnu (klnu7276 AT sdsu DOT edu)
-                    p.
-                        Master degree in Computer Science from San Diego State University. Graduated in 2021.
-                    //- I am currently a graduate student at Department of Computer Science, San Diego State University. 
-                    //- I did my Bachelor's degree in Computer Science and briefly worked as a Full Stack Web Developer. 
-                    //- My research interests lie in Data Science, Big data, Machine Learning, Artificial Intelligence and Computer Vision.
-
-                .person.col-md-12
-                    .portray.col-md-3
-                        img(src="img/shravani.jpg", alt="Shravani", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Shravani Belgamwar (sbelgamwar3697 AT sdsu DOT edu)
-                    p.
-                        Master degree in Computer Science from San Diego State University. Graduated in 2021.
-                    //- I am a Master student at the Department of Computer Engineering, San Diego State University. My research interests include Machine Learning, Deep Learning, Natural Language Processing and Computer Vision. 
-
-                .person.col-md-12
-                    .portray.col-md-3
-                        img(src="img/Nika.jpg", alt="Nika", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Nika Nizharadze (nnizh13 AT gmail DOT com)
-                    p.
-                        I am a Master student at the Department of Computer Engineering, San Diego State University. I am interested in big data processing and analytics, machine learning, and computational linguistics. 
+                //- .person.col-md-12
+                //-     .portray.col-md-3
+                //-         img(src="img/Nika.jpg", alt="Nika", style="width:70%;height:70%;")
+                //-     .short-bio.col-md-9
+                //-     p.
+                //-         Nika Nizharadze (nnizh13 AT gmail DOT com)
+                //-     p.
+                //-         I am a Master student at the Department of Computer Engineering, San Diego State University. I am interested in big data processing and analytics, machine learning, and computational linguistics. 
                 
-                .person.col-md-12
-                    .portray.col-md-3
-                        img(src="img/student_f.jpg", alt="Xinyue", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Xinyue Zhang (xinyuecheol AT gmail DOT com)
-                    p.
-                        Master degree in Computer Science from San Diego State University. Graduated in 2021.
-                    //- I received a bachelor’s degree in Economics and a minor in Computer Science from San Diego State University in May 2018, a master’s degree in Economics from San Diego State University in August 2020, and have work experience as a research and graduate assistant.
-                
-                .person.col-md-12
-                    .portray.col-md-3
-                        img(src="img/student_m.jpg", alt="Kaiwen Feng", style="width:70%;height:70%;")
-                    .short-bio.col-md-9
-                    p.
-                        Kevin Feng
-                    p.
-                        Master degree in Computer Science from San Diego State University. Graduated in 2020. 
+                //- .person.col-md-12
+                //-     .portray.col-md-3
+                //-         img(src="img/student_m.jpg", alt="Kaiwen Feng", style="width:70%;height:70%;")
+                //-     .short-bio.col-md-9
+                //-     p.
+                //-         Kevin Feng
+                //-     p.
+                //-         Master degree in Computer Science from San Diego State University. Graduated in 2020. 
