@@ -2,7 +2,7 @@ import argparse
 import bibtexparser
 
 parser = argparse.ArgumentParser()
-parser.add_argument('bibentry', type=str, help='Bibtex entry to be converted to IEEE format')
+parser.add_argument('bibentry', type=str, default='', help='Bibtex entry to be converted to IEEE format')
 parser.add_argument('--input', type=str, default='', help='Path to the input bibtex file, e.g., ./pubs_list.bib')
 parser.add_argument('--output', type=str, default='./pubs_list_converted.md')
 args = parser.parse_args()
@@ -94,7 +94,7 @@ def convert_to_ieee(bibtex_entry):
 
 
 if __name__ == '__main__':
-    if args.input: 
+    if args.input and args.output: 
         # Example from https://bibtexparser.readthedocs.io/en/main/quickstart.html#prerequisite-vocabulary
         library = bibtexparser.parse_file(args.input)
         print(f"Parsed {len(library.blocks)} blocks, including:"
@@ -103,12 +103,11 @@ if __name__ == '__main__':
             f"\n\t{len(library.strings)} strings and"
             f"\n\t{len(library.preambles)} preambles")
         # write to ouput
-        if args.output:
-            with open(args.output, 'w') as f:
-                for entry in library.entries:
-                    f.write(get_pretty_bibstr(entry))
-                    f.write("\n\n")
-
-    bibentry = args.bibentry
-    library = bibtexparser.parse_string(bibentry)
-    print(convert_to_ieee(library.entries[0]))
+        with open(args.output, 'w') as f:
+            for entry in library.entries:
+                f.write(get_pretty_bibstr(entry))
+                f.write("\n\n")
+    else: # no input specified, do some other task
+        bibentry = args.bibentry
+        library = bibtexparser.parse_string(bibentry)
+        print(convert_to_ieee(library.entries[0]))
