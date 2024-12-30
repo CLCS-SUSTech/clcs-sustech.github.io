@@ -2,9 +2,9 @@ import argparse
 import bibtexparser
 
 parser = argparse.ArgumentParser()
-parser.add_argument('bibentry', type=str, default='', help='Bibtex entry to be converted to IEEE format')
-parser.add_argument('--input', type=str, default='', help='Path to the input bibtex file, e.g., ./pubs_list.bib')
-parser.add_argument('--output', type=str, default='./pubs_list_converted.md')
+parser.add_argument('-bibentry', '-b', type=str, default='', help='Bibtex entry to be converted to IEEE format')
+parser.add_argument('--input', '-i', type=str, default='', help='Path to the input bibtex file, e.g., ./pubs_list.bib')
+parser.add_argument('--output', '-o', type=str, default='./pubs_list_converted.md')
 args = parser.parse_args()
 
 
