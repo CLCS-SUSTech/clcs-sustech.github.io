@@ -171,6 +171,36 @@ body {
     visibility: hidden;
 }
 
+/* Student cards */
+.student-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.student-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.student-info h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.student-info p {
+    color: #6c757d;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 
 /* smooth scroll to anchor link */
 *{scroll-behavior: smooth;}
