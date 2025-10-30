@@ -12,6 +12,23 @@ html(lang="en-US")
     body
         include nav.pug
         .container.pubs-container 
+            .pub-entry.
+                #[span.title #[a(href="#2025Abstain") 2025]. #[a(href="#2025Abstain") Teaching LLMs to Abstain via Fine-Grained Semantic Confidence Reward]]
+                #[br]
+                #[span.authors Hao An, Yang Xu]
+                #[br]
+                #[span.journal arXiv preprint]
+                #[br]
+                #[span.links #[a(href="https://arxiv.org/pdf/2510.24020") paper] &nbsp; #[a.showbib bib] &nbsp;]
+            p.bib-text.
+                @article{an2025abstain,#[br]
+                    &emsp;title = {Teaching LLMs to Abstain via Fine-Grained Semantic Confidence Reward},#[br]
+                    &emsp;author = {An, Hao and Xu, Yang},#[br]
+                    &emsp;journal = {arXiv},#[br]
+                    &emsp;year = {2025},#[br]
+                    &emsp;url = {https://arxiv.org/pdf/2510.24020},#[br]
+                }
+
             .pub-entry. 
                 #[span.title #[a(href="#2025FACE2") 2025]. #[a(href="#2025FACE2") Evaluating Text Generation Quality Using Spectral Distances of Surprisal]]
                 #[br]
@@ -421,3 +438,5 @@ html(lang="en-US")
                 	&emsp;note = {10.1007/978-3-319-16268-3 47},#[br]
                 	&emsp;pages = {381--387}#[br]
                 }
+
+            
