@@ -1,0 +1,23 @@
+slug: reliable-language-models
+order: 3
+title:
+  zh: 知识边界与可靠语言模型
+  en: Knowledge Boundaries and Reliable Language Models
+question:
+  zh: 模型什么时候应该承认自己不知道？
+  en: When should a model admit that it does not know?
+summary:
+  zh: 研究模型何时知道、何时不知道，刻画置信度与知识边界，并让模型在不确定时作出恰当反应。
+  en: We study when models know, when they do not, and how confidence and knowledge boundaries can support appropriate responses under uncertainty.
+description:
+  zh: 我们研究模型何时知道、何时不知道，以及如何让模型在不确定时做出恰当反应。这包括知识边界、置信度、持续学习、生成文本检测与评测等问题。
+  en: We study when models know, when they do not, and how they should respond under uncertainty. Topics include knowledge boundaries, confidence, continual learning, generated-text detection, and evaluation.
+keywords:
+  zh:
+    - 知识边界
+    - 置信度
+    - 选择性回答
+  en:
+    - Knowledge Boundaries
+    - Confidence
+    - Selective Answering

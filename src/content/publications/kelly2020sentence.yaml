@@ -1,0 +1,16 @@
+slug: kelly2020sentence
+year: 2020
+title: "Which Sentence Embeddings and Which Layers Encode Syntactic Structure?"
+authors:
+  - "M. A. Kelly"
+  - "Yang Xu"
+  - "Jesús Calvillo"
+  - "David Reiter"
+venue: "Proceedings of the 42nd Annual Conference of the Cognitive Science Society (CogSci 2020, full paper)"
+bibtex: |-
+  @article{kelly2020sentence,
+    title={Which Sentence Embeddings and Which Layers Encode Syntactic Structure?},
+    author={Kelly, M Alex and Xu, Yang and Calvillo, Jes{\'u}s and Reitter, David},
+    year={2020},
+    publisher={PsyArXiv}
+  }

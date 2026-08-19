@@ -1,0 +1,17 @@
+slug: xu2021global
+year: 2021
+title: "Global divergence and local convergence of utterance semantic representations in dialogue"
+authors:
+  - "Yang Xu"
+venue: "Proceedings of the Society for Computation in Linguistics (SCiL 2021)"
+paper: "https://scholarworks.umass.edu/scil/vol4/iss1/12/"
+bibtex: |-
+  @article{xu2021global,
+    title={Global divergence and local convergence of utterance semantic representations in dialogue},
+    author={Xu, Yang},
+    journal={Proceedings of the Society for Computation in Linguistics},
+    volume={4},
+    number={1},
+    pages={116--124},
+    year={2021}
+  }

@@ -1,0 +1,18 @@
+slug: model-memory
+order: 3
+title:
+  zh: 模型记忆与持续学习
+  en: Model Memory and Lifelong Learning
+summary:
+  zh: 研究语言模型如何存储、遗忘和更新信息，以及新旧知识在持续场景中的相互作用。
+  en: We study how language models store, forget, and update information, and how old and new knowledge interact in continual settings.
+status:
+  zh: 探索中
+  en: Exploring
+tags:
+  zh:
+    - 模型记忆
+    - 持续学习
+  en:
+    - Model Memory
+    - Lifelong Learning

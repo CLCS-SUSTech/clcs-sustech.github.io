@@ -1,0 +1,57 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ContentArticleLayout from '@/components/ContentArticleLayout.astro';
+import { languages, localeConfig, localized } from '@/lib/i18n';
+import { langPath, type Lang } from '@/lib/paths';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('projects');
+  const articles = await getCollection('projectArticles');
+  return articles.flatMap((article) => {
+    const entry = entries.find((item) => item.data.slug === article.data.slug);
+    if (!entry || !entry.data.articleLocales.includes(article.data.lang)) return [];
+    return [{
+      params: { lang: article.data.lang, slug: article.data.slug },
+      props: { entry, article, lang: article.data.lang },
+    }];
+  });
+}
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+  article: CollectionEntry<'projectArticles'>;
+  lang: Lang;
+}
+
+const { entry, article, lang } = Astro.props;
+const { Content } = await render(article);
+const title = localized(entry.data.title, lang);
+const summary = localized(entry.data.summary, lang);
+const status = entry.data.status ? localized(entry.data.status, lang) : undefined;
+const otherLang = languages.find((candidate) => candidate !== lang)!;
+const alternateLangPath = entry.data.articleLocales.includes(otherLang)
+  ? langPath(otherLang, `projects/${entry.data.slug}`)
+  : langPath(otherLang, 'research');
+const formatter = new Intl.DateTimeFormat(localeConfig[lang].dateLocale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const metaParts = [
+  lang === 'zh' ? '项目记录' : 'Project Note',
+  status,
+  entry.data.date ? formatter.format(entry.data.date) : undefined,
+].filter(Boolean);
+---
+
+<ContentArticleLayout
+  lang={lang}
+  title={title}
+  description={summary}
+  meta={metaParts.join(' · ')}
+  backHref={langPath(lang, 'research')}
+  backLabel={lang === 'zh' ? '返回研究与发表' : 'Back to research'}
+  alternateLangPath={alternateLangPath}
+>
+  <Content />
+</ContentArticleLayout>

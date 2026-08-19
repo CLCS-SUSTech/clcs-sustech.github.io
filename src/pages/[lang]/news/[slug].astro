@@ -1,0 +1,52 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ContentArticleLayout from '@/components/ContentArticleLayout.astro';
+import { categoryLabels } from '@/data/site';
+import { languages, localeConfig, localized } from '@/lib/i18n';
+import { langPath, type Lang } from '@/lib/paths';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('news', ({ data }) => !data.draft);
+  const articles = await getCollection('newsArticles');
+  return articles.flatMap((article) => {
+    const entry = entries.find((item) => item.data.slug === article.data.slug);
+    if (!entry || !entry.data.locales.includes(article.data.lang)) return [];
+    return [{
+      params: { lang: article.data.lang, slug: article.data.slug },
+      props: { entry, article, lang: article.data.lang },
+    }];
+  });
+}
+
+interface Props {
+  entry: CollectionEntry<'news'>;
+  article: CollectionEntry<'newsArticles'>;
+  lang: Lang;
+}
+
+const { entry, article, lang } = Astro.props;
+const { Content } = await render(article);
+const title = localized(entry.data.title, lang);
+const excerpt = localized(entry.data.excerpt, lang);
+const otherLang = languages.find((candidate) => candidate !== lang)!;
+const alternateLangPath = entry.data.locales.includes(otherLang)
+  ? langPath(otherLang, `news/${entry.data.slug}`)
+  : langPath(otherLang, 'news');
+const formatter = new Intl.DateTimeFormat(localeConfig[lang].dateLocale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<ContentArticleLayout
+  lang={lang}
+  title={title}
+  description={excerpt}
+  meta={`${categoryLabels[lang][entry.data.category]} · ${formatter.format(entry.data.date)}`}
+  backHref={langPath(lang, 'news')}
+  backLabel={lang === 'zh' ? '返回消息' : 'Back to news'}
+  alternateLangPath={alternateLangPath}
+>
+  <Content />
+</ContentArticleLayout>

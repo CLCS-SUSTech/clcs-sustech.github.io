@@ -1,0 +1,23 @@
+slug: generated-text-evaluation
+order: 4
+title:
+  zh: 生成文本检测与质量评测
+  en: Generated-Text Detection and Quality Evaluation
+question:
+  zh: 我们如何识别并评价机器生成的文本？
+  en: How can we identify and evaluate machine-generated text?
+summary:
+  zh: 从频谱、统计规律和心理语言学信号出发，识别机器生成文本并衡量生成质量与人类偏好。
+  en: We use spectral, statistical, and psycholinguistic signals to detect machine-generated text and evaluate generation quality and human preference.
+description:
+  zh: 我们关注机器生成文本留下的统计与语言学特征，并研究自动评测指标和人类判断之间的联系。
+  en: We study the statistical and linguistic traces left by machine-generated text, as well as connections between automatic evaluation metrics and human judgments.
+keywords:
+  zh:
+    - 文本检测
+    - 生成评测
+    - 人类偏好
+  en:
+    - Text Detection
+    - Generation Evaluation
+    - Human Preference

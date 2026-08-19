@@ -1,0 +1,18 @@
+slug: he2026eye
+year: 2026
+title: "Eye Movement Features Can Predict Human Preferences on Machine-Generated Texts"
+authors:
+  - "Xiaoshan He"
+  - "Xiaoqun Liu"
+  - "Haodong He"
+  - "Yu Wang"
+  - "Yang Xu"
+venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop) (accepted)"
+bibtex: |-
+  @inproceedings{he2026eye,
+    title = {Eye Movement Features Can Predict Human Preferences on Machine-Generated Texts},
+    author = {He, Xiaoshan and Liu, Xiaoqun and He, Haodong and Wang, Yu and \textbf{Xu}, \textbf{Yang}},
+    booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)},
+    year = {2026},
+    note = {(accepted)}
+  }

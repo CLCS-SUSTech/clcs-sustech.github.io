@@ -1,0 +1,23 @@
+slug: reasoning-capabilities
+order: 2
+title:
+  zh: 推理过程与能力增强
+  en: Reasoning Processes and Capability Enhancement
+question:
+  zh: 语言模型如何形成更清晰、更可靠的推理过程？
+  en: How can language models reason more clearly and reliably?
+summary:
+  zh: 研究语言模型的推理路径、结构化生成与能力边界，探索更有效且可解释的推理方法。
+  en: We study reasoning paths, structured generation, and capability boundaries to develop more effective and interpretable reasoning methods.
+description:
+  zh: 我们研究语言模型如何组织中间推理过程，以及句子边界、思维结构和推理策略如何影响最终能力。
+  en: We investigate how language models organize intermediate reasoning and how sentence boundaries, thought structures, and inference strategies affect their capabilities.
+keywords:
+  zh:
+    - 推理过程
+    - 结构化生成
+    - 能力增强
+  en:
+    - Reasoning Processes
+    - Structured Generation
+    - Capability Enhancement

@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MentorProfile from '@/components/MentorProfile.astro';
+import MemberCard from '@/components/MemberCard.astro';
+import { groupLabels, memberRoleLabels } from '@/data/site';
+import type { Lang } from '@/lib/paths';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+type MemberGroup = keyof typeof memberRoleLabels.zh;
+const memberGroup = (id: string) => id.split('/')[0] as MemberGroup;
+const members = (await getCollection('member')).sort((a, b) => {
+  const yearDifference = (a.data.joinYear ?? 0) - (b.data.joinYear ?? 0);
+  return yearDifference || a.data.name.zh.localeCompare(b.data.name.zh, 'zh-CN');
+});
+const mentors = members.filter((member) => memberGroup(member.id) === 'pi');
+const groupOrder = ['postdoc', 'phd', 'master', 'undergraduate', 'alumni'] as const;
+---
+
+<BaseLayout lang={lang} title={lang === 'zh' ? '成员' : 'Members'}>
+  <header class="members-intro">
+    <div class="container">
+      <h1>{lang === 'zh' ? '实验室成员' : 'Members'}</h1>
+    </div>
+  </header>
+
+  {mentors.length > 0 && (
+    <section class="mentor-section">
+      <div class="container">
+        {mentors.map((entry) => <MentorProfile entry={entry} lang={lang} />)}
+      </div>
+    </section>
+  )}
+
+  <main class="members-directory">
+    <div class="container">
+      {groupOrder.map((group) => {
+        const groupMembers = members.filter((member) => memberGroup(member.id) === group);
+        if (!groupMembers.length) return null;
+        return (
+          <section class="member-group" aria-labelledby={`group-${group}`}>
+            <h2 id={`group-${group}`}>{groupLabels[lang][group]}</h2>
+            <div class="member-list">
+              {groupMembers.map((entry) => <MemberCard entry={entry} group={group} lang={lang} />)}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .members-intro {
+    padding: 58px 0 42px;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .members-directory {
+    padding: 64px 0 96px;
+  }
+
+  .member-group {
+    padding-top: 0;
+  }
+
+  .member-group + .member-group {
+    margin-top: 52px;
+  }
+
+  .member-group h2 {
+    margin: 0 0 20px;
+    font-family: var(--sans);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .member-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .member-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .members-intro {
+      padding: 42px 0 32px;
+    }
+
+    .members-directory {
+      padding: 24px 0 72px;
+    }
+
+    .member-group + .member-group {
+      margin-top: 44px;
+    }
+
+    .member-group {
+      padding-top: 0;
+    }
+
+    .member-group h2 {
+      margin-bottom: 14px;
+    }
+
+    .member-list {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+</style>

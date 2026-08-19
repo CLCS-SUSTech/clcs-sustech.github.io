@@ -1,0 +1,156 @@
+---
+import type { Lang } from '@/lib/paths';
+import { withBase } from '@/lib/paths';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const glyphs = [
+  {
+    id: 'ji',
+    alt: lang === 'zh' ? '计' : 'Ji — Computation',
+    title: lang === 'zh' ? '计 · 计算' : '计 · Computation',
+    text: lang === 'zh' ? '以计算模型作为理解语言和智能的方法。' : 'Computational models as a method for understanding language and intelligence.',
+  },
+  {
+    id: 'yu',
+    alt: lang === 'zh' ? '语' : 'Yu — Language',
+    title: lang === 'zh' ? '语 · 语言' : '语 · Language',
+    text: lang === 'zh' ? '研究语言的使用、理解、学习与演化。' : 'How language is used, understood, learned, and evolved.',
+  },
+  {
+    id: 'shi',
+    alt: lang === 'zh' ? '识' : 'Shi — Consciousness',
+    title: lang === 'zh' ? '识 · 意识' : '识 · Consciousness',
+    text: lang === 'zh' ? '追问机器智能与人类认知的根本差异。' : 'Fundamental differences between machine intelligence and human cognition.',
+  },
+  {
+    id: 'xue',
+    alt: lang === 'zh' ? '学' : 'Xue — Sciences',
+    title: lang === 'zh' ? '学 · 科学' : '学 · Sciences',
+    text: lang === 'zh' ? '连接计算机科学、语言学、心理学与哲学。' : 'Connecting computer science, linguistics, psychology, and philosophy.',
+  },
+];
+---
+
+<div class="glyph-grid" aria-label={lang === 'zh' ? '实验室四字标识，悬停或点击查看释义' : 'Four-character lab mark; hover or click for meaning'}>
+  {glyphs.map((glyph) => (
+    <button class="glyph-card" type="button" aria-pressed="false" aria-label={`${glyph.title}：${glyph.text}`}>
+      <span class="glyph-inner">
+        <span class="glyph-face glyph-front">
+          <img src={withBase(`brand/logo-${glyph.id}.svg`)} alt={glyph.alt} />
+        </span>
+        <span class="glyph-face glyph-back">
+          <span>
+            <strong>{glyph.title}</strong>
+            <span>{glyph.text}</span>
+          </span>
+        </span>
+      </span>
+    </button>
+  ))}
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.glyph-grid').forEach((grid) => {
+    const glyphs = Array.from(grid.querySelectorAll<HTMLButtonElement>('.glyph-card'));
+    glyphs.forEach((glyph) => {
+      glyph.addEventListener('click', () => {
+        const next = glyph.getAttribute('aria-pressed') !== 'true';
+        glyphs.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+        glyph.setAttribute('aria-pressed', String(next));
+      });
+    });
+  });
+</script>
+
+<style>
+  .glyph-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    box-shadow: 0 22px 60px rgb(23 35 43 / 7%);
+  }
+
+  .glyph-card {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    perspective: 900px;
+  }
+
+  .glyph-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 420ms cubic-bezier(0.2, 0.75, 0.2, 1);
+  }
+
+  .glyph-card:hover .glyph-inner,
+  .glyph-card:focus-visible .glyph-inner,
+  .glyph-card[aria-pressed='true'] .glyph-inner {
+    transform: rotateY(180deg);
+  }
+
+  .glyph-face {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: clamp(14px, 2.2vw, 28px);
+    backface-visibility: hidden;
+  }
+
+  .glyph-front {
+    background:
+      linear-gradient(145deg, rgb(255 255 255 / 76%), transparent 70%),
+      var(--paper-deep);
+  }
+
+  .glyph-front img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+  }
+
+  .glyph-back {
+    background: var(--brand-deep);
+    color: var(--white);
+    text-align: left;
+    transform: rotateY(180deg);
+  }
+
+  .glyph-back strong,
+  .glyph-back span {
+    display: block;
+  }
+
+  .glyph-back strong {
+    margin-bottom: 9px;
+    font-family: var(--serif);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-weight: 500;
+  }
+
+  .glyph-back span span {
+    color: rgb(255 255 255 / 78%);
+    font-size: clamp(0.72rem, 1.3vw, 0.91rem);
+    line-height: 1.5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glyph-inner {
+      transition: none;
+    }
+  }
+</style>

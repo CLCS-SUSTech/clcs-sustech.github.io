@@ -1,0 +1,32 @@
+slug: rechar-2025
+year: 2025
+title: "ReChar: Revitalising Characters with Structure Preserved and User-Specified Aesthetic Enhancements"
+authors:
+  - "Zhongyu Yang"
+  - "Junhao Song"
+  - "Zhang Luo"
+  - "Zuhao Yang"
+  - "Yang Xu"
+  - "Jingfen Lan"
+  - "Yonghan Zhang"
+  - "Wei Pang"
+  - "Siyang Song"
+  - "Yingfang Yuan"
+venue: "Proceedings of the SIGGRAPH Asia 2025 Technical Communications"
+paper: "https://doi.org/10.1145/3757376.3771409"
+bibtex: |-
+  @inproceedings{10.1145/3757376.3771409,
+    series = {SA Technical Communications '25},
+    location = {},
+    numpages = {5},
+    articleno = {30},
+    booktitle = {Proceedings of the SIGGRAPH Asia 2025 Technical Communications},
+    doi = {10.1145/3757376.3771409},
+    url = {https://doi.org/10.1145/3757376.3771409},
+    address = {New York, NY, USA},
+    publisher = {Association for Computing Machinery},
+    isbn = {9798400721366},
+    year = {2025},
+    title = {ReChar: Revitalising Characters with Structure Preserved and User-Specified Aesthetic Enhancements},
+    author = {Yang, Zhongyu and Song, Junhao and Luo, Zhang and Yang, Zuhao and Xu, Yang and Lan, Jingfen and Zhang, Yonghan and Pang, Wei and Song, Siyang and Yuan, Yingfang},
+  }

@@ -1,0 +1,18 @@
+slug: xu2018power
+year: 2018
+title: "Not that much power: Linguistic alignment is influenced more by low-level linguistic features rather than social power"
+authors:
+  - "Yang Xu"
+  - "Jeremy Cole"
+  - "David Reiter"
+venue: "Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (ACL 2018)"
+paper: "http://www.aclweb.org/anthology/P18-1056"
+bibtex: |-
+  @inproceedings{xu2018power,
+    title={Not that much power: Linguistic alignment is influenced more by low-level linguistic features rather than social power},
+    author={Xu, Yang and Cole, Jeremy and Reitter, David},
+    booktitle={Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+    volume={1},
+    pages={601--610},
+    year={2018}
+  }

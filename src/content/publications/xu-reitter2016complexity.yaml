@@ -1,0 +1,20 @@
+slug: xu-reitter2016complexity
+year: 2016
+title: "Convergence of syntactic complexity in conversation"
+authors:
+  - "Yang Xu"
+  - "David Reiter"
+venue: "Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL 2016, short paper)"
+paper: "http://anthology.aclweb.org/P16-2072"
+code: "https://github.com/innerfirexy/acl2016short"
+bibtex: |-
+  @InProceedings{xu_reitter2016complexity,
+    author    = {Xu, Yang  and  Reitter, David},
+    title     = {Convergence of Syntactic Complexity in Conversation},
+    booktitle = {Proceedings of the 54th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 2: {Short} {Papers})},
+    year      = {2016},
+    address   = {Berlin, Germany},
+    publisher = {Association for Computational Linguistics},
+    pages     = {443--448},
+    url       = {http://anthology.aclweb.org/P16-2072}
+  }

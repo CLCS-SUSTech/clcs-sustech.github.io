@@ -1,0 +1,21 @@
+slug: wang2026backchannels
+year: 2026
+title: "Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models"
+authors:
+  - "Yu Wang"
+  - "Leyi Lao"
+  - "Langchu Huang"
+  - "Gabriel Skantze"
+  - "Yang Xu"
+  - "Hendrik Buschmeier"
+venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (accepted; oral; CCF-A)"
+paper: "https://arxiv.org/abs/2509.20237"
+bibtex: |-
+  @inproceedings{wang2026backchannels,
+    title = {Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models},
+    author = {Wang, Yu and Lao, Leyi and Huang, Langchu and Skantze, Gabriel and \textbf{Xu}, \textbf{Yang} and Buschmeier, Hendrik},
+    booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)},
+    year = {2026},
+    url = {https://arxiv.org/abs/2509.20237},
+    note = {(accepted; CCF-A)}
+  }

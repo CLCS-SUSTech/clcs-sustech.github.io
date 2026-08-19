@@ -1,0 +1,18 @@
+slug: liu2026think
+year: 2026
+title: "Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities"
+authors:
+  - "Zhichen Liu"
+  - "Yongyuan Li"
+  - "Yang Xu"
+venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (accepted; oral; CCF-A)"
+paper: "https://arxiv.org/abs/2604.10135"
+bibtex: |-
+  @inproceedings{liu2026think,
+    title = {Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities},
+    author = {Liu, Zhichen and Li, Yongyuan and \textbf{Xu}, \textbf{Yang}},
+    booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)},
+    year = {2026},
+    url = {https://arxiv.org/abs/2604.10135},
+    note = {(accepted; oral; CCF-A)}
+  }

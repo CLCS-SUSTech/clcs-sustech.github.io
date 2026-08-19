@@ -1,0 +1,152 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SimplePageHeader from '@/components/SimplePageHeader.astro';
+import { lab } from '@/data/site';
+import type { Lang } from '@/lib/paths';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+
+<BaseLayout lang={lang} title={lang === 'zh' ? '加入与联系' : 'Join & Contact'}>
+  <SimplePageHeader title={lang === 'zh' ? '加入我们' : 'Join the Lab'} />
+
+  <section class="section contact-section">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">CONTACT</span>
+        <h2>{lang === 'zh' ? '联系我们' : 'Contact Us'}</h2>
+      </div>
+      <div class="contact-details">
+        <dl>
+          <div><dt>Email</dt><dd>{lab.email}</dd></div>
+          <div><dt>{lang === 'zh' ? '地址' : 'Location'}</dt><dd>{lang === 'zh' ? lab.locationZh : lab.locationEn}</dd></div>
+          <div><dt>{lang === 'zh' ? '院系' : 'Department'}</dt><dd>{lang === 'zh' ? lab.departmentZh : lab.departmentEn}</dd></div>
+          <div><dt>{lang === 'zh' ? '学校' : 'University'}</dt><dd>{lang === 'zh' ? lab.universityZh : lab.universityEn}</dd></div>
+        </dl>
+        <p class="application-note">
+          <strong>{lang === 'zh'
+            ? `联系方式：发送你的简历至邮箱 ${lab.email}。`
+            : `To contact us, send your CV to ${lab.email}.`}</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section resources-section">
+    <div class="container resources-grid">
+      <div>
+        <span class="eyebrow">COMPUTING RESOURCES</span>
+        <h2>{lang === 'zh' ? '我们提供算力资源' : 'Computing Resources'}</h2>
+      </div>
+      <ul class="resource-list">
+        <li>
+          <span>{lang === 'zh' ? '1 台服务器' : '1 server'}</span>
+          <strong>8 × NVIDIA L40</strong>
+        </li>
+        <li>
+          <span>{lang === 'zh' ? '1 台服务器' : '1 server'}</span>
+          <strong>4 × NVIDIA RTX 6000 Ada</strong>
+        </li>
+        <li>
+          <span>{lang === 'zh' ? '2 台服务器' : '2 servers'}</span>
+          <strong>{lang === 'zh' ? '每台 8 × NVIDIA 5880' : '8 × NVIDIA 5880 each'}</strong>
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-section {
+    border-top: 0;
+    background: linear-gradient(180deg, var(--paper-deep), var(--paper));
+  }
+
+  .contact-grid,
+  .resources-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(48px, 9vw, 120px);
+  }
+
+  .contact-grid h2,
+  .resources-grid h2 {
+    margin: 18px 0;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.7rem);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  dl {
+    margin: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  dl div {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  dt {
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  .application-note {
+    margin: 24px 0 0;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+
+  .application-note strong {
+    font-weight: 600;
+  }
+
+  .resources-section {
+    background: var(--paper-deep);
+  }
+
+  .resource-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line-strong);
+    list-style: none;
+  }
+
+  .resource-list li {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .resource-list span {
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+  }
+
+  .resource-list strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 760px) {
+    .contact-grid,
+    .resources-grid {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+  }
+</style>

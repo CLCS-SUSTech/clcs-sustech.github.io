@@ -1,0 +1,19 @@
+slug: an2026purging
+year: 2026
+title: "Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness"
+authors:
+  - "Hao An"
+  - "Yibin Lou"
+  - "Jiayi Guo"
+  - "Yang Xu"
+venue: "Findings of the Association for Computational Linguistics: ACL 2026 (accepted; CCF-A)"
+paper: "https://arxiv.org/abs/2604.14324"
+bibtex: |-
+  @inproceedings{an2026purging,
+    title = {Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness},
+    author = {An, Hao and Lou, Yibin and Guo, Jiayi and \textbf{Xu}, \textbf{Yang}},
+    booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
+    year = {2026},
+    url = {https://arxiv.org/abs/2604.14324},
+    note = {(accepted; CCF-A)}
+  }

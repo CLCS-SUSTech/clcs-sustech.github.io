@@ -1,0 +1,192 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import GlyphLogo from '@/components/GlyphLogo.astro';
+import ControlledText from '@/components/ControlledText.astro';
+import HomeSection from '@/components/HomeSection.astro';
+import NewsCard from '@/components/NewsCard.astro';
+import { copy } from '@/data/site';
+import { localized } from '@/lib/i18n';
+import { langPath, type Lang } from '@/lib/paths';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const research = (await getCollection('research'))
+  .sort((a, b) => a.data.order - b.data.order);
+const latestNews = (await getCollection('news', ({ data }) => data.locales.includes(lang) && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout lang={lang}>
+  <header class="home-hero container">
+    <div class="hero-copy">
+      <h1>{t.heroTitle}</h1>
+      <p class="hero-subtitle">{t.heroSubtitle}</p>
+      <p class="hero-intro"><ControlledText text={t.heroIntro} /></p>
+    </div>
+    <GlyphLogo lang={lang} />
+  </header>
+
+  <HomeSection title={t.researchTitle} actionHref={langPath(lang, 'research')} actionLabel={t.researchMore}>
+    <div class="research-grid">
+      {research.map((entry) => (
+        <article class="research-direction">
+          <span class="research-number">{String(entry.data.order).padStart(2, '0')}</span>
+          <div>
+            <h3>{localized(entry.data.title, lang)}</h3>
+            <p>{localized(entry.data.summary, lang)}</p>
+            <div class="research-keywords">
+              {localized(entry.data.keywords, lang).map((keyword) => <span>{keyword}</span>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </HomeSection>
+
+  <HomeSection title={t.latestNews} actionHref={langPath(lang, 'news')} actionLabel={t.allNews}>
+    <div class="news-grid">
+      {latestNews.map((entry) => <NewsCard entry={entry} lang={lang} />)}
+    </div>
+  </HomeSection>
+</BaseLayout>
+
+<style>
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.78fr);
+    gap: clamp(52px, 8vw, 110px);
+    align-items: center;
+    padding-block: var(--space-intro-y);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+  }
+
+  .hero-copy h1 {
+    max-width: 660px;
+    margin: 0 0 10px;
+    font-size: clamp(2.15rem, 3.2vw, 3.5rem);
+    letter-spacing: -0.035em;
+    line-height: 1.14;
+  }
+
+  .hero-subtitle {
+    max-width: 620px;
+    margin: 0 0 24px;
+    color: var(--brand);
+    font-family: var(--sans);
+    font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+    line-height: 1.35;
+  }
+
+  .hero-intro {
+    max-width: 650px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1.07rem;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(38px, 6vw, 82px);
+  }
+
+  .research-direction {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 16px;
+    padding: 26px 0 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .research-number {
+    padding-top: 4px;
+    color: var(--brand);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .research-direction h3 {
+    margin: 0 0 8px;
+    font-family: var(--sans);
+    font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .research-direction p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.91rem;
+    line-height: 1.65;
+  }
+
+  .research-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 12px;
+  }
+
+  .research-keywords span {
+    color: var(--brand);
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    letter-spacing: 0.03em;
+  }
+
+  .research-keywords span::before {
+    content: '#';
+    margin-right: 2px;
+    color: var(--line-strong);
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  @media (max-width: 940px) {
+    .home-hero {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .home-hero :global(.glyph-grid) {
+      width: min(100%, 560px);
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-grid > :last-child {
+      grid-column: 1 / -1;
+    }
+
+  }
+
+  @media (max-width: 640px) {
+    .research-grid,
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .news-grid > :last-child {
+      grid-column: auto;
+    }
+
+  }
+</style>

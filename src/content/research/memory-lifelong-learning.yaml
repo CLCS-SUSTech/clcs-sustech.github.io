@@ -1,0 +1,23 @@
+slug: memory-lifelong-learning
+order: 5
+title:
+  zh: 模型记忆与持续学习
+  en: Model Memory and Lifelong Learning
+question:
+  zh: 语言模型如何记住、遗忘和更新信息？
+  en: How do language models remember, forget, and update information?
+summary:
+  zh: 研究模型如何存储、遗忘和更新信息，以及在连续场景中保持长期记忆和适应新知识的能力。
+  en: We study how models store, forget, and update information while maintaining long-term memory and adapting to new knowledge in continual settings.
+description:
+  zh: 我们研究大语言模型在持续场景中的记忆能力、信息周期性，以及新旧知识之间的相互作用。
+  en: We investigate memory in continual scenarios, the periodicity of information, and interactions between old and new knowledge in large language models.
+keywords:
+  zh:
+    - 模型记忆
+    - 持续学习
+    - 知识更新
+  en:
+    - Model Memory
+    - Lifelong Learning
+    - Knowledge Updating
