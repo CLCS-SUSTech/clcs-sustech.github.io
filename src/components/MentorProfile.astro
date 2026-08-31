@@ -30,7 +30,7 @@ const recruiting = mentor.recruiting ? localized(mentor.recruiting, lang) : unde
 
   <div class="mentor-content">
     <header>
-      <span class="mentor-label">{lang === 'zh' ? '导师' : 'Mentor'}</span>
+      <!-- <span class="mentor-label">{lang === 'zh' ? '导师' : 'Mentor'}</span> -->
       <h2>
         {nameZh}
         <small>{nameEn}</small>
@@ -80,7 +80,8 @@ const recruiting = mentor.recruiting ? localized(mentor.recruiting, lang) : unde
     display: grid;
     place-items: center;
     width: 100%;
-    aspect-ratio: 2 / 3;
+    /*aspect-ratio: 2 / 3;*/
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background: var(--paper-deep);
     color: var(--brand);
@@ -92,6 +93,7 @@ const recruiting = mentor.recruiting ? localized(mentor.recruiting, lang) : unde
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /*object-fit: content;*/
   }
 
   .mentor-label {
@@ -106,15 +108,15 @@ const recruiting = mentor.recruiting ? localized(mentor.recruiting, lang) : unde
     gap: 8px 14px;
     margin: 8px 0 4px;
     font-family: var(--serif);
-    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
     font-weight: 500;
     line-height: 1.2;
   }
 
   h2 small {
-    color: var(--ink-soft);
+    color: var(--ink);
     font-family: var(--sans);
-    font-size: 0.55em;
+    font-size: 0.75em;
     font-weight: 400;
   }
 
@@ -127,7 +129,7 @@ const recruiting = mentor.recruiting ? localized(mentor.recruiting, lang) : unde
 
   .mentor-role {
     margin: 0;
-    font-size: 0.92rem;
+    font-size: 1.0rem;
   }
 
   .mentor-position {

@@ -73,6 +73,7 @@ const member = defineCollection({
     name: localizedString,
     joinYear: z.number().int().min(1900).max(2100).optional(),
     academicTitle: localizedString.optional(),
+    role: localizedString.optional(),
     bio: localizedString.optional(),
     recruiting: localizedString.optional(),
     destination: localizedString.optional(),

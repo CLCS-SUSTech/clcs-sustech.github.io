@@ -11,7 +11,9 @@ const { lang } = Astro.props;
 const projects = (await getCollection('projects'))
   .sort((a, b) => a.data.order - b.data.order);
 const publications = (await getCollection('publications'))
-  .sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title));
+  .sort((a, b) => b.data.year - a.data.year
+    || Number(b.data.featured) - Number(a.data.featured)
+    || a.data.title.localeCompare(b.data.title));
 const publicationYears = [...new Set(publications.map((entry) => entry.data.year))];
 ---
 

@@ -1,0 +1,17 @@
+slug: an-xu-2026-fiscore
+year: 2026
+title: "Teaching LLMs to Abstain via Fine-Grained Semantic Confidence Reward"
+authors:
+  - "Hao An"
+  - "Yang Xu"
+venue: "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026, Main Conference)"
+featured: true
+paper: "https://arxiv.org/abs/2510.24020"
+bibtex: |-
+  @article{an-xu-2026-fiscore,
+    title = "Teaching {LLMs} to Abstain via Fine-Grained Semantic Confidence Reward ({FiSCoRe})",
+    author = "An, Hao  and Xu, Yang",
+    year = "2026",
+    journal = "arXiv preprint arXiv:2510.24020",
+    url = "https://arxiv.org/abs/2510.24020",
+  }

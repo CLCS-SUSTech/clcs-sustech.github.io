@@ -18,9 +18,11 @@ const hasLinks = Boolean(person.email || person.homepage || person.scholar);
 const nameZh = localized(person.name, 'zh');
 const nameEn = localized(person.name, 'en');
 const roleLabel = memberRoleLabels[lang][group];
-const role = person.joinYear
-  ? (lang === 'zh' ? `${person.joinYear} 级${roleLabel}` : `${roleLabel}, Class of ${person.joinYear}`)
-  : roleLabel;
+const role = person.role
+  ? localized(person.role, lang)
+  : person.joinYear
+    ? (lang === 'zh' ? `${person.joinYear} 级${roleLabel}` : `${roleLabel}, Class of ${person.joinYear}`)
+    : roleLabel;
 const destination = person.destination ? localized(person.destination, lang) : undefined;
 ---
 

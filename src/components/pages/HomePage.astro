@@ -25,7 +25,7 @@ const latestNews = (await getCollection('news', ({ data }) => data.locales.inclu
 <BaseLayout lang={lang}>
   <header class="home-hero container">
     <div class="hero-copy">
-      <h1>{t.heroTitle}</h1>
+      <h1><ControlledText text={t.heroTitle} /></h1>
       <p class="hero-subtitle">{t.heroSubtitle}</p>
       <p class="hero-intro"><ControlledText text={t.heroIntro} /></p>
     </div>
@@ -72,8 +72,9 @@ const latestNews = (await getCollection('news', ({ data }) => data.locales.inclu
 
   .hero-copy h1 {
     max-width: 660px;
-    margin: 0 0 10px;
-    font-size: clamp(2.15rem, 3.2vw, 3.5rem);
+    margin: 0 0 30px;
+    /*font-size: clamp(2.15rem, 3.2vw, 3.5rem);*/
+    font-size: clamp(1.8rem, 2.6vw, 2.8rem);
     letter-spacing: -0.035em;
     line-height: 1.14;
   }
@@ -81,9 +82,10 @@ const latestNews = (await getCollection('news', ({ data }) => data.locales.inclu
   .hero-subtitle {
     max-width: 620px;
     margin: 0 0 24px;
-    color: var(--brand);
+    color: var(--ink);
     font-family: var(--sans);
-    font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+    /*font-size: clamp(1.05rem, 1.65vw, 1.35rem);*/
+    font-size: clamp(1.25rem, 1.65vw, 1.55rem);
     line-height: 1.35;
   }
 

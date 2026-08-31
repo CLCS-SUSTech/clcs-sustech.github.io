@@ -34,9 +34,9 @@ export const copy = {
       join: '加入 / 联系',
     },
     heroKicker: '南方科技大学 · 计算机科学与工程系 · 深圳',
-    heroTitle: lab.nameZh,
+    heroTitle: '计算语言学与意识科学实验室',
     heroSubtitle: lab.nameEn,
-    heroIntro: '我们研究不同时间尺度与动态环境中，人类语言的使用、理解、学习和演化，并以计算方法探索语言、智能与意识之间的深层联系。\n\n欢迎有志于从事人工智能、计算语言学、心理语言学、认知科学等领域研究的同学加入。\n{{accent:联系方式：发送你的简历至邮箱 xuyang [at] sustech [dot] edu [dot] cn。}}',
+    heroIntro: '- 我们研究不同时间尺度与动态环境中，人类语言的使用、理解、学习和演化，并以计算方法探索语言、智能与意识之间的深层联系。\n - 欢迎有志于从事人工智能、计算语言学、心理语言学、认知科学等领域研究的同学加入。\n',
     exploreResearch: '探索研究方向',
     joinUs: '加入我们',
     researchTitle: '研究方向',
@@ -62,7 +62,7 @@ export const copy = {
     heroKicker: 'SUSTech · Department of CSE · Shenzhen',
     heroTitle: lab.nameEn,
     heroSubtitle: lab.nameZh,
-    heroIntro: 'We study how human language is used, understood, learned, and evolved across time scales and dynamic environments, using computational methods to explore the deep connections among language, intelligence, and consciousness.\n\nWe are actively recruiting self-motivated graduate, undergraduate students, and post-docs.\n{{accent:You are more than welcome to send your resume to xuyang [at] sustech [dot] edu [dot] cn.}}',
+    heroIntro: 'We study how human language is used, understood, learned, and evolved across time scales and dynamic environments, using computational methods to explore the deep connections among language, intelligence, and consciousness.\n\nWe are actively recruiting self-motivated graduate, undergraduate students, and post-docs. ',
     exploreResearch: 'Explore our research',
     joinUs: 'Join us',
     researchTitle: 'Research Areas',
@@ -116,7 +116,7 @@ export const groupLabels = {
 
 export const memberRoleLabels = {
   zh: {
-    pi: '实验室负责人',
+    pi: '实验室负责人 (Principal Investigator)',
     postdoc: '博士后',
     phd: '博士研究生',
     master: '硕士研究生',

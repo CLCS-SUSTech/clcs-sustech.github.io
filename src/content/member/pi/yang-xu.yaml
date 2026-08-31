@@ -1,16 +1,13 @@
 name:
-  zh: 徐扬
+  zh: 徐 炀
   en: Yang Xu
 academicTitle:
   zh: 副教授
   en: Associate Professor
-recruiting:
-  zh: 欢迎对计算语言学、大语言模型、心理语言学与认知科学抱有长期兴趣的博士后、博士生、硕士生和本科生联系加入。
-  en: We welcome postdoctoral fellows and students with sustained interests in computational linguistics, large language models, psycholinguistics, and cognitive science.
 profileLinks:
   - label: Google Scholar
     url: https://scholar.google.com/citations?user=DnivueEAAAAJ&hl=en
   - label: DBLP Page
     url: https://dblp.org/pid/61/3906-24.html
-avatar: images/member/yang-xu.jpg
+avatar: images/member/xy.jpg
 email: xuyang@sustech.edu.cn
