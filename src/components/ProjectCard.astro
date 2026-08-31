@@ -1,0 +1,128 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { localized } from '@/lib/i18n';
+import { langPath, type Lang } from '@/lib/paths';
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const project = entry.data;
+const title = localized(project.title, lang);
+const summary = localized(project.summary, lang);
+const status = project.status ? localized(project.status, lang) : undefined;
+const tags = localized(project.tags, lang);
+const internalHref = project.articleLocales.includes(lang) ? langPath(lang, `projects/${project.slug}`) : undefined;
+const href = internalHref ?? project.link;
+const isExternal = Boolean(project.link && !internalHref);
+---
+
+{href ? (
+  <a
+    class="project-card project-card--linked"
+    href={href}
+    target={isExternal ? '_blank' : undefined}
+    rel={isExternal ? 'noreferrer' : undefined}
+  >
+    <div class="project-heading">
+      <h3>{title}</h3>
+      {status && <span>{status}</span>}
+    </div>
+    <p>{summary}</p>
+    <div class="project-footer">
+      <span>{tags.join(' · ')}</span>
+      <strong>{internalHref
+        ? (lang === 'zh' ? '项目记录 →' : 'Project note →')
+        : (lang === 'zh' ? '访问链接 ↗' : 'Visit ↗')}</strong>
+    </div>
+  </a>
+) : (
+  <article class="project-card">
+    <div class="project-heading">
+      <h3>{title}</h3>
+      {status && <span>{status}</span>}
+    </div>
+    <p>{summary}</p>
+    <div class="project-footer">
+      <span>{tags.join(' · ')}</span>
+    </div>
+  </article>
+)}
+
+<style>
+  .project-card {
+    display: flex;
+    min-width: 0;
+    min-height: 176px;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid var(--line);
+    background: rgb(255 255 255 / 52%);
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .project-card--linked {
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .project-card--linked:hover,
+  .project-card--linked:focus-visible {
+    border-color: var(--line-strong);
+    box-shadow: 0 10px 24px rgb(23 35 43 / 8%);
+    color: var(--ink);
+    transform: translateY(-3px);
+  }
+
+  .project-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 1.16rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .project-heading > span {
+    flex: 0 0 auto;
+    padding-top: 3px;
+    color: var(--brand);
+    font-size: 0.72rem;
+  }
+
+  p {
+    margin: 12px 0 20px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .project-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px 20px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 0.74rem;
+  }
+
+  .project-footer > span {
+    color: var(--ink-soft);
+  }
+
+  .project-footer strong {
+    color: var(--brand);
+    font-weight: 600;
+  }
+</style>

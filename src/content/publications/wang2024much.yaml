@@ -1,0 +1,16 @@
+slug: wang2024much
+year: 2024
+title: "How Much Does Nonverbal Communication Conform to Entropy Rate Constancy?: A Case Study on Listener Gaze in Interaction"
+authors:
+  - "Yu Wang"
+  - "Yang Xu"
+  - "Gabriel Skantze"
+  - "Hendrik Buschmeier"
+venue: "Findings of the Association for Computational Linguistics: ACL 2024"
+bibtex: |-
+  @inproceedings{wang2024much,
+    title = {How Much Does Nonverbal Communication Conform to Entropy Rate Constancy?: A Case Study on Listener Gaze in Interaction},
+    author = {Wang, Yu and Xu, Yang and Skantze, Gabriel and Buschmeier, Hendrik},
+    booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+    year = {2024},
+  }

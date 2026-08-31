@@ -1,0 +1,20 @@
+slug: ou2025periodicity
+year: 2026
+title: "Identifying the Periodicity of Information in Natural Language"
+authors:
+  - "Yulin Ou"
+  - "Yu Wang"
+  - "Yang Xu"
+  - "Hendrik Buschmeier"
+venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (accepted; CCF-A)"
+paper: "https://arxiv.org/pdf/2510.27241"
+code: "https://github.com/CLCS-SUSTech/APS"
+bibtex: |-
+  @inproceedings{ou2025periodicity,
+    title = {Identifying the Periodicity of Information in Natural Language},
+    author = {Ou, Yulin and Wang, Yu and \textbf{Xu}, \textbf{Yang} and Buschmeier, Hendrik},
+    booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)},
+    year = {2026},
+    url = {https://arxiv.org/pdf/2510.27241},
+    note = {(accepted; CCF-A)}
+  }

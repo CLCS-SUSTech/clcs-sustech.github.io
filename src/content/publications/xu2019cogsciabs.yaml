@@ -1,0 +1,19 @@
+slug: xu2019cogsciabs
+year: 2019
+title: "Subword Embeddings Reveal Language Change"
+authors:
+  - "Yang Xu"
+  - "Jeremy Cole"
+  - "David Reiter"
+venue: "Proceedings of the 41st Annual Meeting of the Cognitive Science Society (CogSci 2019, poster presentation)"
+bibtex: |-
+  @article{xu2019cogsciabs,
+    title={},
+    author={Xu, Yang and Zhang, Jiasheng and Reitter, David},
+    journal={Proceedings of The 41st Annual Meeting of the Cognitive Science Society},
+    volume={},
+    number={},
+    pages={},
+    address={Montreal, Canada},
+    year={2019}
+  }

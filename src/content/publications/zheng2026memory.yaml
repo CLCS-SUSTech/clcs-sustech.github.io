@@ -1,0 +1,24 @@
+slug: zheng2026memory
+year: 2026
+title: "Evaluating Memory Capability in Continuous Lifelog Scenario"
+authors:
+  - "Jianjie Zheng"
+  - "Zhichen Liu"
+  - "Zhanyu Shen"
+  - "Jingxiang Qu"
+  - "Guanhua Chen"
+  - "Yile Wang"
+  - "Yang Xu"
+  - "Yang Liu"
+  - "Sijie Cheng"
+venue: "Findings of the Association for Computational Linguistics: ACL 2026 (accepted; CCF-A)"
+paper: "https://arxiv.org/abs/2604.11182"
+bibtex: |-
+  @inproceedings{zheng2026memory,
+    title = {Evaluating Memory Capability in Continuous Lifelog Scenario},
+    author = {Zheng, Jianjie and Liu, Zhichen and Shen, Zhanyu and Qu, Jingxiang and Chen, Guanhua and Wang, Yile and \textbf{Xu}, \textbf{Yang} and Liu, Yang and Cheng, Sijie},
+    booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
+    year = {2026},
+    url = {https://arxiv.org/abs/2604.11182},
+    note = {(accepted; CCF-A)}
+  }

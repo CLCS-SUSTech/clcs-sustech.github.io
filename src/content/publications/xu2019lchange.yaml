@@ -1,0 +1,20 @@
+slug: xu2019lchange
+year: 2019
+title: "Treat the Word As a Whole or Look Inside? Subword Embeddings Model Language Change and Typology"
+authors:
+  - "Yang Xu"
+  - "Jiasheng Zhang"
+  - "David Reiter"
+venue: "Workshop of LChange 2019 (colocated at ACL 2019)"
+code: "https://github.com/innerfirexy/lchange2019"
+bibtex: |-
+  @article{xu2019lchange,
+    title={Treat the Word As a Whole or Look Inside? Subword Embeddings Model Language Change and Typology},
+    author={Xu, Yang and Zhang, Jiasheng and Reitter, David},
+    journal={Proceedings of the 1st International Workshop on Computational Approaches to Historical Language Change},
+    volume={},
+    number={},
+    pages={},
+    address={Florence, Italy},
+    year={2019}
+  }

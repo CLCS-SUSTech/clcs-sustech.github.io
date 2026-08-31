@@ -1,0 +1,19 @@
+slug: xu2019linguistic
+year: 2019
+title: "Linguistic alignment is affected more by lexical surprisal rather than social power"
+authors:
+  - "Yang Xu"
+  - "Jeremy Cole"
+  - "David Reiter"
+venue: "Proceedings of the Society for Computation in Linguistics (SCiL 2019)"
+paper: "https://scholarworks.umass.edu/cgi/viewcontent.cgi?article=1104&context=scil"
+bibtex: |-
+  @article{xu2019linguistic,
+    title={Linguistic alignment is affected more by lexical surprisal rather than social power},
+    author={Xu, Yang and Cole, Jeremy and Reitter, David},
+    journal={Proceedings of the Society for Computation in Linguistics},
+    volume={2},
+    number={1},
+    pages={349--352},
+    year={2019}
+  }

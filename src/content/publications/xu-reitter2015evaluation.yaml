@@ -1,0 +1,17 @@
+slug: xu-reitter2015evaluation
+year: 2015
+title: "An evaluation and comparison of linguistic alignment measures"
+authors:
+  - "Yang Xu"
+  - "David Reiter"
+venue: "Proceedings of Proceedings of Cognitive Modeling and Computational Linguistics (CMCL 2015, colocated at NAACL 2015)"
+bibtex: |-
+  @InProceedings{xu_reitter2015evaluation,
+    title={An evaluation and comparison of linguistic alignment measures},
+    author={Xu, Yang and Reitter, David},
+    journal={Proceedings of Cognitive Modeling and Computational Linguistics},
+    pages={58--67},
+    year={2015},
+    publisher = {Association for Computational Linguistics},
+    address = {Denver, CO}
+  }

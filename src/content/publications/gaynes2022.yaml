@@ -1,0 +1,22 @@
+slug: gaynes2022
+year: 2022
+title: "Hierarchical data visualization of experimental erythrocyte aggregation employing cross correlation and optical flow applications"
+authors:
+  - "Bruce I. Gaynes"
+  - "Mark B. Shapiro"
+  - "Abel Saju Augustine"
+  - "Yang Xu"
+  - "..."
+  - "Jie Xu"
+venue: "Microvascular Research"
+paper: "https://doi.org/10.1016/j.mvr.2022.104386"
+bibtex: |-
+  @article{GAYNES2022104386,
+    title = {Hierarchical data visualization of experimental erythrocyte aggregation employing cross correlation and optical flow applications},
+    journal = {Microvascular Research},
+    pages = {104386},
+    year = {2022},
+    issn = {0026-2862},
+    doi = {https://doi.org/10.1016/j.mvr.2022.104386},
+    author = {Bruce I. Gaynes and Mark B. Shapiro and Abel Saju Augustine and Yang Xu and Yang Lin and Parisa Mirbod and Robert Dieter and Yang Cheng and Mengren Wu and Harish Venkataraman and Yuan Gao and Plamen Petrov and Jie Xu},
+  }

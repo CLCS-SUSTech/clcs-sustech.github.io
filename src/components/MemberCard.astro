@@ -1,0 +1,148 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { memberRoleLabels } from '@/data/site';
+import { localized } from '@/lib/i18n';
+import { type Lang, withBase } from '@/lib/paths';
+
+type MemberGroup = keyof typeof memberRoleLabels.zh;
+
+interface Props {
+  entry: CollectionEntry<'member'>;
+  group: MemberGroup;
+  lang: Lang;
+}
+
+const { entry, group, lang } = Astro.props;
+const person = entry.data;
+const hasLinks = Boolean(person.email || person.homepage || person.scholar);
+const nameZh = localized(person.name, 'zh');
+const nameEn = localized(person.name, 'en');
+const roleLabel = memberRoleLabels[lang][group];
+const role = person.role
+  ? localized(person.role, lang)
+  : person.joinYear
+    ? (lang === 'zh' ? `${person.joinYear} 级${roleLabel}` : `${roleLabel}, Class of ${person.joinYear}`)
+    : roleLabel;
+const destination = person.destination ? localized(person.destination, lang) : undefined;
+---
+
+<article class="member-card">
+  <div class:list={['member-card-main', { 'member-card-main--with-photo': person.avatar }]}>
+    {person.avatar && <img src={withBase(person.avatar)} alt={`${nameZh} ${nameEn}`} />}
+    <div>
+      <h3>{nameZh}</h3>
+      <span class="member-name-en">{nameEn}</span>
+      <p class="member-role">{role}</p>
+      {destination && <p class="member-destination">{destination}</p>}
+    </div>
+  </div>
+
+  {hasLinks && (
+    <div class="member-links">
+      {person.email && <a href={`mailto:${person.email}`}>Email</a>}
+      {person.homepage && (
+        <a href={person.homepage} target="_blank" rel="noreferrer">
+          {lang === 'zh' ? '个人主页' : 'Homepage'}
+        </a>
+      )}
+      {person.scholar && <a href={person.scholar} target="_blank" rel="noreferrer">Scholar</a>}
+    </div>
+  )}
+</article>
+
+<style>
+  .member-card {
+    display: flex;
+    min-width: 0;
+    min-height: 142px;
+    flex-direction: column;
+    padding: 18px;
+    border: 1px solid var(--line);
+    background: rgb(255 255 255 / 46%);
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  @media (hover: hover) {
+    .member-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-strong);
+      background: rgb(255 255 255 / 72%);
+      box-shadow: 0 10px 24px rgb(48 40 30 / 7%);
+    }
+  }
+
+  .member-card-main--with-photo {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  img {
+    width: 58px;
+    height: 72px;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 1.24rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .member-name-en {
+    display: block;
+    margin-top: 2px;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+
+  .member-role,
+  .member-destination {
+    color: var(--ink-soft);
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+
+  .member-role {
+    margin: 18px 0 0;
+  }
+
+  .member-destination {
+    margin: 5px 0 0;
+  }
+
+  .member-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 0.76rem;
+  }
+
+  .member-links a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  .member-links a:hover {
+    color: var(--brand-deep);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .member-card {
+      transition: none;
+    }
+
+    .member-card:hover {
+      transform: none;
+    }
+  }
+</style>

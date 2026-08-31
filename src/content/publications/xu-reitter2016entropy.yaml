@@ -1,0 +1,20 @@
+slug: xu-reitter2016entropy
+year: 2016
+title: "Entropy converges between dialogue participants: Explanations from an information-theoretic perspective"
+authors:
+  - "Yang Xu"
+  - "David Reitter"
+venue: "Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL 2016)"
+paper: "http://www.aclweb.org/anthology/P16-1051"
+code: "https://github.com/innerfirexy/acl2016long"
+bibtex: |-
+  @InProceedings{xu_reitter2016entropy,
+    author    = {Xu, Yang and Reitter, David},
+    title     = {Entropy converges between dialogue participants: Explanations from an information-theoretic perspective},
+    booktitle = {Proceedings of the 54th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 1: {Long} {Papers})},
+    year      = {2016},
+    address   = {Berlin, Germany},
+    publisher = {Association for Computational Linguistics},
+    pages     = {537--546},
+    url       = {http://www.aclweb.org/anthology/P16-1051}
+  }

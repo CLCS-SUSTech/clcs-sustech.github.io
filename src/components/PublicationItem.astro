@@ -1,0 +1,261 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { localized } from '@/lib/i18n';
+import type { Lang } from '@/lib/paths';
+
+interface Props {
+  entry: CollectionEntry<'publications'>;
+  lang: Lang;
+  showYear?: boolean;
+}
+
+const { entry, lang, showYear = true } = Astro.props;
+const publication = entry.data;
+const status = publication.status ? localized(publication.status, lang) : undefined;
+const bibPanelId = 'bib-' + publication.slug;
+---
+
+<article class:list={['publication-item', { 'publication-item--without-year': !showYear }]}>
+  {showYear && <div class="publication-year">{publication.year}</div>}
+  <div>
+    <h3>{publication.title}</h3>
+    <p class="authors">{publication.authors.join(', ')}</p>
+    <p class="venue">{publication.venue}{status ? ` · ${status}` : ''}</p>
+    <div class="publication-links">
+      {publication.paper
+        ? <a href={publication.paper} target="_blank" rel="noreferrer">Paper</a>
+        : <span class="is-disabled" aria-disabled="true">Paper</span>}
+      {publication.bibtex
+        ? (
+          <button
+            class="bib-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls={bibPanelId}
+          >
+            Bib
+          </button>
+        )
+        : publication.bib
+          ? <a href={publication.bib} target="_blank" rel="noreferrer">Bib</a>
+        : <span class="is-disabled" aria-disabled="true">Bib</span>}
+      {publication.code
+        ? <a href={publication.code} target="_blank" rel="noreferrer">Code</a>
+        : <span class="is-disabled" aria-disabled="true">Code</span>}
+      {publication.project && (
+        <a href={publication.project} target="_blank" rel="noreferrer">
+          {lang === 'zh' ? '项目主页' : 'Project'}
+        </a>
+      )}
+    </div>
+    {publication.bibtex && (
+      <div id={bibPanelId} class="bib-panel" hidden>
+        <div class="bib-panel-toolbar">
+          <span>BibTeX</span>
+          <button
+            class="bib-copy"
+            type="button"
+            data-copy-label={lang === 'zh' ? '复制' : 'Copy'}
+            data-copied-label={lang === 'zh' ? '已复制' : 'Copied'}
+          >
+            {lang === 'zh' ? '复制' : 'Copy'}
+          </button>
+        </div>
+        <pre><code>{publication.bibtex}</code></pre>
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .publication-item {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .publication-item:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .publication-item--without-year {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-year {
+    color: var(--brand);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-family: var(--sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 4px 0;
+  }
+
+  .authors {
+    color: #34434b;
+  }
+
+  .venue {
+    color: var(--ink-soft);
+  }
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 12px;
+    font-size: 0.82rem;
+  }
+
+  .publication-links a,
+  .bib-toggle {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .bib-toggle {
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .publication-links a::after {
+    content: ' ↗';
+    font-size: 0.75em;
+  }
+
+  .bib-toggle::after {
+    content: ' +';
+    font-size: 0.85em;
+  }
+
+  .bib-toggle[aria-expanded='true']::after {
+    content: ' −';
+  }
+
+  .publication-links a:hover,
+  .bib-toggle:hover {
+    color: var(--brand-deep);
+  }
+
+  .publication-links a:hover {
+    text-decoration: underline;
+  }
+
+  .publication-links .is-disabled {
+    color: var(--ink-soft);
+    opacity: 0.42;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  .bib-panel {
+    margin-top: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgb(255 255 255 / 52%);
+  }
+
+  .bib-panel-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 0.72rem;
+  }
+
+  .bib-copy {
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--brand);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .bib-copy:hover {
+    color: var(--brand-deep);
+  }
+
+  pre {
+    max-height: 240px;
+    margin: 0;
+    overflow: auto;
+    padding: 13px 14px;
+    color: #34434b;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    line-height: 1.55;
+    white-space: pre;
+  }
+
+  @media (max-width: 560px) {
+    .publication-item {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+</style>
+
+<script>
+  const bibToggles = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('.bib-toggle'),
+  );
+
+  function setBibOpen(toggle: HTMLButtonElement, open: boolean) {
+    const panelId = toggle.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (panel) panel.hidden = !open;
+  }
+
+  bibToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      bibToggles.forEach((otherToggle) => setBibOpen(otherToggle, false));
+      if (shouldOpen) setBibOpen(toggle, true);
+    });
+  });
+
+  async function copyBibtex(text: string) {
+    if (!navigator.clipboard?.writeText) throw new Error('Clipboard API unavailable');
+    await navigator.clipboard.writeText(text);
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.bib-copy').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const code = button.closest('.bib-panel')?.querySelector('code');
+      if (!code?.textContent) return;
+
+      try {
+        await copyBibtex(code.textContent);
+        button.textContent = button.dataset.copiedLabel ?? 'Copied';
+        window.setTimeout(() => {
+          button.textContent = button.dataset.copyLabel ?? 'Copy';
+        }, 1400);
+      } catch {
+        button.textContent = button.dataset.copyLabel ?? 'Copy';
+      }
+    });
+  });
+</script>

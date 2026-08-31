@@ -1,0 +1,22 @@
+slug: sentence-reasoning
+order: 1
+title:
+  zh: 句子边界与语言模型推理
+  en: Sentence Boundaries and Language-Model Reasoning
+summary:
+  zh: 研究显式句子结构如何影响语言模型的推理过程、生成组织与能力边界。
+  en: We study how explicit sentence structure shapes reasoning, generation organization, and capability boundaries in language models.
+date: 2026-05-12
+status:
+  zh: 进行中
+  en: Ongoing
+tags:
+  zh:
+    - 推理
+    - 结构化生成
+  en:
+    - Reasoning
+    - Structured Generation
+articleLocales:
+  - zh
+  - en

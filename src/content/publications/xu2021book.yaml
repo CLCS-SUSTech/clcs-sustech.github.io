@@ -1,0 +1,18 @@
+slug: xu2021book
+year: 2021
+title: "Historical changes in semantic weights of sub-word units"
+authors:
+  - "Yang Xu"
+  - "Zheng-sheng Zhang"
+venue: "Computational Approaches to Semantic Change (Book Chapter)"
+paper: "https://langsci-press.org/catalog/book/303"
+bibtex: |-
+  @incollection{xu2021book,
+    title = {Historical changes in semantic weights of sub-word units},
+    author = {Xu, Yang and Zhang, Zheng-sheng},
+    booktitle = {Computational Approaches to Semantic Change},
+    editor = {Jatowt, Adam and Tahmasebi, Nina and Xu, Yang and Borin, Lars},
+    year = {2021},
+    pages = {169--187},
+    publisher = {Language Science Press}
+  }

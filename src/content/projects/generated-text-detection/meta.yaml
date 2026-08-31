@@ -1,0 +1,22 @@
+slug: generated-text-detection
+order: 2
+title:
+  zh: 生成文本检测与质量评测
+  en: Generated-Text Detection and Quality Evaluation
+summary:
+  zh: 从频谱、统计规律和心理语言学信号出发，识别机器生成文本并衡量生成质量。
+  en: We use spectral, statistical, and psycholinguistic signals to identify machine-generated text and evaluate generation quality.
+date: 2026-04-08
+status:
+  zh: 进行中
+  en: Ongoing
+tags:
+  zh:
+    - 文本检测
+    - 生成评测
+  en:
+    - Text Detection
+    - Generation Evaluation
+articleLocales:
+  - zh
+  - en

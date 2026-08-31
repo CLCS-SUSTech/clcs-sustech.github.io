@@ -1,0 +1,14 @@
+slug: emnlp-2026-fiscore
+date: 2026-08-31
+category: publication
+title:
+  zh: 一篇论文被 EMNLP 2026 主会接收
+  en: Paper Accepted to EMNLP 2026 Main Conference
+excerpt:
+  zh: 一作为课题组博士生安浩，论文提出结合正确性与语义熵不确定性的联合微调方法 FiSCoRe。
+  en: First-authored by our Ph.D. student Hao An, the paper proposes FiSCoRe, jointly fine-tuning models with correctness and semantic-entropy uncertainty.
+featured: false
+draft: false
+locales:
+  - zh
+  - en

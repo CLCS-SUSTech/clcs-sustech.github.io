@@ -1,0 +1,105 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { categoryLabels } from '@/data/site';
+import { localeConfig, localized } from '@/lib/i18n';
+import type { Lang } from '@/lib/paths';
+import { langPath, withBase } from '@/lib/paths';
+
+interface Props {
+  entry: CollectionEntry<'news'>;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const { date, category, image, slug } = entry.data;
+const title = localized(entry.data.title, lang);
+const excerpt = localized(entry.data.excerpt, lang);
+const formatter = new Intl.DateTimeFormat(localeConfig[lang].dateLocale, {
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+});
+---
+
+<article class:list={['news-card', { 'news-card--with-image': image }]}>
+  {image && <div class="news-visual" style={`background-image:url(${withBase(image)})`}></div>}
+  <div class="news-meta">
+    <span>{categoryLabels[lang][category]}</span>
+    <time datetime={date.toISOString()}>{formatter.format(date)}</time>
+  </div>
+  <h3><a href={langPath(lang, `news/${slug}`)}>{title}</a></h3>
+  <p>{excerpt}</p>
+  <a class="arrow-link" href={langPath(lang, `news/${slug}`)}>{lang === 'zh' ? '阅读全文' : 'Read more'}</a>
+</article>
+
+<style>
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    background: rgb(255 255 255 / 68%);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .news-card:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+  }
+
+  .news-visual {
+    min-height: 190px;
+    margin-bottom: 22px;
+    background-color: var(--paper-deep);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+  }
+
+  .news-meta span {
+    color: var(--brand);
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  time {
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h3 {
+    margin: 12px 0 10px;
+    font-family: var(--sans);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  h3 a {
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+
+  .arrow-link {
+    margin-top: auto;
+    padding-top: 22px;
+    font-size: 0.9rem;
+  }
+</style>

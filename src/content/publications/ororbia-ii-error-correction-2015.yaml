@@ -1,0 +1,23 @@
+slug: ororbia-ii-error-correction-2015
+year: 2015
+title: "Error-correction and aggregation in crowd-sourcing of geopolitical incident information"
+authors:
+  - "Alexander G. Ororbia II"
+  - "Yang Xu"
+  - "David Reiter"
+venue: "Social Computing, Behavioral Modeling and Prediction (SBP 2015)"
+paper: "http://www.david-reitter.com/pub/ororbia2015crowd.pdf"
+bibtex: |-
+  @incollection{ororbia_ii_error-correction_2015,
+    series = {Lecture {Notes} in {Computer} {Science}},
+    title = {Error-correction and aggregation in crowd-sourcing of geopolitical incident information},
+    volume = {9021},
+    url = {http://www.david-reitter.com/pub/ororbia2015crowd.pdf},
+    booktitle = {Social {Computing}, {Behavioral} {Modeling} and {Prediction}},
+    publisher = {Springer},
+    author = {Ororbia II, Alexander G. and Xu, Yang and D'Orazio, Vito and Reitter, David},
+    editor = {Agarwal, Nitin and Xu, Kevin and Osgood, Nathaniel},
+    year = {2015},
+    note = {10.1007/978-3-319-16268-3 47},
+    pages = {381--387}
+  }

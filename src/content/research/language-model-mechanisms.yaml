@@ -1,0 +1,23 @@
+slug: language-model-mechanisms
+order: 1
+title:
+  zh: 语言模型表征与机理
+  en: Representations and Mechanisms in Language Models
+question:
+  zh: 模型内部究竟如何组织和使用语言知识？
+  en: How do models organize and use linguistic knowledge internally?
+summary:
+  zh: 分析模型内部如何编码、组织和调用语言知识，解释能力形成与模型行为背后的计算机制。
+  en: We analyze how models encode, organize, and retrieve linguistic knowledge to explain capability formation and model behavior.
+description:
+  zh: 我们关注语言模型内部如何形成、组织和使用信息，以及模型的能力如何受到训练数据、目标函数和推理方式的影响。
+  en: We investigate how language models form, organize, and use information, and how their capabilities are shaped by training data, objectives, and inference procedures.
+keywords:
+  zh:
+    - 表征分析
+    - 机制解释
+    - 行为分析
+  en:
+    - Representation Analysis
+    - Mechanistic Interpretation
+    - Behavioral Analysis

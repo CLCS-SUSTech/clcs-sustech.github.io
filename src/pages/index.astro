@@ -1,0 +1,20 @@
+---
+import { withBase } from '@/lib/paths';
+
+const target = withBase('zh/');
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <link rel="canonical" href={new URL(target, Astro.site)} />
+    <title>正在前往 CLCS Lab</title>
+  </head>
+  <body>
+    <p>正在前往中文版网站。<a href={target}>如未自动跳转，请点击这里。</a></p>
+    <script is:inline define:vars={{ target }}>window.location.replace(target);</script>
+  </body>
+</html>

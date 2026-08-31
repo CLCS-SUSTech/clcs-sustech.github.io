@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import NewsCard from '@/components/NewsCard.astro';
+import SimplePageHeader from '@/components/SimplePageHeader.astro';
+import type { Lang } from '@/lib/paths';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const entries = (await getCollection('news', ({ data }) => data.locales.includes(lang) && !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout lang={lang} title={lang === 'zh' ? '消息' : 'News'}>
+  <SimplePageHeader title={lang === 'zh' ? '消息' : 'News'} />
+
+  <section class="news-index">
+    <div class="container news-grid">
+      {entries.map((entry) => <NewsCard entry={entry} lang={lang} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .news-index {
+    padding: clamp(42px, 6vw, 70px) 0 clamp(76px, 9vw, 112px);
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  @media (max-width: 940px) {
+    .news-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

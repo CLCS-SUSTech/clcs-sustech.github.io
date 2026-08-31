@@ -1,0 +1,61 @@
+---
+interface Props {
+  text: string;
+}
+
+type Token = {
+  kind: 'plain' | 'strong' | 'brand' | 'accent' | 'break';
+  text?: string;
+};
+
+const { text } = Astro.props;
+const tokens: Token[] = [];
+const pattern = /\{\{(strong|brand|accent):([\s\S]*?)\}\}|(\n)/g;
+let cursor = 0;
+let match: RegExpExecArray | null;
+
+while ((match = pattern.exec(text)) !== null) {
+  if (match.index > cursor) {
+    tokens.push({ kind: 'plain', text: text.slice(cursor, match.index) });
+  }
+
+  if (match[3]) {
+    tokens.push({ kind: 'break' });
+  } else {
+    tokens.push({ kind: match[1] as Token['kind'], text: match[2] });
+  }
+
+  cursor = pattern.lastIndex;
+}
+
+if (cursor < text.length) {
+  tokens.push({ kind: 'plain', text: text.slice(cursor) });
+}
+---
+
+{
+  tokens.map((token) => {
+    if (token.kind === 'break') return <br />;
+    if (token.kind === 'strong') return <strong>{token.text}</strong>;
+    if (token.kind === 'brand') return <span class="brand">{token.text}</span>;
+    if (token.kind === 'accent') return <span class="accent">{token.text}</span>;
+    return <>{token.text}</>;
+  })
+}
+
+<style>
+  strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .brand {
+    color: var(--brand);
+    font-weight: 500;
+  }
+
+  .accent {
+    color: var(--accent);
+    font-weight: 500;
+  }
+</style>

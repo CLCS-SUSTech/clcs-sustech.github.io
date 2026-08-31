@@ -1,0 +1,20 @@
+slug: xu-reitter-2018-cognition
+year: 2018
+title: "Information density converges in dialogue: Towards an information-theoretic model"
+authors:
+  - "Yang Xu"
+  - "David Reiter"
+venue: "Cognition (journal paper)"
+paper: "http://www.sciencedirect.com/science/article/pii/S0010027717302615"
+code: "https://github.com/innerfirexy/cognition2017"
+bibtex: |-
+  @article{xu_reitter_2018_cognition,
+    title = {Information density converges in dialogue: Towards an information-theoretic model},
+    journal = {Cognition},
+    volume = {170},
+    pages = {147--163},
+    year = {2018},
+    doi = {https://doi.org/10.1016/j.cognition.2017.09.018},
+    url = {http://www.sciencedirect.com/science/article/pii/S0010027717302615},
+    author = {Xu, Yang and Reitter, David}
+  }

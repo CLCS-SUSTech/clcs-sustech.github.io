@@ -1,0 +1,15 @@
+---
+import JoinPage from '@/components/pages/JoinPage.astro';
+import { siteFeatures } from '@/data/site';
+import { languages, type Lang } from '@/lib/paths';
+
+export function getStaticPaths() {
+  if (!siteFeatures.join) return [];
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+
+<JoinPage lang={lang} />

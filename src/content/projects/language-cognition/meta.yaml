@@ -1,0 +1,18 @@
+slug: language-cognition
+order: 4
+title:
+  zh: 语言、认知与人类偏好
+  en: Language, Cognition, and Human Preference
+summary:
+  zh: 连接计算模型、心理语言学和行为实验，比较人类与机器理解语言的方式。
+  en: We connect computational models, psycholinguistics, and behavioral experiments to compare human and machine language understanding.
+status:
+  zh: 长期方向
+  en: Long-term
+tags:
+  zh:
+    - 心理语言学
+    - 人类行为
+  en:
+    - Psycholinguistics
+    - Human Behavior

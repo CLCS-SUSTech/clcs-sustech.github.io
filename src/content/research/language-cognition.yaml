@@ -1,0 +1,23 @@
+slug: language-cognition
+order: 6
+title:
+  zh: 语言、认知与人类偏好
+  en: Language, Cognition, and Human Preference
+question:
+  zh: 人与模型理解语言的方式有什么不同？
+  en: How do humans and models differ in the way they understand language?
+summary:
+  zh: 连接心理语言学、眼动与行为实验和计算模型，比较人类与机器在语言理解和判断上的异同。
+  en: We connect psycholinguistics, eye tracking, behavioral experiments, and computational models to compare human and machine language processing.
+description:
+  zh: 语言为研究人类认知提供了独特入口。我们尝试把计算模型与眼动、行为实验和心理语言学理论联系起来，理解人类与机器在语言处理上的异同。
+  en: Language offers a unique entry point into human cognition. We connect computational models with eye tracking, behavioral experiments, and psycholinguistic theories to understand similarities and differences between human and machine language processing.
+keywords:
+  zh:
+    - 心理语言学
+    - 眼动实验
+    - 人类行为
+  en:
+    - Psycholinguistics
+    - Eye Tracking
+    - Human Behavior

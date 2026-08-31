@@ -1,0 +1,22 @@
+slug: xu-cheng-2023-spontaneous
+year: 2023
+title: "Spontaneous gestures encoded by hand positions improve language models: An Information-Theoretic motivated study"
+authors:
+  - "Yang Xu"
+  - "Yang Cheng"
+venue: "Findings of the Association for Computational Linguistics: ACL 2023"
+paper: "https://aclanthology.org/2023.findings-acl.600/"
+code: "https://github.com/innerfirexy/Life-lessons"
+bibtex: |-
+  @inproceedings{xu-cheng-2023-spontaneous,
+    title = {Spontaneous gestures encoded by hand positions improve language models: An Information-Theoretic motivated study},
+    author = {Xu, Yang  and
+    Cheng, Yang},
+    booktitle = {Findings of the Association for Computational Linguistics: ACL 2023},
+    month = {jul},
+    year = {2023},
+    address = {Toronto, Canada},
+    publisher = {Association for Computational Linguistics},
+    url = {https://aclanthology.org/2023.findings-acl.600},
+    pages = {9409--9424},
+  }

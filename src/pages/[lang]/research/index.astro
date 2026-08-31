@@ -1,0 +1,13 @@
+---
+import ResearchPage from '@/components/pages/ResearchPage.astro';
+import { languages, type Lang } from '@/lib/paths';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+
+<ResearchPage lang={lang} />

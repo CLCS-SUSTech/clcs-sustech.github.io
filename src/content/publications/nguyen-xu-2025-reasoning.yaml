@@ -1,0 +1,20 @@
+slug: nguyen-xu-2025-reasoning
+year: 2025
+title: "Reasoning for Translation: Comparative Analysis of Chain-of-Thought and Tree-of-Thought Prompting for LLM Translation"
+authors:
+  - "Lam Nguyen"
+  - "Yang Xu"
+venue: "ACL Student Research Workshop 2025 (Oral)"
+paper: "https://aclanthology.org/2025.acl-srw.17/"
+bibtex: |-
+  @inproceedings{nguyen-xu-2025-reasoning,
+    title = "Reasoning for Translation: Comparative Analysis of Chain-of-Thought and Tree-of-Thought Prompting for {LLM} Translation",
+    author = "Nguyen, Lam  and Xu, Yang",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-srw.17/",
+    pages = "259--275",
+  }

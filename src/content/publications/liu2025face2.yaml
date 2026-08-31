@@ -1,0 +1,20 @@
+slug: liu2025face2
+year: 2025
+title: "Evaluating Text Generation Quality Using Spectral Distances of Surprisal"
+authors:
+  - "Zhichen Liu"
+  - "Yongyuan Li"
+  - "Yang Xu"
+  - "Yu Wang"
+  - "Yingfang Yuan"
+  - "Zuhao Yang"
+venue: "Findings of the Association for Computational Linguistics: EMNLP 2025"
+paper: "https://aclanthology.org/2025.findings-emnlp.132/"
+code: "https://github.com/CLCS-SUSTech/FACEScore"
+bibtex: |-
+  @inproceedings{liu2025face2,
+    title = {Evaluating Text Generation Quality Using Spectral Distances of Surprisal},
+    author = {Liu, Zhichen and Li, Yongyuan and Xu, Yang and Wang, Yu and Yuan, Yingfang and Yang, Zuhao},
+    booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2025},
+    year = {2025},
+  }
