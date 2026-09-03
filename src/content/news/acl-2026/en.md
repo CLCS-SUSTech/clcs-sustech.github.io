@@ -3,16 +3,16 @@ lang: en
 slug: acl-2026
 ---
 
-We are delighted to share that seven papers from the lab have been accepted to ACL 2026, including two Main Conference Oral presentations.
+We are delighted to share that six papers from the lab have been accepted to ACL 2026, including three Main Conference Oral presentations.
 
-The accepted work spans language-model reasoning, memory, information structure, and machine-generated text detection:
+- **Representation of Backchannels**: Learning useful representations for these small conversational cues is both necessary and effective. This project went through many twists and turns; many thanks to first author Dr. Yu Wang and Leyi Lao for seeing it through.
 
-- [Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities](https://arxiv.org/abs/2604.10135) — ACL Main Conference Oral
-- [Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models](https://arxiv.org/abs/2509.20237) — ACL Main Conference Oral
-- [Identifying the Periodicity of Information in Natural Language](https://arxiv.org/pdf/2510.27241) — ACL Main Conference
-- [Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness](https://arxiv.org/abs/2604.14324) — Findings of ACL
-- WaveDetect: Robust Framework for Machine-Generated Text Detection via Wavelet Transform — Findings of ACL
-- [Evaluating Memory Capability in Continuous Lifelog Scenario](https://arxiv.org/abs/2604.11182) — Findings of ACL
-- Eye Movement Features Can Predict Human Preferences on Machine-Generated Texts — ACL Student Research Workshop
+- **Think in Sentences**: What if language models thought in sentences, much like humans do? From an initial spark of insight to a fully realized set of experiments, Zhichen Liu pursued this idea with remarkable persistence—and it has paid off.
 
-Congratulations to all authors and collaborators!
+- **Periodicity of Information**: Information entropy exhibits periodicity, with LLMs showing stronger periodic patterns than humans. The motivation may sound a little science-fictional, while the method is grounded in straightforward signal processing. We hope this work brings a fresh perspective to longstanding questions in psycholinguistics.
+
+- **Purging the Gray Zone**: This work uses the geometry of representation spaces to reduce hallucinations in large language models. The idea is intuitive and effective. We thank Ph.D. student Hao An for his continued persistence in leading undergraduates Yibin Lou and Jiayi Guo through this exploration, bringing a clear signal out of subtle structure.
+
+- **WaveDetect**: A tool for distinguishing LLM-generated text from human text using wavelet features. It builds on our earlier spectral view of information entropy—and performs surprisingly well!
+
+Congratulations to all our students!
