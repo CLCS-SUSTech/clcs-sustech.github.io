@@ -7,6 +7,7 @@ authors:
   - "Linhan He"
   - "Yang Xu"
 venue: "Findings of the Association for Computational Linguistics: ACL 2026 (accepted; CCF-A)"
+paper: "https://arxiv.org/abs/2606.23336"
 bibtex: |-
   @inproceedings{liu2026wavedetect,
     title = {WaveDetect: Robust Framework for Machine-Generated Text Detection via Wavelet Transform},

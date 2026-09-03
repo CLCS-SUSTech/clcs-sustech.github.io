@@ -33,6 +33,9 @@ html {
 }
 
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   margin: 0;
   background:
     radial-gradient(circle at 92% 4%, rgb(31 88 114 / 5%), transparent 24rem),
@@ -40,6 +43,10 @@ body {
   color: var(--ink);
   line-height: 1.65;
   text-rendering: optimizeLegibility;
+}
+
+main {
+  flex: 1;
 }
 
 button,
