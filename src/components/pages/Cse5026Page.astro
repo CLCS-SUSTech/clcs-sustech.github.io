@@ -1,0 +1,427 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { cse5026Schedule, cse5026Years } from '@/data/courses';
+import { langPath, withBase, type Lang } from '@/lib/paths';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const isZh = lang === 'zh';
+const resourceKind = {
+  zh: { slide: '讲义', reading: '阅读', note: '笔记' },
+  en: { slide: 'Slides', reading: 'Reading', note: 'Note' },
+};
+const publicHref = (path: string) => encodeURI(withBase(path));
+---
+
+<BaseLayout
+  lang={lang}
+  title="CSE5026"
+  description={isZh ? 'CSE5026 认知科学导论与前沿的课程大纲、讲义、阅读与实验材料。' : 'Syllabus, slides, readings, and labs for CSE5026 Introduction and Frontiers of Cognitive Science.'}
+>
+  <header class="course-hero">
+    <div class="container">
+      <a class="back-link" href={langPath(lang, 'course')}>← {isZh ? '返回课程目录' : 'Back to courses'}</a>
+      <span class="course-code">CSE5026</span>
+      <h1>Introduction and Frontiers of Cognitive Science</h1>
+      <p class="course-title-zh">认知科学导论与前沿</p>
+      <p class="course-summary">
+        {isZh
+          ? '从神经基础、感知、记忆与语言出发，连接认知科学的经典理论、实验方法与人工智能前沿。'
+          : 'Connecting classic theories and experimental methods in cognitive science with current frontiers in artificial intelligence.'}
+      </p>
+    </div>
+  </header>
+
+  <section class="materials-section">
+    <div class="container">
+      <div class="materials-heading">
+        <div>
+          <span class="eyebrow">{isZh ? '课程材料' : 'Course materials'}</span>
+        </div>
+        <nav class="year-switcher" aria-label={isZh ? '学期选择' : 'Select academic year'}>
+          {cse5026Years.map((year, index) => (
+            <a
+              href={`#year-${year}`}
+              data-year-link={year}
+              aria-current={index === 0 ? 'page' : undefined}
+            >
+              {year}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      {cse5026Years.map((year, index) => (
+        <section
+          id={`year-${year}`}
+          class="year-panel"
+          data-year-panel={year}
+          hidden={index !== 0}
+          aria-labelledby={`year-${year}-title`}
+        >
+          <div class="term-note">
+            <div>
+              <h3 id={`year-${year}-title`}>{year} {isZh ? '秋季学期' : 'Fall'}</h3>
+              <p>
+                {year === '2026'
+                  ? (isZh ? '课程计划与材料将随教学进度持续更新。' : 'The schedule and materials will be updated throughout the term.')
+                  : (isZh ? '2025 秋季学期归档材料。实验包保留当学期文件结构。' : 'Archived Fall 2025 materials. Lab downloads preserve the original term file structure.')}
+              </p>
+            </div>
+            {year === '2025' && (
+              <a class="reading-pool-link" href={langPath(lang, 'course/cse5026/readings')}>
+                {isZh ? '完整阅读材料库' : 'Complete reading library'} <span aria-hidden="true">→</span>
+              </a>
+            )}
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">{isZh ? '周次' : 'Week'}</th>
+                  <th scope="col">{isZh ? '主题' : 'Topic'}</th>
+                  <th scope="col">{isZh ? '讲义 / 笔记' : 'Slide / Note'}</th>
+                  <th scope="col">{isZh ? '实验' : 'Lab'}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cse5026Schedule[year].map((week) => (
+                  <tr>
+                    <th scope="row">
+                      <span class="week-label">W{String(week.week).padStart(2, '0')}</span>
+                      {week.dates && <span class="week-dates">{week.dates[lang]}</span>}
+                    </th>
+                    <td class="topic-cell">{week.topic[lang]}</td>
+                    <td>
+                      {week.resources?.length ? (
+                        <div class="resource-list">
+                          {week.resources.map((resource) => (
+                            <a class={`resource-link resource-link--${resource.kind}`} href={publicHref(resource.path)}>
+                              <span>{resourceKind[lang][resource.kind]}</span>
+                              {resource.label[lang]}
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <span class="muted">{week.note?.[lang] ?? '—'}</span>
+                      )}
+                    </td>
+                    <td>
+                      {week.labPath ? (
+                        <a class="lab-link" href={publicHref(week.labPath)} download>
+                          {week.labPath.split('/').pop()} <span aria-hidden="true">↓</span>
+                        </a>
+                      ) : (
+                        <span class="muted">—</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const yearLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-year-link]'));
+  const yearPanels = Array.from(document.querySelectorAll<HTMLElement>('[data-year-panel]'));
+
+  function showYear(year: string, updateHash = false) {
+    const hasYear = yearPanels.some((panel) => panel.dataset.yearPanel === year);
+    const selectedYear = hasYear ? year : '2026';
+
+    yearLinks.forEach((link) => {
+      if (link.dataset.yearLink === selectedYear) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    yearPanels.forEach((panel) => {
+      panel.hidden = panel.dataset.yearPanel !== selectedYear;
+    });
+
+    if (updateHash) history.replaceState(null, '', `#year-${selectedYear}`);
+  }
+
+  yearLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      showYear(link.dataset.yearLink ?? '2026', true);
+    });
+  });
+
+  showYear(location.hash.replace('#year-', ''));
+</script>
+
+<style>
+  .course-hero {
+    padding: clamp(42px, 6vw, 72px) 0 clamp(54px, 7vw, 84px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: clamp(38px, 5vw, 60px);
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .course-code {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: 0.11em;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+  }
+
+  .course-title-zh {
+    margin: 18px 0 0;
+    color: var(--brand);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 600;
+  }
+
+  .course-summary {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .materials-section {
+    padding: clamp(52px, 7vw, 88px) 0 clamp(76px, 9vw, 120px);
+  }
+
+  .materials-heading,
+  .term-note {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .materials-heading {
+    margin-bottom: 38px;
+  }
+
+  .materials-heading .eyebrow {
+    font-size: 0.92rem;
+  }
+
+  .year-switcher {
+    display: inline-flex;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .year-switcher a {
+    position: relative;
+    min-width: 76px;
+    padding: 9px 15px 10px;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    font-size: 0.92rem;
+    font-weight: 650;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .year-switcher a[aria-current='page'] {
+    color: var(--brand-deep);
+  }
+
+  .year-switcher a[aria-current='page']::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    content: '';
+  }
+
+  .year-panel[hidden] {
+    display: none;
+  }
+
+  .term-note {
+    margin-bottom: 18px;
+  }
+
+  .term-note h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .term-note p {
+    margin: 4px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+  }
+
+  .reading-pool-link {
+    color: var(--brand-deep);
+    font-size: 0.84rem;
+    font-weight: 650;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border-top: 2px solid var(--ink);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  thead th {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  thead th:first-child,
+  tbody th {
+    width: 16%;
+  }
+
+  thead th:nth-child(2) {
+    width: 26%;
+  }
+
+  thead th:nth-child(3) {
+    width: 40%;
+  }
+
+  thead th:last-child {
+    width: 18%;
+  }
+
+  tbody th {
+    font-weight: 500;
+  }
+
+  tbody tr:hover {
+    background: rgb(31 88 114 / 3%);
+  }
+
+  .week-label {
+    display: block;
+    color: var(--brand);
+    font-family: var(--mono);
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .week-dates {
+    display: block;
+    margin-top: 5px;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .topic-cell {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .resource-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 9px;
+  }
+
+  .resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+    background: rgb(255 255 255 / 58%);
+    font-size: 0.76rem;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+
+  .resource-link span {
+    color: var(--accent);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .resource-link--reading span {
+    color: var(--brand);
+  }
+
+  .lab-link {
+    color: var(--brand-deep);
+    font-size: 0.8rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .muted {
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 720px) {
+    .materials-heading,
+    .term-note {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .materials-heading {
+      gap: 22px;
+    }
+
+    .term-note {
+      gap: 10px;
+    }
+
+    .year-switcher {
+      width: 100%;
+    }
+
+    .year-switcher a {
+      flex: 1;
+    }
+  }
+</style>

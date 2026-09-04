@@ -1,0 +1,109 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SimplePageHeader from '@/components/SimplePageHeader.astro';
+import { cse5026ReadingFiles } from '@/data/courses';
+import { langPath, withBase, type Lang } from '@/lib/paths';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const isZh = lang === 'zh';
+const files = cse5026ReadingFiles;
+const titleFromFile = (file: string) => file
+  .replace(/\.pdf$/i, '')
+  .replace(/[_-]+/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+const publicHref = (file: string) => encodeURI(withBase(`course/cse5026/2025/readings/${file}`));
+---
+
+<BaseLayout lang={lang} title={isZh ? 'CSE5026 阅读材料' : 'CSE5026 Readings'}>
+  <SimplePageHeader
+    title={isZh ? 'CSE5026 阅读材料' : 'CSE5026 Readings'}
+    description={isZh ? '2025 秋季学期论文与延伸阅读归档。' : 'Papers and supplementary readings archived from Fall 2025.'}
+  />
+
+  <section class="reading-section">
+    <div class="container">
+      <div class="reading-toolbar">
+        <a href={langPath(lang, 'course/cse5026')}>← {isZh ? '返回课程页' : 'Back to course'}</a>
+        <span>{files.length} {isZh ? '份 PDF' : 'PDFs'}</span>
+      </div>
+      <ol class="reading-list">
+        {files.map((file, index) => (
+          <li>
+            <span class="reading-number">{String(index + 1).padStart(2, '0')}</span>
+            <a href={publicHref(file)}>{titleFromFile(file)}</a>
+            <span class="file-type">PDF</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .reading-section {
+    padding: clamp(44px, 6vw, 72px) 0 clamp(76px, 9vw, 120px);
+  }
+
+  .reading-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+
+  .reading-toolbar a {
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .reading-list {
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+    list-style: none;
+  }
+
+  .reading-list li {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 18px;
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .reading-number,
+  .file-type {
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+  }
+
+  .reading-list a {
+    font-weight: 580;
+    line-height: 1.45;
+    text-decoration: none;
+  }
+
+  .file-type {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  @media (max-width: 600px) {
+    .reading-list li {
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 10px;
+      padding-inline: 4px;
+    }
+
+    .file-type {
+      display: none;
+    }
+  }
+</style>
