@@ -20,7 +20,7 @@ function resolveOutput(pathname) {
     ? pathname.slice(basePath.length + 2)
     : pathname.replace(/^\//, '');
   const target = new URL(withoutBase, root);
-  const filePath = target.pathname;
+  const filePath = fileURLToPath(target);
   if (extname(filePath)) return filePath;
   return join(filePath, 'index.html');
 }

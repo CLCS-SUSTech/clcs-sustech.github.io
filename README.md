@@ -48,6 +48,19 @@ src/content/
 
 固定信息与功能开关位于 `src/data/site.ts`，静态图片、Logo 和 PDF 位于 `public/`。
 
+### 课程材料
+
+课程页面位于 `src/pages/[lang]/course/`，CSE5026 的周次、主题与资源链接集中维护在 `src/data/courses.ts`。可下载的讲义、阅读材料和实验包放在：
+
+```text
+public/course/cse5026/<year>/
+├── slides/
+├── readings/
+└── labs/
+```
+
+新增或替换资源后，同步更新 `src/data/courses.ts` 中的路径，再运行 `npm run build && npm run verify` 检查页面和站内链接。
+
 ## GitHub Actions 构建与部署
 
 工作流位于 `.github/workflows/deploy.yml`，会在以下情况运行：
