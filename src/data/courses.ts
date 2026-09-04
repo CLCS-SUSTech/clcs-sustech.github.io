@@ -97,11 +97,6 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
       week: 6,
       dates: { zh: '理论 10/13 · 实验 10/14', en: 'Lecture 10/13 · Lab 10/14' },
       topic: { zh: '上下文无关语法 (Context-Free Grammars, CFG) 与句法分析', en: 'Context-Free Grammars and Parsing' },
-      resources: [{
-        label: { zh: '讲义 PPTX', en: 'Slides PPTX' },
-        path: 'course/cse5026/2026/slides/0x-cfg_parsing.pptx',
-        kind: 'slide',
-      }],
     },
     { week: 7, dates: { zh: '理论 10/20 · 实验 10/21', en: 'Lecture 10/20 · Lab 10/21' }, topic: { zh: '待更新', en: 'To be announced' } },
     {
