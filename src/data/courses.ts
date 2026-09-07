@@ -84,9 +84,9 @@ export const cse5026ReadingFiles = [
 export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
   '2026': [
     { week: 1, dates: { zh: '理论 09/08 · 实验 09/09', en: 'Lecture 09/08 · Lab 09/09' }, topic: { zh: '待更新', en: 'To be announced' } },
-    { week: 2, dates: { zh: '理论 09/15 · 实验 09/16', en: 'Lecture 09/15 · Lab 09/16' }, topic: { zh: '待更新', en: 'To be announced' } },
-    { week: 3, dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' }, topic: { zh: '待更新', en: 'To be announced' } },
-    { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '待更新', en: 'To be announced' } },
+    { week: 2, dates: { zh: '理论 09/15 · 实验 09/16', en: 'Lecture 09/15 · Lab 09/16' }, topic: { zh: '认知的神经基础', en: 'Neural Basis of Cognition' } },
+    { week: 3, dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' }, topic: { zh: '感知与注意', en: 'Perception and Attention' } },
+    { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉', en: 'Vision' } },
     {
       week: 5,
       dates: { zh: '理论 10/06（停课）· 实验补课 10/10', en: 'Lecture 10/06 (no class) · Lab make-up 10/10' },
