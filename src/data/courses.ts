@@ -83,7 +83,25 @@ export const cse5026ReadingFiles = [
 
 export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
   '2026': [
-    { week: 1, dates: { zh: '理论 09/08 · 实验 09/09', en: 'Lecture 09/08 · Lab 09/09' }, topic: { zh: '课程介绍 Course Introduction & Overview', en: 'Course Introduction & Overview' }, resources: [{ label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/00-intro.pdf', kind: 'slide' }] },
+    {
+      week: 1,
+      dates: { zh: '理论 09/08 · 实验 09/09', en: 'Lecture 09/08 · Lab 09/09' },
+      topic: { zh: '课程介绍 Course Introduction & Overview', en: 'Course Introduction & Overview' },
+      resources: [
+        { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/00-intro.pdf', kind: 'slide' },
+        {
+          label: { zh: '补充阅读：MIT Lecture 3', en: 'Supplementary reading: MIT Lecture 3' },
+          path: 'course/cse5026/2026/readings/MIT9_07F16_lec3.pdf',
+          kind: 'reading',
+        },
+        {
+          label: { zh: '补充阅读：MIT Lecture 12', en: 'Supplementary reading: MIT Lecture 12' },
+          path: 'course/cse5026/2026/readings/MIT9_07F16_lec12.pdf',
+          kind: 'reading',
+        },
+      ],
+      labPath: 'course/cse5026/2026/labs/lab_w1_stats.zip',
+    },
     { week: 2, dates: { zh: '理论 09/15 · 实验 09/16', en: 'Lecture 09/15 · Lab 09/16' }, topic: { zh: '认知的神经基础 Neural Basis of Cognition', en: 'Neural Basis of Cognition' } },
     { week: 3, dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' }, topic: { zh: '感知与注意 Perception and Attention', en: 'Perception and Attention' } },
     { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉 Vision', en: 'Vision' } },
