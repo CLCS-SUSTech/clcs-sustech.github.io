@@ -99,7 +99,9 @@ const publicHref = (path: string) => encodeURI(withBase(path));
                           {week.resources.map((resource) => (
                             <a class={`resource-link resource-link--${resource.kind}`} href={publicHref(resource.path)}>
                               <span>{resourceKind[lang][resource.kind]}</span>
-                              {resource.label[lang]}
+                              {resource.kind === 'slide'
+                                ? resource.path.split('/').pop()?.replace(/\.pdf$/i, '')
+                                : resource.label[lang]}
                             </a>
                           ))}
                         </div>
