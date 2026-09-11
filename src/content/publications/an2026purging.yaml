@@ -1,19 +1,33 @@
 slug: an2026purging
 year: 2026
+order: 5
 title: "Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness"
 authors:
   - "Hao An"
   - "Yibin Lou"
   - "Jiayi Guo"
   - "Yang Xu"
-venue: "Findings of the Association for Computational Linguistics: ACL 2026 (accepted; CCF-A)"
-paper: "https://arxiv.org/abs/2604.14324"
+venue: "Findings of the Association for Computational Linguistics: ACL 2026 (CCF-A)"
+paper: "https://aclanthology.org/2026.findings-acl.122/"
 bibtex: |-
-  @inproceedings{an2026purging,
-    title = {Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness},
-    author = {An, Hao and Lou, Yibin and Guo, Jiayi and \textbf{Xu}, \textbf{Yang}},
-    booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
-    year = {2026},
-    url = {https://arxiv.org/abs/2604.14324},
-    note = {(accepted; CCF-A)}
+  @inproceedings{an-etal-2026-purging,
+      title = "Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness",
+      author = "An, Hao  and
+        Lou, Yibin  and
+        Guo, Jiayi  and
+        Xu, Yang",
+      editor = "Liakata, Maria  and
+        Moreira, Viviane P.  and
+        Zhang, Jiajun  and
+        Jurgens, David",
+      booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026",
+      month = jul,
+      year = "2026",
+      address = "San Diego, California, United States",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2026.findings-acl.122/",
+      doi = "10.18653/v1/2026.findings-acl.122",
+      pages = "2562--2576",
+      ISBN = "979-8-89176-395-1",
+      abstract = "Large language models (LLMs) often exhibit hallucinations due to their inability to accurately perceive their own knowledge boundaries. Existing abstention fine-tuning methods typically partition datasets directly based on response accuracy, causing models to suffer from severe label noise near the decision boundaries and consequently exhibit high rates of abstentions or hallucinations. This paper adopts a latent space representation perspective, revealing a ``gray zone'' near the decision hyperplane where internal belief ambiguity constitutes the core performance bottleneck. Based on this insight, we propose the \textbf{GeoDe} (\textbf{Geo}metric \textbf{De}noising) framework for abstention fine-tuning. This method constructs a truth hyperplane using linear probes and performs ``geometric denoising'' by employing geometric distance as a confidence signal for abstention decisions. This approach filters out ambiguous boundary samples while retaining high-fidelity signals for fine-tuning. Experiments across multiple models (Llama3, Qwen3) and benchmark datasets (TriviaQA, NQ, SciQ, SimpleQA) demonstrate that GeoDe significantly enhances model truthfulness and demonstrates strong generalization in out-of-distribution (OOD) scenarios. Code is available at \url{https://github.com/Notbesidemoon/GeoDe}."
   }

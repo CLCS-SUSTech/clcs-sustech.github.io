@@ -20,7 +20,9 @@ const bibPanelId = 'bib-' + publication.slug;
   <div>
     <h3>{publication.title}</h3>
     <p class="authors">{publication.authors.join(', ')}</p>
-    <p class="venue">{publication.venue}{status ? ` · ${status}` : ''}</p>
+    <p class="venue">{publication.venue.split(/(\bOral\b)/i).map((part) =>
+      /^oral$/i.test(part) ? <strong>{part}</strong> : part
+    )}{status ? ` · ${status}` : ''}</p>
     <div class="publication-links">
       {publication.paper
         ? <a href={publication.paper} target="_blank" rel="noreferrer">Paper</a>
@@ -42,6 +44,11 @@ const bibPanelId = 'bib-' + publication.slug;
       {publication.code
         ? <a href={publication.code} target="_blank" rel="noreferrer">Code</a>
         : <span class="is-disabled" aria-disabled="true">Code</span>}
+      {publication.data && (
+        typeof publication.data === 'string'
+          ? <a href={publication.data} target="_blank" rel="noreferrer">Data</a>
+          : <span class="is-disabled" aria-disabled="true">Data</span>
+      )}
       {publication.project && (
         <a href={publication.project} target="_blank" rel="noreferrer">
           {lang === 'zh' ? '项目主页' : 'Project'}

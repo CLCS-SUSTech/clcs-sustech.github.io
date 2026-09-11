@@ -1,18 +1,34 @@
 slug: liu2026wavedetect
 year: 2026
+order: 4
 title: "WaveDetect: Robust Framework for Machine-Generated Text Detection via Wavelet Transform"
 authors:
   - "Zhichen Liu"
   - "Kaitong Qin"
   - "Linhan He"
   - "Yang Xu"
-venue: "Findings of the Association for Computational Linguistics: ACL 2026 (accepted; CCF-A)"
-paper: "https://arxiv.org/abs/2606.23336"
+venue: "Findings of the Association for Computational Linguistics: ACL 2026 (CCF-A)"
+paper: "https://aclanthology.org/2026.findings-acl.424/"
+code: "https://github.com/KaitongQin/WaveDetect"
 bibtex: |-
-  @inproceedings{liu2026wavedetect,
-    title = {WaveDetect: Robust Framework for Machine-Generated Text Detection via Wavelet Transform},
-    author = {Liu, Zhichen and Qin, Kaitong and He, Linhan and \textbf{Xu}, \textbf{Yang}},
-    booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
-    year = {2026},
-    note = {(accepted; CCF-A)}
+  @inproceedings{liu-etal-2026-wavedetect,
+      title = "{W}ave{D}etect: Robust Framework for Machine-Generated Text Detection via Wavelet Transform",
+      author = "Liu, Zhichen  and
+        Qin, Kaitong  and
+        He, Linhan  and
+        Xu, Yang",
+      editor = "Liakata, Maria  and
+        Moreira, Viviane P.  and
+        Zhang, Jiajun  and
+        Jurgens, David",
+      booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026",
+      month = jul,
+      year = "2026",
+      address = "San Diego, California, United States",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2026.findings-acl.424/",
+      doi = "10.18653/v1/2026.findings-acl.424",
+      pages = "8712--8727",
+      ISBN = "979-8-89176-395-1",
+      abstract = "As Large Language Models asymptotically approach human-level fluency in natural language generation, solely relying on surface-level semantic artifacts for detecting LLM-generated texts has become increasingly precarious. Existing detectors often falter when facing three critical challenges: adversarial perturbations, cross-domain shifts, and the rapid temporal evolution of the foundation model. To address these issues, we propose , a novel framework that reformulates text detection as a signal processing task within the time-frequency domain. Unlike previous methods that analyze static token probability distributions, models the generated output as a probability signal, upon which a differentiable Continuous Wavelet Transform is applied to convert them into learnable spectral representations. This process reveals the intrinsic ``spectral fingerprints'' in machine-generated texts{--}patterns that remain invisible in time domain. Comprehensive evaluations on three well-curated datasets (RAID, EvoBench, and Domain-Shift) show that our method achieves a new state-of-the-art. It not only achieves superior accuracy but also exhibits remarkable robustness against sophisticated attacks, generalization across out-of-distribution topics and unseen evolving LLMs. Our results validate the efficacy of spectral analysis as a promising paradigm for LLM-generated texts detection."
   }

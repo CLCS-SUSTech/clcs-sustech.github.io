@@ -1,18 +1,32 @@
 slug: liu2026think
 year: 2026
+order: 2
 title: "Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities"
 authors:
   - "Zhichen Liu"
   - "Yongyuan Li"
   - "Yang Xu"
-venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (accepted; oral; CCF-A)"
-paper: "https://arxiv.org/abs/2604.10135"
+venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (Oral; CCF-A)"
+paper: "https://aclanthology.org/2026.acl-long.104/"
+code: "https://github.com/CLCS-SUSTech/think-in-sentence"
 bibtex: |-
-  @inproceedings{liu2026think,
-    title = {Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities},
-    author = {Liu, Zhichen and Li, Yongyuan and \textbf{Xu}, \textbf{Yang}},
-    booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)},
-    year = {2026},
-    url = {https://arxiv.org/abs/2604.10135},
-    note = {(accepted; oral; CCF-A)}
+  @inproceedings{liu-etal-2026-think,
+      title = "Think in Sentences: Explicit Sentence Boundaries Enhance Language Model{'}s Capabilities",
+      author = "Liu, Zhichen  and
+        Li, Yongyuan  and
+        Xu, Yang",
+      editor = "Liakata, Maria  and
+        Moreira, Viviane P.  and
+        Zhang, Jiajun  and
+        Jurgens, David",
+      booktitle = "Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+      month = jul,
+      year = "2026",
+      address = "San Diego, California, United States",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2026.acl-long.104/",
+      doi = "10.18653/v1/2026.acl-long.104",
+      pages = "2275--2288",
+      ISBN = "979-8-89176-390-6",
+      abstract = "Researchers have explored ways to improve large language models (LLMs)' capabilities via dummy token insertion in contexts. However, existing works focus solely on the dummy tokens themselves, but failed to leverage the inherent sentence-level structure of natural language. This is a critical oversight, as LLMs acquire linguistic capabilities through exposure to human-generated texts, which are inherently structured at the sentence level. Motivated by the gap, we proposed a method that inserts delimiters at sentence boundaries. Our method not only integrates dummy tokens into contexts, but also enables LLMs with sentence-by-sentence processing behavior during reasoning. Two approaches are proposed: (1). In-context learning and (2). Supervised fine-tuning are experimented from 7B LLMs to 600B Deepseek-V3. Experimental results demonstrate consistent improvements in various tasks, with notable gains of up to 7.7{\%} on GSM8k and 12.5{\%} on DROP. Furthermore, LLMs fine-tuned via our strategy further incorporate sentence awareness into their inner representations. Our work establishes a simple yet effective technique for enhancing LLM{'}s capabilities, offering promising directions for cognitive-inspired LLM enhancement paradigm."
   }

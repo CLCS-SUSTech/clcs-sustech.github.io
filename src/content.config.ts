@@ -90,6 +90,7 @@ const publications = defineCollection({
   schema: z.object({
     slug: z.string(),
     year: z.number(),
+    order: z.number().default(1000),
     title: z.string(),
     authors: z.array(z.string()),
     venue: z.string(),
@@ -99,6 +100,7 @@ const publications = defineCollection({
     bib: z.url().optional(),
     bibtex: z.string().optional(),
     code: z.url().optional(),
+    data: z.union([z.url(), z.literal(true)]).optional(),
     project: z.url().optional(),
     featured: z.boolean().default(false),
   }),

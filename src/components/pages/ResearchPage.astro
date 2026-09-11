@@ -2,17 +2,15 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SimplePageHeader from '@/components/SimplePageHeader.astro';
-import ProjectCard from '@/components/ProjectCard.astro';
 import PublicationItem from '@/components/PublicationItem.astro';
 import type { Lang } from '@/lib/paths';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const projects = (await getCollection('projects'))
-  .sort((a, b) => a.data.order - b.data.order);
 const publications = (await getCollection('publications'))
   .sort((a, b) => b.data.year - a.data.year
     || Number(b.data.featured) - Number(a.data.featured)
+    || a.data.order - b.data.order
     || a.data.title.localeCompare(b.data.title));
 const publicationYears = [...new Set(publications.map((entry) => entry.data.year))];
 ---
@@ -20,21 +18,10 @@ const publicationYears = [...new Set(publications.map((entry) => entry.data.year
 <BaseLayout lang={lang} title={lang === 'zh' ? '研究与发表' : 'Research & Publications'}>
   <SimplePageHeader title={lang === 'zh' ? '研究与发表' : 'Research & Publications'} />
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-intro">
-        <h2>{lang === 'zh' ? '最近项目' : 'Recent Projects'}</h2>
-      </div>
-      <div class="project-grid">
-        {projects.map((entry) => <ProjectCard entry={entry} lang={lang} />)}
-      </div>
-    </div>
-  </section>
-
   <section class="content-section publications-section">
     <div class="container">
       <div class="section-intro publication-heading">
-        <h2>{lang === 'zh' ? '发表物' : 'Publications'}</h2>
+        <h2>{lang === 'zh' ? '已发表论文' : 'Publications'}</h2>
       </div>
       <div class="publication-years">
         {publicationYears.map((year) => (
@@ -57,10 +44,6 @@ const publicationYears = [...new Set(publications.map((entry) => entry.data.year
     padding: clamp(52px, 7vw, 84px) 0;
   }
 
-  .content-section + .content-section {
-    border-top: 1px solid var(--line);
-  }
-
   .section-intro {
     margin-bottom: 30px;
   }
@@ -72,14 +55,8 @@ const publicationYears = [...new Set(publications.map((entry) => entry.data.year
     font-weight: 500;
   }
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
   .publications-section {
-    background: var(--paper-deep);
+    background: #eef3f6;
   }
 
   .publication-heading {
@@ -107,10 +84,6 @@ const publicationYears = [...new Set(publications.map((entry) => entry.data.year
   }
 
   @media (max-width: 760px) {
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
-
     .publication-year-group {
       grid-template-columns: 1fr;
       gap: 4px;

@@ -1,20 +1,34 @@
 slug: ou2025periodicity
 year: 2026
+order: 1
 title: "Identifying the Periodicity of Information in Natural Language"
 authors:
   - "Yulin Ou"
   - "Yu Wang"
   - "Yang Xu"
   - "Hendrik Buschmeier"
-venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (accepted; CCF-A)"
-paper: "https://arxiv.org/pdf/2510.27241"
+venue: "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) (CCF-A)"
+paper: "https://aclanthology.org/2026.acl-long.52/"
 code: "https://github.com/CLCS-SUSTech/APS"
 bibtex: |-
-  @inproceedings{ou2025periodicity,
-    title = {Identifying the Periodicity of Information in Natural Language},
-    author = {Ou, Yulin and Wang, Yu and \textbf{Xu}, \textbf{Yang} and Buschmeier, Hendrik},
-    booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)},
-    year = {2026},
-    url = {https://arxiv.org/pdf/2510.27241},
-    note = {(accepted; CCF-A)}
+  @inproceedings{ou-etal-2026-identifying,
+      title = "Identifying the Periodicity of Information in Natural Language",
+      author = "OU, Yulin  and
+        Wang, Yu  and
+        Xu, Yang  and
+        Buschmeier, Hendrik",
+      editor = "Liakata, Maria  and
+        Moreira, Viviane P.  and
+        Zhang, Jiajun  and
+        Jurgens, David",
+      booktitle = "Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+      month = jul,
+      year = "2026",
+      address = "San Diego, California, United States",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2026.acl-long.52/",
+      doi = "10.18653/v1/2026.acl-long.52",
+      pages = "1161--1175",
+      ISBN = "979-8-89176-390-6",
+      abstract = "Recent theoretical advancement of information density in natural language has brought the following question on desk: To what degree does natural language exhibit periodicity pattern in its encoded information? We address this question by introducing a new method called AutoPeriod of Surprisal (APS). APS adopts a canonical periodicity detection algorithm and is able to identify any significant periods that exist in the surprisal sequence of a single document. By applying the algorithm to a set of corpora, we have obtained the following interesting results: Firstly, a considerable proportion of human language demonstrates a strong pattern of periodicity in information; Secondly, new periods that are outside the distributions of typical structural units in text (e.g., sentence boundaries, elementary discourse units, etc.) are found and further confirmed via harmonic regression modeling. We conclude that the periodicity of information in language is a joint outcome from both structured factors and other driving factors that take effect at longer distances. The advantages of our periodicity detection method and its potentials in LLM-generation detection are further discussed."
   }

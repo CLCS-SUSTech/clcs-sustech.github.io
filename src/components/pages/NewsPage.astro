@@ -12,7 +12,7 @@ const entries = (await getCollection('news', ({ data }) => data.locales.includes
 ---
 
 <BaseLayout lang={lang} title={lang === 'zh' ? '消息' : 'News'}>
-  <SimplePageHeader title={lang === 'zh' ? '消息' : 'News'} />
+  <SimplePageHeader title={lang === 'zh' ? '近期消息' : 'News'} />
 
   <section class="news-index">
     <div class="container news-grid">
