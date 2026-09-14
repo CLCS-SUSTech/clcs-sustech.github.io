@@ -102,7 +102,16 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
       ],
       labPath: 'course/cse5026/2026/labs/lab_w1_stats.zip',
     },
-    { week: 2, dates: { zh: '理论 09/15 · 实验 09/16', en: 'Lecture 09/15 · Lab 09/16' }, topic: { zh: '认知的神经基础 Neural Basis of Cognition', en: 'Neural Basis of Cognition' } },
+    {
+      week: 2,
+      dates: { zh: '理论 09/15 · 实验 09/16', en: 'Lecture 09/15 · Lab 09/16' },
+      topic: { zh: '认知的神经基础 Neural Basis of Cognition', en: 'Neural Basis of Cognition' },
+      resources: [
+        { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/01-neural.pdf', kind: 'slide' },
+      ],
+      labPath: 'course/cse5026/2026/labs/lab_neuron_demo.ipynb',
+      note: { zh: '实验演示 notebook；学生作业稍后发布。', en: 'Lab demonstration notebook; the student assignment will be released later.' },
+    },
     { week: 3, dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' }, topic: { zh: '感知与注意 Perception and Attention', en: 'Perception and Attention' } },
     { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉 Vision', en: 'Vision' } },
     {
