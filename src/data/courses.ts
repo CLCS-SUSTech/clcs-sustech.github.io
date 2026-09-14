@@ -12,6 +12,7 @@ export interface CourseWeek {
   dates?: Record<Lang, string>;
   resources?: CourseResource[];
   labPath?: string;
+  labPaths?: string[];
   note?: Record<Lang, string>;
 }
 
@@ -109,8 +110,10 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
       resources: [
         { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/01-neural.pdf', kind: 'slide' },
       ],
-      labPath: 'course/cse5026/2026/labs/lab_neuron_demo.ipynb',
-      note: { zh: '实验演示 notebook；学生作业稍后发布。', en: 'Lab demonstration notebook; the student assignment will be released later.' },
+      labPaths: [
+        'course/cse5026/2026/labs/lab_neuron_demo.ipynb',
+        'course/cse5026/2026/labs/lab_LIF.ipynb',
+      ],
     },
     { week: 3, dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' }, topic: { zh: '感知与注意 Perception and Attention', en: 'Perception and Attention' } },
     { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉 Vision', en: 'Vision' } },

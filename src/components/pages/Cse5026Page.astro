@@ -110,10 +110,14 @@ const publicHref = (path: string) => encodeURI(withBase(path));
                       )}
                     </td>
                     <td>
-                      {week.labPath ? (
-                        <a class="lab-link" href={publicHref(week.labPath)} download>
-                          {week.labPath.split('/').pop()} <span aria-hidden="true">↓</span>
-                        </a>
+                      {(week.labPaths?.length || week.labPath) ? (
+                        <div class="resource-list">
+                          {(week.labPaths ?? [week.labPath!]).map((path) => (
+                            <a class="lab-link" href={publicHref(path)} download>
+                              {path.split('/').pop()} <span aria-hidden="true">↓</span>
+                            </a>
+                          ))}
+                        </div>
                       ) : (
                         <span class="muted">—</span>
                       )}
