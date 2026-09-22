@@ -115,7 +115,14 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
         'course/cse5026/2026/labs/lab_LIF.ipynb',
       ],
     },
-    { week: 3, dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' }, topic: { zh: '感知与注意 Perception and Attention', en: 'Perception and Attention' } },
+    {
+      week: 3,
+      dates: { zh: '理论 09/22 · 实验 09/23', en: 'Lecture 09/22 · Lab 09/23' },
+      topic: { zh: '感知与注意 Perception and Attention', en: 'Perception and Attention' },
+      resources: [
+        { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/02-perception_attention.pdf', kind: 'slide' },
+      ],
+    },
     { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉 Vision', en: 'Vision' } },
     {
       week: 5,
