@@ -122,6 +122,7 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
       resources: [
         { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/02-perception_attention.pdf', kind: 'slide' },
       ],
+      labPath: 'course/cse5026/2026/labs/lab_w3_weber.zip',
     },
     { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉 Vision', en: 'Vision' } },
     {
