@@ -124,7 +124,25 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
       ],
       labPath: 'course/cse5026/2026/labs/lab_w3_weber.zip',
     },
-    { week: 4, dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' }, topic: { zh: '视觉 Vision', en: 'Vision' } },
+    {
+      week: 4,
+      dates: { zh: '理论 09/29 · 实验 09/30', en: 'Lecture 09/29 · Lab 09/30' },
+      topic: { zh: '视觉 Vision', en: 'Vision' },
+      resources: [
+        { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/03-vision.pdf', kind: 'slide' },
+        {
+          label: { zh: '拓展阅读：Chen (2005) — 拓扑知觉', en: 'Further reading: Chen (2005) — Topological perception' },
+          path: 'course/cse5026/2026/readings/Chen2005_topological-perceptual.pdf',
+          kind: 'reading',
+        },
+        {
+          label: { zh: '拓展阅读：Yang & Wang (2020) — 神经网络入门', en: 'Further reading: Yang & Wang (2020) — Artificial Neural Networks for Neuroscientists: A Primer' },
+          path: 'course/cse5026/2026/readings/ANN-Primer_2020.pdf',
+          kind: 'reading',
+        },
+      ],
+      labPath: 'course/cse5026/2026/labs/lab_w4_ConvNets.zip',
+    },
     {
       week: 5,
       dates: { zh: '理论 10/06（停课）· 实验补课 10/10', en: 'Lecture 10/06 (no class) · Lab make-up 10/10' },
