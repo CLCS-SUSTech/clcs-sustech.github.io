@@ -61,6 +61,8 @@ public/course/cse5026/<year>/
 
 新增或替换资源后，同步更新 `src/data/courses.ts` 中的路径，再运行 `npm run build && npm run verify` 检查页面和站内链接。
 
+课程讲义和实验下载链接支持悬停或键盘聚焦查看最后修改时间，统一显示北京时间（UTC+8）。已发布文件使用该文件最近一次 Git 提交的时间，避免重新部署改变日期；本地未提交的新文件或修改文件使用文件系统修改时间。部署工作流须保留完整 Git 历史（`fetch-depth: 0`）。
+
 ## GitHub Actions 构建与部署
 
 工作流位于 `.github/workflows/deploy.yml`，会在以下情况运行：

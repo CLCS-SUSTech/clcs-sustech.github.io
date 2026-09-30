@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # File tooltips need each material's last change, not the checkout time.
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4

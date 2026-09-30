@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import CourseFileTooltip from '@/components/CourseFileTooltip.astro';
 import { cse5026Schedule, cse5026Years } from '@/data/courses';
+import { courseFileUpdatedAt, formatCourseFileDate } from '@/lib/course-file-dates';
 import { langPath, withBase, type Lang } from '@/lib/paths';
 
 interface Props { lang: Lang }
@@ -11,6 +13,16 @@ const resourceKind = {
   en: { slide: 'Slides', reading: 'Reading', note: 'Note' },
 };
 const publicHref = (path: string) => encodeURI(withBase(path));
+const fileDateAttributes = (path: string) => {
+  const updatedAt = courseFileUpdatedAt(path);
+  if (!updatedAt) return {};
+  const formatted = formatCourseFileDate(updatedAt);
+  return {
+    'data-file-modified-at': updatedAt,
+    'data-file-modified-text': formatted,
+    title: `${isZh ? '最后修改' : 'Last modified'}: ${formatted} (UTC+8)`,
+  };
+};
 ---
 
 <BaseLayout
@@ -97,7 +109,11 @@ const publicHref = (path: string) => encodeURI(withBase(path));
                       {week.resources?.length ? (
                         <div class="resource-list">
                           {week.resources.map((resource) => (
-                            <a class={`resource-link resource-link--${resource.kind}`} href={publicHref(resource.path)}>
+                            <a
+                              class={`resource-link resource-link--${resource.kind}`}
+                              href={publicHref(resource.path)}
+                              {...(resource.kind === 'slide' ? fileDateAttributes(resource.path) : {})}
+                            >
                               <span>{resourceKind[lang][resource.kind]}</span>
                               {resource.kind === 'slide'
                                 ? resource.path.split('/').pop()?.replace(/\.pdf$/i, '')
@@ -113,7 +129,7 @@ const publicHref = (path: string) => encodeURI(withBase(path));
                       {(week.labPaths?.length || week.labPath) ? (
                         <div class="resource-list">
                           {(week.labPaths ?? [week.labPath!]).map((path) => (
-                            <a class="lab-link" href={publicHref(path)} download>
+                            <a class="lab-link" href={publicHref(path)} download {...fileDateAttributes(path)}>
                               {path.split('/').pop()} <span aria-hidden="true">↓</span>
                             </a>
                           ))}
@@ -131,6 +147,7 @@ const publicHref = (path: string) => encodeURI(withBase(path));
       ))}
     </div>
   </section>
+  <CourseFileTooltip lang={lang} />
 </BaseLayout>
 
 <script>

@@ -1,0 +1,102 @@
+---
+import type { Lang } from '@/lib/paths';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+
+<div id="course-file-tooltip" role="tooltip" popover="manual">
+  <span>{lang === 'zh' ? '最后修改' : 'Last modified'}</span>
+  <time></time>
+  <small>{lang === 'zh' ? '北京时间 · UTC+8' : 'China Standard Time · UTC+8'}</small>
+</div>
+
+<script>
+  const tooltip = document.querySelector<HTMLElement>('#course-file-tooltip');
+  if (tooltip && 'showPopover' in tooltip) {
+    const timestamp = tooltip.querySelector('time')!;
+    const links = document.querySelectorAll<HTMLAnchorElement>('a[data-file-modified-at]');
+    let activeLink: HTMLAnchorElement | undefined;
+    let hideTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const cancelHide = () => clearTimeout(hideTimer);
+    const hide = () => {
+      cancelHide();
+      tooltip.hidePopover();
+      activeLink?.removeAttribute('aria-describedby');
+      activeLink = undefined;
+    };
+    const scheduleHide = () => {
+      cancelHide();
+      hideTimer = setTimeout(() => {
+        if (activeLink?.matches(':hover, :focus-visible') || tooltip.matches(':hover')) return;
+        hide();
+      }, 160);
+    };
+
+    const show = (link: HTMLAnchorElement) => {
+      cancelHide();
+      const anchor = link.getBoundingClientRect();
+      if (anchor.bottom < 0 || anchor.top > innerHeight) {
+        hide();
+        return;
+      }
+      activeLink?.removeAttribute('aria-describedby');
+      activeLink = link;
+      timestamp.dateTime = link.dataset.fileModifiedAt!;
+      timestamp.textContent = link.dataset.fileModifiedText!;
+      link.setAttribute('aria-describedby', tooltip.id);
+      tooltip.showPopover();
+
+      const box = tooltip.getBoundingClientRect();
+      const left = Math.max(12, Math.min(anchor.left, innerWidth - box.width - 12));
+      const top = anchor.top - box.height - 8;
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${top >= 12 ? top : anchor.bottom + 8}px`;
+    };
+
+    for (const link of links) {
+      // Keep the native title as the fallback when JavaScript/popovers are unavailable.
+      link.removeAttribute('title');
+      link.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'touch') show(link);
+      });
+      link.addEventListener('pointerleave', scheduleHide);
+      link.addEventListener('focus', () => show(link));
+      link.addEventListener('blur', scheduleHide);
+      link.addEventListener('click', hide);
+    }
+    tooltip.addEventListener('pointerenter', cancelHide);
+    tooltip.addEventListener('pointerleave', scheduleHide);
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hide(); });
+    // Keyboard focus can scroll a link into view; keep its tooltip attached.
+    document.addEventListener('scroll', () => {
+      if (activeLink?.matches(':focus-visible')) show(activeLink);
+      else hide();
+    }, true);
+    window.addEventListener('resize', hide);
+    window.addEventListener('hashchange', hide);
+  }
+</script>
+
+<style>
+  #course-file-tooltip {
+    position: fixed;
+    inset: auto;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+    margin: 0;
+    padding: 11px 15px;
+    border: 1px solid rgb(255 255 255 / 12%);
+    border-radius: 6px;
+    background: var(--brand-deep);
+    color: #fff;
+    box-shadow: 0 5px 18px rgb(15 35 48 / 18%);
+    font-size: 0.76rem;
+    line-height: 1.5;
+  }
+
+  span, time, small { display: block; }
+  span { color: rgb(255 255 255 / 78%); }
+  time { margin: 2px 0; font-size: 0.9rem; font-variant-numeric: tabular-nums; font-weight: 650; }
+  small { color: rgb(255 255 255 / 70%); font-size: 0.67rem; }
+</style>
