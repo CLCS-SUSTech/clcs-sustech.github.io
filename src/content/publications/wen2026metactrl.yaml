@@ -1,0 +1,28 @@
+slug: wen2026metactrl
+year: 2026
+order: -1
+featured: true
+title: "MetaCtrl: Your Large Language Models Can Reason Better and More Concisely with a Metacognitive Controller"
+authors:
+  - "Zhibin Wen"
+  - "Tao Han"
+  - "Lei Bai"
+  - "Can Li"
+  - "Yang Xu"
+venue: "arXiv:2609.37304"
+status:
+  zh: "预印本"
+  en: "Preprint"
+paper: "https://arxiv.org/abs/2609.37304"
+code: "https://github.com/binbin2xs/MetaCtrl"
+bibtex: |-
+  @article{wen2026metactrl,
+    title = {{MetaCtrl}: Your Large Language Models Can Reason Better and More Concisely with a Metacognitive Controller},
+    author = {Wen, Zhibin and Han, Tao and Bai, Lei and Li, Can and Xu, Yang},
+    journal = {arXiv preprint arXiv:2609.37304},
+    year = {2026},
+    eprint = {2609.37304},
+    archivePrefix = {arXiv},
+    primaryClass = {cs.AI},
+    url = {https://arxiv.org/abs/2609.37304}
+  }
