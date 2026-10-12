@@ -152,20 +152,23 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
     {
       week: 6,
       dates: { zh: '理论 10/13 · 实验 10/14', en: 'Lecture 10/13 · Lab 10/14' },
-      topic: { zh: '上下文无关语法 (Context-Free Grammars, CFG) 与句法分析', en: 'Context-Free Grammars and Parsing' },
+      topic: { zh: '听觉与言语系统（Auditory and Speech Systems）', en: 'Auditory and Speech Systems' },
+      resources: [
+        { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/04-auditory_speech.pdf', kind: 'slide' },
+      ],
     },
-    { week: 7, dates: { zh: '理论 10/20 · 实验 10/21', en: 'Lecture 10/20 · Lab 10/21' }, topic: { zh: '待更新', en: 'To be announced' } },
+    { week: 7, dates: { zh: '理论 10/20 · 实验 10/21', en: 'Lecture 10/20 · Lab 10/21' }, topic: { zh: '语言与语法（Language and Syntax）', en: 'Language and Syntax' } },
     {
       week: 8,
       dates: { zh: '理论 10/27 · 实验 10/28', en: 'Lecture 10/27 · Lab 10/28' },
-      topic: { zh: '待更新', en: 'To be announced' },
+      topic: { zh: '语言建模（Language Modeling）', en: 'Language Modeling' },
     },
     {
       week: 9,
       dates: { zh: '理论 11/03 · 实验 11/04', en: 'Lecture 11/03 · Lab 11/04' },
-      topic: { zh: '待更新', en: 'To be announced' },
+      topic: { zh: '记忆1（Memory (I)）', en: 'Memory (I)' },
     },
-    { week: 10, dates: { zh: '理论 11/10 · 实验 11/11', en: 'Lecture 11/10 · Lab 11/11' }, topic: { zh: '待更新', en: 'To be announced' } },
+    { week: 10, dates: { zh: '理论 11/10 · 实验 11/11', en: 'Lecture 11/10 · Lab 11/11' }, topic: { zh: '记忆2（Memory (II)）', en: 'Memory (II)' } },
     { week: 11, dates: { zh: '理论 11/17 · 实验 11/18', en: 'Lecture 11/17 · Lab 11/18' }, topic: { zh: '待更新', en: 'To be announced' } },
     { week: 12, dates: { zh: '理论 11/24 · 实验 11/25', en: 'Lecture 11/24 · Lab 11/25' }, topic: { zh: '待更新', en: 'To be announced' } },
     { week: 13, dates: { zh: '理论 12/01 · 实验 12/02', en: 'Lecture 12/01 · Lab 12/02' }, topic: { zh: '待更新', en: 'To be announced' } },
