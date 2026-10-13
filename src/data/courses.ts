@@ -28,6 +28,12 @@ const reading = (file: string, label: string): CourseResource => ({
   kind: 'reading',
 });
 
+const alternativeReading = (fileOrUrl: string, title: string): CourseResource => ({
+  label: { zh: `备选：${title}`, en: `Alternative: ${title}` },
+  path: /^https?:\/\//.test(fileOrUrl) ? fileOrUrl : `course/cse5026/2026/readings/${fileOrUrl}`,
+  kind: 'reading',
+});
+
 const lab = (week: number) => `course/cse5026/2025/labs/week${week}-lab.zip`;
 
 export const cse5026Years = ['2026', '2025'] as const;
@@ -165,19 +171,71 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
     {
       week: 8,
       dates: { zh: '理论 10/27 · 实验 10/28', en: 'Lecture 10/27 · Lab 10/28' },
-      topic: { zh: '语言与语法（Language and Syntax）：依存句法分析', en: 'Language and Syntax: Dependency Parsing' },
+      topic: { zh: "语言与语法（Language and Syntax）：依存句法分析", en: "Language and Syntax: Dependency Parsing" },
+      resources: [
+        alternativeReading("levy-jaeger-2007.pdf", "Levy & Jaeger — Speakers optimize information density through syntactic reduction"),
+      ],
     },
     {
       week: 9,
       dates: { zh: '理论 11/03 · 实验 11/04', en: 'Lecture 11/03 · Lab 11/04' },
-      topic: { zh: '语言建模（Language Modeling）', en: 'Language Modeling' },
+      topic: { zh: "语言建模（Language Modeling）", en: "Language Modeling" },
+      resources: [
+        alternativeReading("Kutas.1980.Reading_Senseless_Sentences_N400.pdf", "Kutas & Hillyard (1980) — Reading Senseless Sentences: Brain Potentials Reflect Semantic Incongruity"),
+        alternativeReading("surprise_uid_2024.pdf", "Tsipidi et al. (2024) — Surprise! Uniform Information Density Isn’t the Whole Story: Predicting Surprisal Contours in Long-form Discourse"),
+      ],
     },
-    { week: 10, dates: { zh: '理论 11/10 · 实验 11/11', en: 'Lecture 11/10 · Lab 11/11' }, topic: { zh: '记忆1（Memory (I)）', en: 'Memory (I)' } },
-    { week: 11, dates: { zh: '理论 11/17 · 实验 11/18', en: 'Lecture 11/17 · Lab 11/18' }, topic: { zh: '记忆2（Memory (II)）', en: 'Memory (II)' } },
-    { week: 12, dates: { zh: '理论 11/24 · 实验 11/25', en: 'Lecture 11/24 · Lab 11/25' }, topic: { zh: '待更新', en: 'To be announced' } },
-    { week: 13, dates: { zh: '理论 12/01 · 实验 12/02', en: 'Lecture 12/01 · Lab 12/02' }, topic: { zh: '待更新', en: 'To be announced' } },
-    { week: 14, dates: { zh: '理论 12/08 · 实验 12/09', en: 'Lecture 12/08 · Lab 12/09' }, topic: { zh: '待更新', en: 'To be announced' } },
-    { week: 15, dates: { zh: '理论 12/15 · 实验 12/16', en: 'Lecture 12/15 · Lab 12/16' }, topic: { zh: '待更新', en: 'To be announced' } },
+    {
+      week: 10,
+      dates: { zh: '理论 11/10 · 实验 11/11', en: 'Lecture 11/10 · Lab 11/11' },
+      topic: { zh: "记忆1（Memory (I)）", en: "Memory (I)" },
+      resources: [
+        alternativeReading("Miller_1956_Magical.pdf", "Miller (1956) — The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information"),
+      ],
+    },
+    {
+      week: 11,
+      dates: { zh: '理论 11/17 · 实验 11/18', en: 'Lecture 11/17 · Lab 11/18' },
+      topic: { zh: "记忆2（Memory (II)）", en: "Memory (II)" },
+      resources: [
+        alternativeReading("HM's brain reconstructed.2013.ncomms4122.pdf", "Annese et al. (2014) — Postmortem examination of patient H.M.’s brain based on histological sectioning and digital 3D reconstruction"),
+        alternativeReading("Murre.2013.A mathematical model of forgetting and amnesia.pdf", "Murre et al. (2013) — A mathematical model of forgetting and amnesia"),
+      ],
+    },
+    {
+      week: 12,
+      dates: { zh: '理论 11/24 · 实验 11/25', en: 'Lecture 11/24 · Lab 11/25' },
+      topic: { zh: "学习与记忆系统（Learning and Memory Systems）", en: "Learning and Memory Systems" },
+      resources: [
+        alternativeReading("hopfield-1982-neural-networks.pdf", "Hopfield (1982) — Neural networks and physical systems with emergent collective computational abilities"),
+        alternativeReading("Hinton.2006.Deep Belief Nets.pdf", "Hinton et al. (2006) — A Fast Learning Algorithm for Deep Belief Nets"),
+      ],
+    },
+    {
+      week: 13,
+      dates: { zh: '理论 12/01 · 实验 12/02', en: 'Lecture 12/01 · Lab 12/02' },
+      topic: { zh: "思维与决策（Thinking and Decision Making）", en: "Thinking and Decision Making" },
+      resources: [
+        alternativeReading("De Neys.2006.Dual processing in reasoning - two systems but one reasoner.pdf", "De Neys (2006) — Dual Processing in Reasoning: Two Systems but One Reasoner"),
+        alternativeReading("LLM_political_DM_2025.pdf", "Fisher et al. (2025) — Biased LLMs can Influence Political Decision-Making"),
+      ],
+    },
+    {
+      week: 14,
+      dates: { zh: '理论 12/08 · 实验 12/09', en: 'Lecture 12/08 · Lab 12/09' },
+      topic: { zh: "情绪与情感计算（Emotion and Affective Computing）", en: "Emotion and Affective Computing" },
+      resources: [
+        alternativeReading("https://pubmed.ncbi.nlm.nih.gov/9457784/", "Gross (1998) — Antecedent- and response-focused emotion regulation: Divergent consequences for experience, expression, and physiology"),
+      ],
+    },
+    {
+      week: 15,
+      dates: { zh: '理论 12/15 · 实验 12/16', en: 'Lecture 12/15 · Lab 12/16' },
+      topic: { zh: "心智与意识（Mind and Consciousness）", en: "Mind and Consciousness" },
+      resources: [
+        alternativeReading("Hermans-Kempen-Van-Loon-1992-Dialogical-Self-American-Psychologist.pdf", "Hermans et al. (1992) — The Dialogical Self: Beyond Individualism and Rationalism"),
+      ],
+    },
     { week: 16, dates: { zh: '理论 12/22 · 实验 12/23', en: 'Lecture 12/22 · Lab 12/23' }, topic: { zh: '待更新', en: 'To be announced' } },
     {
       week: 17,

@@ -12,7 +12,7 @@ const resourceKind = {
   zh: { slide: '讲义', reading: '阅读', note: '笔记' },
   en: { slide: 'Slides', reading: 'Reading', note: 'Note' },
 };
-const publicHref = (path: string) => encodeURI(withBase(path));
+const publicHref = (path: string) => /^https?:\/\//.test(path) ? path : encodeURI(withBase(path));
 const fileDateAttributes = (path: string) => {
   const updatedAt = courseFileUpdatedAt(path);
   if (!updatedAt) return {};
@@ -401,6 +401,8 @@ const fileDateAttributes = (path: string) => {
   }
 
   .resource-link span {
+    flex-shrink: 0;
+    white-space: nowrap;
     color: var(--accent);
     font-size: 0.62rem;
     font-weight: 700;
