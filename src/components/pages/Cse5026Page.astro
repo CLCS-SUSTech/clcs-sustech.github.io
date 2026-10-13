@@ -114,7 +114,7 @@ const fileDateAttributes = (path: string) => {
                               href={publicHref(resource.path)}
                               {...(resource.kind === 'slide' ? fileDateAttributes(resource.path) : {})}
                             >
-                              <span>{resourceKind[lang][resource.kind]}</span>
+                              {resource.showKindLabel !== false && <span>{resourceKind[lang][resource.kind]}</span>}
                               {resource.kind === 'slide'
                                 ? resource.path.split('/').pop()?.replace(/\.pdf$/i, '')
                                 : resource.label[lang]}
