@@ -112,6 +112,12 @@ weeks:
     topic:
       zh: 语言与语法（Language and Syntax）：成分句法分析
       en: "Language and Syntax: Constituency Parsing"
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/05-language_syntax1.pdf
+        kind: slide
   - week: 8
     dates:
       zh: 理论 10/27 · 实验 10/28
