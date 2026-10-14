@@ -106,6 +106,33 @@ const publications = defineCollection({
   }),
 });
 
+const courses = defineCollection({
+  loader: glob({
+    pattern: '**/*.{yaml,yml}',
+    base: './src/content/courses',
+    generateId: ({ data }: { data: Record<string, unknown> }) => `${data.course}/${data.year}`,
+  }),
+  schema: z.object({
+    course: z.string(),
+    year: z.string(),
+    weeks: z.array(z.object({
+      week: z.number(),
+      topic: localizedString,
+      dates: localizedString.optional(),
+      resources: z.array(z.object({
+        label: localizedString,
+        path: z.string(),
+        kind: z.enum(['slide', 'reading', 'note']),
+        showKindLabel: z.boolean().optional(),
+      })).optional(),
+      labPath: z.string().optional(),
+      labPaths: z.array(z.string()).optional(),
+      note: localizedString.optional(),
+    })),
+    readingPool: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   news,
   newsArticles,
@@ -114,4 +141,5 @@ export const collections = {
   projectArticles,
   member,
   publications,
+  courses,
 };

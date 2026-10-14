@@ -1,0 +1,350 @@
+course: cse5026
+year: "2025"
+weeks:
+  - week: 1
+    topic:
+      zh: 绪论：认知科学的兴起、方法与人工智能
+      en: "Introduction: cognitive science, methods, and AI"
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/00-intro.pdf
+        kind: slide
+    labPath: course/cse5026/2025/labs/week1-lab.zip
+  - week: 2
+    topic:
+      zh: 认知的神经基础
+      en: Neural foundations of cognition
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/01-neural.pdf
+        kind: slide
+      - label:
+          zh: ANN Primer
+          en: ANN Primer
+        path: course/cse5026/2025/readings/ANN-Primer_2020.pdf
+        kind: reading
+      - label:
+          zh: Hopfield (1982)
+          en: Hopfield (1982)
+        path: course/cse5026/2025/readings/hopfield-1982-neural-networks.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week2-lab.zip
+  - week: 3
+    topic:
+      zh: 感知、视觉与注意
+      en: Perception, vision, and attention
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/02-perception_attention.pdf
+        kind: slide
+      - label:
+          zh: Kopp et al. (1996)
+          en: Kopp et al. (1996)
+        path: course/cse5026/2025/readings/Kopp1996_N200-flanker.pdf
+        kind: reading
+      - label:
+          zh: ERP CORE
+          en: ERP CORE
+        path: course/cse5026/2025/readings/ERP_CORE_paper.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week3-lab.zip
+  - week: 4
+    topic:
+      zh: 视觉与物体识别
+      en: Vision and object recognition
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/03-vision.pdf
+        kind: slide
+      - label:
+          zh: DeepRetina
+          en: DeepRetina
+        path: course/cse5026/2025/readings/DeepRetina_nips2016.pdf
+        kind: reading
+      - label:
+          zh: Yamins & DiCarlo (2016)
+          en: Yamins & DiCarlo (2016)
+        path: course/cse5026/2025/readings/Yamins-DiCarlo.nn.2016.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week4-lab.zip
+  - week: 5
+    topic:
+      zh: 国庆假期
+      en: National Day holiday
+    note:
+      zh: 本周停课。
+      en: No class.
+  - week: 6
+    topic:
+      zh: 类脑计算
+      en: Neuromorphic computing
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/04-neuromorphic_computing.pdf
+        kind: slide
+      - label:
+          zh: Maass (1997)
+          en: Maass (1997)
+        path: course/cse5026/2025/readings/Maass97_networks-of-spiking-neurons.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week6-lab.zip
+  - week: 7
+    topic:
+      zh: 听觉与语音识别
+      en: Audition and speech recognition
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/05-auditory_speech.pdf
+        kind: slide
+      - label:
+          zh: Nelken & Chechik (2007)
+          en: Nelken & Chechik (2007)
+        path: course/cse5026/2025/readings/Nelken_Chechik.2007.Information-theory-in-auditory-research.pdf
+        kind: reading
+      - label:
+          zh: EmergentTTS-Eval (2025)
+          en: EmergentTTS-Eval (2025)
+        path: course/cse5026/2025/readings/EmergentTTS-Eval_2025.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week7-lab.zip
+  - week: 8
+    topic:
+      zh: 记忆 I：短时记忆与工作记忆
+      en: "Memory I: short-term and working memory"
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/06-memory_i.pdf
+        kind: slide
+      - label:
+          zh: Miller (1956)
+          en: Miller (1956)
+        path: course/cse5026/2025/readings/Miller_1956_Magical.pdf
+        kind: reading
+      - label:
+          zh: Baddeley & Hitch (1974)
+          en: Baddeley & Hitch (1974)
+        path: course/cse5026/2025/readings/Baddeley_Hitch_1974_Working-Memory.pdf
+        kind: reading
+      - label:
+          zh: Cowan (2001)
+          en: Cowan (2001)
+        path: course/cse5026/2025/readings/Cowan.2001.the-magical-number-4-in-short-term-memory.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week8-lab.zip
+  - week: 9
+    topic:
+      zh: 记忆 II：长时记忆、遗忘与内隐记忆
+      en: "Memory II: long-term memory, forgetting, and implicit memory"
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/07-memory_ii.pdf
+        kind: slide
+      - label:
+          zh: Schacter (1987)
+          en: Schacter (1987)
+        path: course/cse5026/2025/readings/Schacter87_implicit-memory.pdf
+        kind: reading
+      - label:
+          zh: Replication of the forgetting curve
+          en: Replication of the forgetting curve
+        path: course/cse5026/2025/readings/Replication-forgetting-curve_2015.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week9-lab.zip
+  - week: 10
+    topic:
+      zh: 语言与语言模型 I
+      en: Language and language models I
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/08-language_i.pdf
+        kind: slide
+      - label:
+          zh: Indefrey & Levelt (2004)
+          en: Indefrey & Levelt (2004)
+        path: course/cse5026/2025/readings/Indefrey-Levelt.2004.Spatial_temporal_word_prod.pdf
+        kind: reading
+      - label:
+          zh: Kutas & Hillyard (1980)
+          en: Kutas & Hillyard (1980)
+        path: course/cse5026/2025/readings/Kutas.1980.Reading_Senseless_Sentences_N400.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week10-lab.zip
+  - week: 11
+    topic:
+      zh: 语言与认知负载
+      en: Language and cognitive load
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/09-language_ii.pdf
+        kind: slide
+      - label:
+          zh: Levy & Jaeger (2007)
+          en: Levy & Jaeger (2007)
+        path: course/cse5026/2025/readings/levy-jaeger-2007.pdf
+        kind: reading
+      - label:
+          zh: Frank et al. (2015)
+          en: Frank et al. (2015)
+        path: course/cse5026/2025/readings/StefanLFrank.2015.ERP_response_to_surprisal.pdf
+        kind: reading
+      - label:
+          zh: Surprisal & UID (2024)
+          en: Surprisal & UID (2024)
+        path: course/cse5026/2025/readings/surprise_uid_2024.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week11-lab.zip
+  - week: 12
+    topic:
+      zh: 学习理论
+      en: Learning theories
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/10-learning.pdf
+        kind: slide
+      - label:
+          zh: Hinton et al. (2006)
+          en: Hinton et al. (2006)
+        path: course/cse5026/2025/readings/Hinton.2006.Deep Belief Nets.pdf
+        kind: reading
+      - label:
+          zh: Reinforcement learning primer
+          en: Reinforcement learning primer
+        path: course/cse5026/2025/readings/rl-primer.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week12-lab.zip
+  - week: 13
+    topic:
+      zh: 思维、推理与决策
+      en: Thinking, reasoning, and decision making
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/11-thinking_JDM.pdf
+        kind: slide
+      - label:
+          zh: Tversky & Kahneman (1974)
+          en: Tversky & Kahneman (1974)
+        path: course/cse5026/2025/readings/Tversky-JudgmentUncertaintyHeuristics-1974.pdf
+        kind: reading
+      - label:
+          zh: DeLLMa (2025)
+          en: DeLLMa (2025)
+        path: course/cse5026/2025/readings/DeLLMa_LLM_DM_2025.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week13-lab.zip
+  - week: 14
+    topic:
+      zh: 情绪与情感计算
+      en: Emotion and affective computing
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/12-emotion.pdf
+        kind: slide
+      - label:
+          zh: The Logic of Feeling (2004)
+          en: The Logic of Feeling (2004)
+        path: course/cse5026/2025/readings/logic_of_feeling_2004.pdf
+        kind: reading
+      - label:
+          zh: LLM emotional intelligence (2025)
+          en: LLM emotional intelligence (2025)
+        path: course/cse5026/2025/readings/LLMs-emotional-intelligence-tests_2025.pdf
+        kind: reading
+    labPath: course/cse5026/2025/labs/week14-lab.zip
+  - week: 15
+    topic:
+      zh: 意识理论
+      en: Theories of consciousness
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/13-consciousness.pdf
+        kind: slide
+      - label:
+          zh: Thermodynamics of Mind (2024)
+          en: Thermodynamics of Mind (2024)
+        path: course/cse5026/2025/readings/Thermodynamics-of-Mind_2024.pdf
+        kind: reading
+  - week: 16
+    topic:
+      zh: 复习与总结
+      en: Review and summary
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2025/slides/14-review.pdf
+        kind: slide
+readingPool:
+  - 2022.Brains-and-algorithms-NLP.pdf
+  - 2025.A Survey on fMRI-based Brain Decoding for Reconstructing Multimodal Stimuli.pdf
+  - A-Mem_agent_memory_2025.pdf
+  - ANN-Primer_2020.pdf
+  - Baddeley_Hitch_1974_Working-Memory.pdf
+  - Brain-word_Indefrey_Levelt_2004.pdf
+  - Chen2005_topological-perceptual.pdf
+  - Controlling Robots Using EEG Signals, Since 1988.pdf
+  - Cowan.2001.the-magical-number-4-in-short-term-memory.pdf
+  - DJField_1987_relations-images-response.pdf
+  - De Neys.2006.Dual processing in reasoning - two systems but one reasoner.pdf
+  - DeLLMa_LLM_DM_2025.pdf
+  - DeepRetina_nips2016.pdf
+  - ERP_CORE_paper.pdf
+  - EmergentTTS-Eval_2025.pdf
+  - HM's brain reconstructed.2013.ncomms4122.pdf
+  - Hermans-Kempen-Van-Loon-1992-Dialogical-Self-American-Psychologist.pdf
+  - Hinton.2006.Deep Belief Nets.pdf
+  - Indefrey-Levelt.2004.Spatial_temporal_word_prod.pdf
+  - Just_Science-1996_brain-activation.pdf
+  - Kopp1996_N200-flanker.pdf
+  - Kutas.1980.Reading_Senseless_Sentences_N400.pdf
+  - LLM_political_DM_2025.pdf
+  - LLMs-emotional-intelligence-tests_2025.pdf
+  - Li.2002.saliency-map.pdf
+  - MIT_2025_Your-Brain-On-ChatGPT.pdf
+  - MPI.2024.A tutorial on open-source large language models for behavioral science.pdf
+  - Maass97_networks-of-spiking-neurons.pdf
+  - Miller_1956_Magical.pdf
+  - Murre.2013.A mathematical model of forgetting and amnesia.pdf
+  - Nelken_Chechik.2007.Information-theory-in-auditory-research.pdf
+  - Replication-forgetting-curve_2015.pdf
+  - Schacter87_implicit-memory.pdf
+  - StefanLFrank.2015.ERP_response_to_surprisal.pdf
+  - Thermodynamics-of-Mind_2024.pdf
+  - Tversky-JudgmentUncertaintyHeuristics-1974.pdf
+  - VLM-perceptual-constancy_2025.pdf
+  - What Learning Systems do  Intelligent Agents Need_KumaranHassabisMcC16CLSUpdate.pdf
+  - Yamins-DiCarlo.nn.2016.pdf
+  - children_llm_learning_2023.pdf
+  - hopfield-1982-neural-networks.pdf
+  - kosinski-2024-evaluating-large-language-models-in-theory-of-mind-tasks.pdf
+  - levy-jaeger-2007.pdf
+  - logic_of_feeling_2004.pdf
+  - rl-primer.pdf
+  - surprise_uid_2024.pdf

@@ -1,0 +1,339 @@
+course: cse5026
+year: "2026"
+weeks:
+  - week: 1
+    dates:
+      zh: 理论 09/08 · 实验 09/09
+      en: Lecture 09/08 · Lab 09/09
+    topic:
+      zh: 课程介绍 Course Introduction & Overview
+      en: Course Introduction & Overview
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/00-intro.pdf
+        kind: slide
+      - label:
+          zh: 补充阅读：MIT Lecture 3
+          en: "Supplementary reading: MIT Lecture 3"
+        path: course/cse5026/2026/readings/MIT9_07F16_lec3.pdf
+        kind: reading
+      - label:
+          zh: 补充阅读：MIT Lecture 12
+          en: "Supplementary reading: MIT Lecture 12"
+        path: course/cse5026/2026/readings/MIT9_07F16_lec12.pdf
+        kind: reading
+    labPath: course/cse5026/2026/labs/lab_w1_stats.zip
+  - week: 2
+    dates:
+      zh: 理论 09/15 · 实验 09/16
+      en: Lecture 09/15 · Lab 09/16
+    topic:
+      zh: 认知的神经基础 Neural Basis of Cognition
+      en: Neural Basis of Cognition
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/01-neural.pdf
+        kind: slide
+    labPaths:
+      - course/cse5026/2026/labs/lab_neuron_demo.ipynb
+      - course/cse5026/2026/labs/lab_LIF.ipynb
+  - week: 3
+    dates:
+      zh: 理论 09/22 · 实验 09/23
+      en: Lecture 09/22 · Lab 09/23
+    topic:
+      zh: 感知与注意 Perception and Attention
+      en: Perception and Attention
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/02-perception_attention.pdf
+        kind: slide
+    labPath: course/cse5026/2026/labs/lab_w3_weber.zip
+  - week: 4
+    dates:
+      zh: 理论 09/29 · 实验 09/30
+      en: Lecture 09/29 · Lab 09/30
+    topic:
+      zh: 视觉 Vision
+      en: Vision
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/03-vision.pdf
+        kind: slide
+      - label:
+          zh: 拓展阅读：Chen (2005) — 拓扑知觉
+          en: "Further reading: Chen (2005) — Topological perception"
+        path: course/cse5026/2026/readings/Chen2005_topological-perceptual.pdf
+        kind: reading
+      - label:
+          zh: 拓展阅读：Yang & Wang (2020) — 神经网络入门
+          en: "Further reading: Yang & Wang (2020) — Artificial Neural Networks for Neuroscientists: A Primer"
+        path: course/cse5026/2026/readings/ANN-Primer_2020.pdf
+        kind: reading
+    labPath: course/cse5026/2026/labs/lab_w4_ConvNets.zip
+  - week: 5
+    dates:
+      zh: 理论 10/06（停课）· 实验补课 10/10
+      en: Lecture 10/06 (no class) · Lab make-up 10/10
+    topic:
+      zh: 国庆假期
+      en: National Day holiday
+    note:
+      zh: 根据校历，10 月 10 日补上单周周三的课。
+      en: The odd-week Wednesday class is made up on October 10.
+  - week: 6
+    dates:
+      zh: 理论 10/13 · 实验 10/14
+      en: Lecture 10/13 · Lab 10/14
+    topic:
+      zh: 听觉与言语系统（Auditory and Speech Systems）
+      en: Auditory and Speech Systems
+    resources:
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/04-auditory_speech.pdf
+        kind: slide
+    labPaths:
+      - course/cse5026/2026/labs/lab_F0.ipynb
+      - course/cse5026/2026/labs/record.py
+  - week: 7
+    dates:
+      zh: 理论 10/20 · 实验 10/21
+      en: Lecture 10/20 · Lab 10/21
+    topic:
+      zh: 语言与语法（Language and Syntax）：成分句法分析
+      en: "Language and Syntax: Constituency Parsing"
+  - week: 8
+    dates:
+      zh: 理论 10/27 · 实验 10/28
+      en: Lecture 10/27 · Lab 10/28
+    topic:
+      zh: 语言与语法（Language and Syntax）：依存句法分析
+      en: "Language and Syntax: Dependency Parsing"
+    resources:
+      - label:
+          zh: Just et al.（1996）
+          en: Just et al. (1996)
+        path: course/cse5026/2026/readings/Just_Science-1996_brain-activation.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Evanson et al.（2023）
+          en: Evanson et al. (2023)
+        path: course/cse5026/2026/readings/children_llm_learning_2023.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Levy & Jaeger（2007）
+          en: Levy & Jaeger (2007)
+        path: course/cse5026/2026/readings/levy-jaeger-2007.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 9
+    dates:
+      zh: 理论 11/03 · 实验 11/04
+      en: Lecture 11/03 · Lab 11/04
+    topic:
+      zh: 语言建模（Language Modeling）
+      en: Language Modeling
+    resources:
+      - label:
+          zh: Frank et al.（2015）
+          en: Frank et al. (2015)
+        path: course/cse5026/2026/readings/StefanLFrank.2015.ERP_response_to_surprisal.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Caucheteux & King（2022）
+          en: Caucheteux & King (2022)
+        path: course/cse5026/2026/readings/2022.Brains-and-algorithms-NLP.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Tsipidi et al.（2024）
+          en: Tsipidi et al. (2024)
+        path: course/cse5026/2026/readings/surprise_uid_2024.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 10
+    dates:
+      zh: 理论 11/10 · 实验 11/11
+      en: Lecture 11/10 · Lab 11/11
+    topic:
+      zh: 记忆1（Memory (I)）
+      en: Memory (I)
+    resources:
+      - label:
+          zh: Baddeley & Hitch（1974）
+          en: Baddeley & Hitch (1974)
+        path: course/cse5026/2026/readings/Baddeley_Hitch_1974_Working-Memory.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Cowan（2001）
+          en: Cowan (2001)
+        path: course/cse5026/2026/readings/Cowan.2001.the-magical-number-4-in-short-term-memory.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Miller（1956）
+          en: Miller (1956)
+        path: course/cse5026/2026/readings/Miller_1956_Magical.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 11
+    dates:
+      zh: 理论 11/17 · 实验 11/18
+      en: Lecture 11/17 · Lab 11/18
+    topic:
+      zh: 记忆2（Memory (II)）
+      en: Memory (II)
+    resources:
+      - label:
+          zh: Schacter（1987）
+          en: Schacter (1987)
+        path: course/cse5026/2026/readings/Schacter87_implicit-memory.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Murre & Dros（2015）
+          en: Murre & Dros (2015)
+        path: course/cse5026/2026/readings/Replication-forgetting-curve_2015.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Annese et al.（2014）
+          en: Annese et al. (2014)
+        path: course/cse5026/2026/readings/HM's brain reconstructed.2013.ncomms4122.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 12
+    dates:
+      zh: 理论 11/24 · 实验 11/25
+      en: Lecture 11/24 · Lab 11/25
+    topic:
+      zh: 学习与记忆系统（Learning and Memory Systems）
+      en: Learning and Memory Systems
+    resources:
+      - label:
+          zh: Kumaran et al.（2016）
+          en: Kumaran et al. (2016)
+        path: course/cse5026/2026/readings/What Learning Systems do  Intelligent Agents Need_KumaranHassabisMcC16CLSUpdate.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Xu et al.（2025）
+          en: Xu et al. (2025)
+        path: course/cse5026/2026/readings/A-Mem_agent_memory_2025.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Hopfield（1982）
+          en: Hopfield (1982)
+        path: course/cse5026/2026/readings/hopfield-1982-neural-networks.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 13
+    dates:
+      zh: 理论 12/01 · 实验 12/02
+      en: Lecture 12/01 · Lab 12/02
+    topic:
+      zh: 思维与决策（Thinking and Decision Making）
+      en: Thinking and Decision Making
+    resources:
+      - label:
+          zh: Tversky & Kahneman（1974）
+          en: Tversky & Kahneman (1974)
+        path: course/cse5026/2026/readings/Tversky-JudgmentUncertaintyHeuristics-1974.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Liu et al.（2025）
+          en: Liu et al. (2025)
+        path: course/cse5026/2026/readings/DeLLMa_LLM_DM_2025.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: De Neys（2006）
+          en: De Neys (2006)
+        path: course/cse5026/2026/readings/De Neys.2006.Dual processing in reasoning - two systems but one reasoner.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 14
+    dates:
+      zh: 理论 12/08 · 实验 12/09
+      en: Lecture 12/08 · Lab 12/09
+    topic:
+      zh: 情绪与情感计算（Emotion and Affective Computing）
+      en: Emotion and Affective Computing
+    resources:
+      - label:
+          zh: Pham（2004）
+          en: Pham (2004)
+        path: course/cse5026/2026/readings/logic_of_feeling_2004.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Schlegel et al.（2025）
+          en: Schlegel et al. (2025)
+        path: course/cse5026/2026/readings/LLMs-emotional-intelligence-tests_2025.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Gross（2002）
+          en: Gross (2002)
+        path: course/cse5026/2026/readings/Gross_2002_emotion-regulation.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 15
+    dates:
+      zh: 理论 12/15 · 实验 12/16
+      en: Lecture 12/15 · Lab 12/16
+    topic:
+      zh: 心智与意识（Mind and Consciousness）
+      en: Mind and Consciousness
+    resources:
+      - label:
+          zh: Kosinski（2024）
+          en: Kosinski (2024)
+        path: course/cse5026/2026/readings/kosinski-2024-evaluating-large-language-models-in-theory-of-mind-tasks.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Kringelbach et al.（2024）
+          en: Kringelbach et al. (2024)
+        path: course/cse5026/2026/readings/Thermodynamics-of-Mind_2024.pdf
+        kind: reading
+        showKindLabel: false
+      - label:
+          zh: Hermans et al.（1992）
+          en: Hermans et al. (1992)
+        path: course/cse5026/2026/readings/Hermans-Kempen-Van-Loon-1992-Dialogical-Self-American-Psychologist.pdf
+        kind: reading
+        showKindLabel: false
+  - week: 16
+    dates:
+      zh: 理论 12/22 · 实验 12/23
+      en: Lecture 12/22 · Lab 12/23
+    topic:
+      zh: 待更新
+      en: To be announced
+  - week: 17
+    dates:
+      zh: 12/29–12/30
+      en: 12/29–12/30
+    topic:
+      zh: 期末考试周
+      en: Final examination period
+    note:
+      zh: 期末考试时间待定。
+      en: Final examination time to be confirmed.

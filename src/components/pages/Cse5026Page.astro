@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CourseFileTooltip from '@/components/CourseFileTooltip.astro';
-import { cse5026Schedule, cse5026Years } from '@/data/courses';
+import { getCourse } from '@/lib/courses';
 import { courseFileUpdatedAt, formatCourseFileDate } from '@/lib/course-file-dates';
 import { langPath, withBase, type Lang } from '@/lib/paths';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
+const { years: cse5026Years, terms } = await getCourse('cse5026');
 const isZh = lang === 'zh';
 const resourceKind = {
   zh: { slide: '讲义', reading: '阅读', note: '笔记' },
@@ -98,7 +99,7 @@ const fileDateAttributes = (path: string) => {
                 </tr>
               </thead>
               <tbody>
-                {cse5026Schedule[year].map((week) => (
+                {(terms.get(year)?.weeks ?? []).map((week) => (
                   <tr>
                     <th scope="row">
                       <span class="week-label">W{String(week.week).padStart(2, '0')}</span>

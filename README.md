@@ -50,7 +50,7 @@ src/content/
 
 ### 课程材料
 
-课程页面位于 `src/pages/[lang]/course/`，CSE5026 的周次、主题与资源链接集中维护在 `src/data/courses.ts`。可下载的讲义、阅读材料和实验包放在：
+课程页面位于 `src/pages/[lang]/course/`，CSE5026 的周次、主题与资源链接按学期维护在 `src/content/courses/cse5026/<year>.yaml`（纯数据文件，由内容集合 schema 校验）。可下载的讲义、阅读材料和实验包放在：
 
 ```text
 public/course/cse5026/<year>/
@@ -59,7 +59,7 @@ public/course/cse5026/<year>/
 └── labs/
 ```
 
-新增或替换资源后，同步更新 `src/data/courses.ts` 中的路径，再运行 `npm run build && npm run verify` 检查页面和站内链接。
+新增或替换资源后，同步更新对应学期 YAML 中的路径，再运行 `npm run build && npm run verify` 检查页面和站内链接。新开一个学期时，复制上一份 YAML 并修改 `year` 字段即可。
 
 课程讲义和实验下载链接支持悬停或键盘聚焦查看最后修改时间，统一显示北京时间（UTC+8）。已发布文件使用该文件最近一次 Git 提交的时间，避免重新部署改变日期；本地未提交的新文件或修改文件使用文件系统修改时间。部署工作流须保留完整 Git 历史（`fetch-depth: 0`）。
 
