@@ -110,8 +110,8 @@ weeks:
       zh: 理论 10/20 · 实验 10/21
       en: Lecture 10/20 · Lab 10/21
     topic:
-      zh: 语言与语法（Language and Syntax）：成分句法分析
-      en: "Language and Syntax: Constituency Parsing"
+      zh: "语言与语法·一：成分句法（Language and Syntax 1: Constituency Parsing）"
+      en: "Language and Syntax 1: Constituency Parsing"
     resources:
       - label:
           zh: 讲义 PDF
@@ -123,8 +123,8 @@ weeks:
       zh: 理论 10/27 · 实验 10/28
       en: Lecture 10/27 · Lab 10/28
     topic:
-      zh: 语言与语法（Language and Syntax）：依存句法分析
-      en: "Language and Syntax: Dependency Parsing"
+      zh: "语言与语法·二：依存句法（Language and Syntax 2: Dependency Parsing）"
+      en: "Language and Syntax 2: Dependency Parsing"
     resources:
       - label:
           zh: Just et al.（1996）
