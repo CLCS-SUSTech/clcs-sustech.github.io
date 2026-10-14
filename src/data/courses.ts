@@ -165,7 +165,7 @@ export const cse5026Schedule: Record<Cse5026Year, CourseWeek[]> = {
         { label: { zh: '讲义 PDF', en: 'Slides PDF' }, path: 'course/cse5026/2026/slides/04-auditory_speech.pdf', kind: 'slide' },
       ],
       labPaths: [
-        'course/cse5026/2026/labs/lab_F0_sol.ipynb',
+        'course/cse5026/2026/labs/lab_F0.ipynb',
         'course/cse5026/2026/labs/record.py',
       ],
     },
