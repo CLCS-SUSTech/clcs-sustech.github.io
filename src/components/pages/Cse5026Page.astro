@@ -14,8 +14,10 @@ const resourceKind = {
   en: { slide: 'Slides', reading: 'Reading', note: 'Note' },
 };
 const publicHref = (path: string) => /^https?:\/\//.test(path) ? path : encodeURI(withBase(path));
-const fileDateAttributes = (path: string) => {
-  const updatedAt = courseFileUpdatedAt(path);
+const updatedAtOf = (year: string) => terms.get(year)?.updatedAt;
+const fileDateAttributes = (path: string, updatedAtMap?: Record<string, string>) => {
+  // Prefer the upload time recorded by the admin panel; fall back to git history.
+  const updatedAt = updatedAtMap?.[path] ?? courseFileUpdatedAt(path);
   if (!updatedAt) return {};
   const formatted = formatCourseFileDate(updatedAt);
   return {
@@ -113,7 +115,7 @@ const fileDateAttributes = (path: string) => {
                             <a
                               class={`resource-link resource-link--${resource.kind}`}
                               href={publicHref(resource.path)}
-                              {...(resource.kind === 'slide' ? fileDateAttributes(resource.path) : {})}
+                              {...(resource.kind === 'slide' ? fileDateAttributes(resource.path, updatedAtOf(year)) : {})}
                             >
                               {resource.showKindLabel !== false && <span>{resourceKind[lang][resource.kind]}</span>}
                               {resource.kind === 'slide'
@@ -130,7 +132,7 @@ const fileDateAttributes = (path: string) => {
                       {(week.labPaths?.length || week.labPath) ? (
                         <div class="resource-list">
                           {(week.labPaths ?? [week.labPath!]).map((path) => (
-                            <a class="lab-link" href={publicHref(path)} download {...fileDateAttributes(path)}>
+                            <a class="lab-link" href={publicHref(path)} download {...fileDateAttributes(path, updatedAtOf(year))}>
                               {path.split('/').pop()} <span aria-hidden="true">↓</span>
                             </a>
                           ))}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>课程管理面板</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>课程管理面板</h1>
+      <select id="course-select" aria-label="选择课程"></select>
+    </div>
+    <div class="topbar-right">
+      <span id="git-badge" class="git-badge" title="Git 状态">…</span>
+      <button id="refresh-btn" class="btn">刷新</button>
+      <button id="publish-btn" class="btn btn-primary">发布…</button>
+    </div>
+  </header>
+
+  <nav id="year-tabs" class="year-tabs"></nav>
+
+  <main id="main"></main>
+
+  <div id="save-bar" class="save-bar" hidden>
+    <span id="save-hint"></span>
+    <button id="save-btn" class="btn btn-primary">保存</button>
+  </div>
+
+  <dialog id="resource-dialog" class="dialog">
+    <form method="dialog">
+      <h2>编辑资源</h2>
+      <label>类型
+        <select id="res-kind">
+          <option value="slide">讲义 slide</option>
+          <option value="reading">阅读 reading</option>
+          <option value="note">笔记 note</option>
+        </select>
+      </label>
+      <label>标签（中）<input id="res-label-zh" type="text"></label>
+      <label>标签（英）<input id="res-label-en" type="text"></label>
+      <label class="checkbox">
+        <input id="res-show-kind" type="checkbox"> 显示类型角标
+      </label>
+      <p class="dialog-path" id="res-path"></p>
+      <div class="dialog-actions">
+        <button id="res-remove" type="button" class="btn btn-danger">移除此资源</button>
+        <span class="spacer"></span>
+        <button value="cancel" class="btn">取消</button>
+        <button id="res-save" type="button" class="btn btn-primary">保存</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="publish-dialog" class="dialog">
+    <form method="dialog">
+      <h2>发布更改</h2>
+      <p class="dialog-note">将暂存并提交 <code>src/content/courses/</code> 与 <code>public/course/</code> 下的全部更改，然后推送到远端。</p>
+      <label>提交信息
+        <input id="publish-message" type="text" value="Update CSE5026 course materials">
+      </label>
+      <pre id="publish-log" class="publish-log" hidden></pre>
+      <div class="dialog-actions">
+        <span class="spacer"></span>
+        <button value="cancel" class="btn">关闭</button>
+        <button id="publish-run" type="button" class="btn btn-primary">提交并推送</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

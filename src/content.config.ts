@@ -130,6 +130,12 @@ const courses = defineCollection({
       note: localizedString.optional(),
     })),
     readingPool: z.array(z.string()).optional(),
+    /**
+     * Upload timestamps recorded by the admin panel, keyed by public path.
+     * Astro parses YAML with js-yaml, which turns ISO timestamps into Date
+     * objects — coerce them back to ISO strings so pages get a stable type.
+     */
+    updatedAt: z.record(z.string(), z.coerce.date().transform((date) => date.toISOString())).optional(),
   }),
 });
 
