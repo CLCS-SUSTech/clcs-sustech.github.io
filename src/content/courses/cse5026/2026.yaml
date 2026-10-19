@@ -118,6 +118,11 @@ weeks:
           en: Slides PDF
         path: course/cse5026/2026/slides/05-language_syntax1.pdf
         kind: slide
+    labPaths:
+      - course/cse5026/2026/labs/lab_w7_cfg.ipynb
+      - course/cse5026/2026/labs/README_en.md
+      - course/cse5026/2026/labs/README_zh.md
+      - course/cse5026/2026/labs/atis3.cfg
   - week: 8
     dates:
       zh: 理论 10/27 · 实验 10/28
@@ -345,3 +350,7 @@ weeks:
       en: Final examination time to be confirmed.
 updatedAt:
   course/cse5026/2026/slides/05-language_syntax1.pdf: 2026-10-19T14:03:58.917Z
+  course/cse5026/2026/labs/lab_w7_cfg.ipynb: 2026-10-19T17:42:35.832Z
+  course/cse5026/2026/labs/README_en.md: 2026-10-19T17:42:41.584Z
+  course/cse5026/2026/labs/README_zh.md: 2026-10-19T17:42:49.854Z
+  course/cse5026/2026/labs/atis3.cfg: 2026-10-19T17:42:58.275Z
