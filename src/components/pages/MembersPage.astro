@@ -15,7 +15,7 @@ const members = (await getCollection('member')).sort((a, b) => {
   return yearDifference || a.data.name.zh.localeCompare(b.data.name.zh, 'zh-CN');
 });
 const mentors = members.filter((member) => memberGroup(member.id) === 'pi');
-const groupOrder = ['postdoc', 'phd', 'master', 'undergraduate', 'alumni'] as const;
+const groupOrder = ['phd', 'master', 'undergraduate', 'alumni', 'postdoc'] as const;
 ---
 
 <BaseLayout lang={lang} title={lang === 'zh' ? '成员' : 'Members'}>
