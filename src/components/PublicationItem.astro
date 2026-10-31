@@ -18,7 +18,7 @@ const bibPanelId = 'bib-' + publication.slug;
 <article class:list={['publication-item', { 'publication-item--without-year': !showYear }]}>
   {showYear && <div class="publication-year">{publication.year}</div>}
   <div>
-    <h3>{publication.title}</h3>
+    <h3>{publication.isNew && <span class="new-badge">[New]</span>}{publication.title}</h3>
     <p class="authors">{publication.authors.join(', ')}</p>
     <p class="venue">{publication.venue.split(/(\bOral\b)/i).map((part) =>
       /^oral$/i.test(part) ? <strong>{part}</strong> : part
@@ -104,6 +104,12 @@ const bibPanelId = 'bib-' + publication.slug;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.35;
+  }
+
+  .new-badge {
+    margin-right: 0.45em;
+    color: #F82830;
+    font-weight: 700;
   }
 
   p {

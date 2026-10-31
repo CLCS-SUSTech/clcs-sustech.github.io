@@ -2,6 +2,7 @@ slug: wen2026metactrl
 year: 2026
 order: -1
 featured: true
+isNew: true
 title: "MetaCtrl: Your Large Language Models Can Reason Better and More Concisely with a Metacognitive Controller"
 authors:
   - "Zhibin Wen"

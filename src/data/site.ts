@@ -28,7 +28,7 @@ export const copy = {
     siteDescription: '计算语言学与意识科学实验室官方网站，研究语言模型、自然语言处理、认知与意识。',
     nav: {
       home: '首页',
-      research: '研究与发表',
+      research: '论文发表',
       news: '消息',
       members: '成员',
       course: '课程',
@@ -55,7 +55,7 @@ export const copy = {
     siteDescription: 'Official website of the Computational Linguistics & Consciousness Sciences Lab, working on language models, NLP, cognition, and consciousness.',
     nav: {
       home: 'Home',
-      research: 'Research & Publications',
+      research: 'Publications',
       news: 'News',
       members: 'Members',
       course: 'Course',

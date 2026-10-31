@@ -1,0 +1,27 @@
+slug: new-word
+year: 2026
+order: -2
+featured: true
+isNew: true
+title: "Modeling the Arrival Time of Information-Bearing Events in Natural Language"
+authors:
+  - "Leyi Lao"
+  - "Yulin Ou"
+  - "Yang Xu"
+  - "Hao An"
+venue: "arXiv:2610.14212"
+status:
+  zh: "预印本"
+  en: "Preprint"
+paper: "https://arxiv.org/abs/2610.14212"
+bibtex: |-
+  @article{lao2026newword,
+    title = {Modeling the Arrival Time of Information-Bearing Events in Natural Language},
+    author = {Lao, Leyi and Ou, Yulin and Xu, Yang and An, Hao},
+    journal = {arXiv preprint arXiv:2610.14212},
+    year = {2026},
+    eprint = {2610.14212},
+    archivePrefix = {arXiv},
+    primaryClass = {cs.CL},
+    url = {https://arxiv.org/abs/2610.14212}
+  }

@@ -103,6 +103,7 @@ const publications = defineCollection({
     data: z.union([z.url(), z.literal(true)]).optional(),
     project: z.url().optional(),
     featured: z.boolean().default(false),
+    isNew: z.boolean().default(false),
   }),
 });
 

@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import SimplePageHeader from '@/components/SimplePageHeader.astro';
 import PublicationItem from '@/components/PublicationItem.astro';
 import type { Lang } from '@/lib/paths';
 
@@ -15,8 +14,7 @@ const publications = (await getCollection('publications'))
 const publicationYears = [...new Set(publications.map((entry) => entry.data.year))];
 ---
 
-<BaseLayout lang={lang} title={lang === 'zh' ? '研究与发表' : 'Research & Publications'}>
-  <SimplePageHeader title={lang === 'zh' ? '研究与发表' : 'Research & Publications'} />
+<BaseLayout lang={lang} title={lang === 'zh' ? '论文发表' : 'Publications'}>
 
   <section class="content-section publications-section">
     <div class="container">
