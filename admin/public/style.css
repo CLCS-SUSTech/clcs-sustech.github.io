@@ -366,6 +366,17 @@ main {
 
 .spacer { flex: 1; }
 
+.pool-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.pool-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .publish-log {
   max-height: 240px;
   overflow: auto;

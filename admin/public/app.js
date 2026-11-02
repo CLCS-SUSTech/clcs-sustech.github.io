@@ -45,6 +45,11 @@ function el(tag, className, text) {
 
 const fileName = (path) => path.split('/').pop();
 const fileStem = (path) => fileName(path).replace(/\.[^.]+$/, '');
+const isExternalUrl = (path) => /^https?:\/\//.test(path);
+const labelFromUrl = (url) => {
+  try { return decodeURIComponent(fileName(new URL(url).pathname) ?? '') || url; }
+  catch { return url; }
+};
 
 const KIND_LABEL = { slide: '讲义', reading: '阅读', note: '笔记' };
 
@@ -132,6 +137,13 @@ function uploadButton(week, kind) {
   return btn;
 }
 
+function linkButton(context) {
+  const btn = el('button', 'btn btn-upload', '＋ 添加链接');
+  btn.title = '引用外部托管的文件，不上传到本站';
+  btn.addEventListener('click', () => openLinkDialog(context));
+  return btn;
+}
+
 function resourceChip(week, resource) {
   const chip = el('span', 'chip');
   chip.append(
@@ -210,7 +222,7 @@ function weekCard(week) {
   const resourceRow = el('div', 'chip-row');
   resourceRow.append(el('span', 'chip-row-label', '讲义 / 阅读'));
   for (const resource of week.resources ?? []) resourceRow.append(resourceChip(week, resource));
-  resourceRow.append(uploadButton(week, 'slides'), uploadButton(week, 'readings'));
+  resourceRow.append(uploadButton(week, 'slides'), uploadButton(week, 'readings'), linkButton({ mode: 'resource', week }));
   card.append(resourceRow);
 
   const labRow = el('div', 'chip-row');
@@ -247,12 +259,18 @@ function readingPoolSection(term) {
   };
   upload.addEventListener('click', () => picker.click());
   picker.addEventListener('change', () => { handle(picker.files[0]); picker.value = ''; });
-  head.append(upload);
+  const actions = el('div', 'pool-actions');
+  actions.append(linkButton({ mode: 'pool', term }), upload);
+  head.append(actions);
   section.append(head);
 
   const list = el('ul', 'pool-list');
   for (const name of term.readingPool) {
-    const item = el('li', null, name);
+    const item = el('li');
+    const label = isExternalUrl(name) ? labelFromUrl(name) : name;
+    const text = el('span', 'pool-name', isExternalUrl(name) ? `🔗 ${label}` : label);
+    text.title = name;
+    item.append(text);
     const remove = el('button', 'chip-remove', '×');
     remove.title = '从阅读库移除（不删除文件）';
     remove.addEventListener('click', () => {
@@ -359,6 +377,17 @@ async function uploadAndAttach(week, kind, file) {
 // ---------- dialogs ----------
 
 let dialogContext = null;
+let linkContext = null;
+
+function openLinkDialog(context) {
+  linkContext = context;
+  $('#link-url').value = '';
+  $('#link-label-zh').value = '';
+  $('#link-label-en').value = '';
+  $('#link-kind').value = 'reading';
+  $('#link-meta').style.display = context.mode === 'pool' ? 'none' : '';
+  $('#link-dialog').showModal();
+}
 
 function openResourceDialog(week, resource) {
   dialogContext = { week, resource };
@@ -371,6 +400,28 @@ function openResourceDialog(week, resource) {
 }
 
 function bindDialogs() {
+  $('#link-save').addEventListener('click', () => {
+    const url = $('#link-url').value.trim();
+    if (!isExternalUrl(url)) { toast('请输入以 http:// 或 https:// 开头的链接', true); return; }
+    if (linkContext.mode === 'pool') {
+      const { term } = linkContext;
+      if (!term.readingPool.includes(url)) term.readingPool.push(url);
+    } else {
+      const { week } = linkContext;
+      const fallback = labelFromUrl(url);
+      const labelZh = $('#link-label-zh').value.trim() || fallback;
+      const labelEn = $('#link-label-en').value.trim() || labelZh;
+      week.resources ??= [];
+      if (!week.resources.some((r) => r.path === url)) {
+        week.resources.push({ label: { zh: labelZh, en: labelEn }, path: url, kind: $('#link-kind').value });
+      }
+    }
+    markDirty();
+    renderMain();
+    $('#link-dialog').close();
+    toast('已添加链接（记得保存）');
+  });
+
   $('#res-save').addEventListener('click', () => {
     const { resource } = dialogContext;
     resource.kind = $('#res-kind').value;

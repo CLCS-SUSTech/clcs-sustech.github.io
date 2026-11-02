@@ -69,6 +69,30 @@
     </form>
   </dialog>
 
+  <dialog id="link-dialog" class="dialog">
+    <form method="dialog">
+      <h2>添加外部链接</h2>
+      <p class="dialog-note">链接到外部托管的文件，不复制到本站，可避免版权问题。</p>
+      <label>链接 URL<input id="link-url" type="text" placeholder="https://…"></label>
+      <div id="link-meta">
+        <label>标签（中）<input id="link-label-zh" type="text" placeholder="留空则使用文件名"></label>
+        <label>标签（英）<input id="link-label-en" type="text" placeholder="留空则使用文件名"></label>
+        <label>类型
+          <select id="link-kind">
+            <option value="reading" selected>阅读 reading</option>
+            <option value="slide">讲义 slide</option>
+            <option value="note">笔记 note</option>
+          </select>
+        </label>
+      </div>
+      <div class="dialog-actions">
+        <span class="spacer"></span>
+        <button value="cancel" class="btn">取消</button>
+        <button id="link-save" type="button" class="btn btn-primary">添加</button>
+      </div>
+    </form>
+  </dialog>
+
   <div id="toast" class="toast" hidden></div>
 
   <script src="/app.js"></script>

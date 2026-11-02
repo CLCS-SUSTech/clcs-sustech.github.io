@@ -9,12 +9,23 @@ const { lang } = Astro.props;
 const isZh = lang === 'zh';
 const { terms } = await getCourse('cse5026');
 const files = terms.get('2025')?.readingPool ?? [];
-const titleFromFile = (file: string) => file
-  .replace(/\.pdf$/i, '')
-  .replace(/[_-]+/g, ' ')
-  .replace(/\s+/g, ' ')
-  .trim();
-const publicHref = (file: string) => encodeURI(withBase(`course/cse5026/2025/readings/${file}`));
+const isExternal = (file: string) => /^https?:\/\//.test(file);
+const allLocal = files.every((file) => !isExternal(file));
+const titleFromFile = (file: string) => {
+  let base = file;
+  if (isExternal(file)) {
+    try { base = decodeURIComponent(new URL(file).pathname.split('/').pop() ?? file); }
+    catch { /* fall through with the raw URL */ }
+  }
+  return base
+    .replace(/\.pdf$/i, '')
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+const publicHref = (file: string) => isExternal(file)
+  ? file
+  : encodeURI(withBase(`course/cse5026/2025/readings/${file}`));
 ---
 
 <BaseLayout lang={lang} title={isZh ? 'CSE5026 阅读材料' : 'CSE5026 Readings'}>
@@ -27,14 +38,14 @@ const publicHref = (file: string) => encodeURI(withBase(`course/cse5026/2025/rea
     <div class="container">
       <div class="reading-toolbar">
         <a href={langPath(lang, 'course/cse5026')}>← {isZh ? '返回课程页' : 'Back to course'}</a>
-        <span>{files.length} {isZh ? '份 PDF' : 'PDFs'}</span>
+        <span>{files.length} {allLocal ? (isZh ? '份 PDF' : 'PDFs') : (isZh ? '份材料' : 'items')}</span>
       </div>
       <ol class="reading-list">
         {files.map((file, index) => (
           <li>
             <span class="reading-number">{String(index + 1).padStart(2, '0')}</span>
-            <a href={publicHref(file)}>{titleFromFile(file)}</a>
-            <span class="file-type">PDF</span>
+            <a href={publicHref(file)} {...(isExternal(file) ? { target: '_blank', rel: 'noopener' } : {})}>{titleFromFile(file)}</a>
+            <span class="file-type">{isExternal(file) ? (isZh ? '外链' : 'LINK') : 'PDF'}</span>
           </li>
         ))}
       </ol>

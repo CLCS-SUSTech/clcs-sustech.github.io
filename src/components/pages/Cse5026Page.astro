@@ -14,6 +14,7 @@ const resourceKind = {
   en: { slide: 'Slides', reading: 'Reading', note: 'Note' },
 };
 const publicHref = (path: string) => /^https?:\/\//.test(path) ? path : encodeURI(withBase(path));
+const externalAttrs = (path: string) => /^https?:\/\//.test(path) ? { target: '_blank', rel: 'noopener' } : {};
 const updatedAtOf = (year: string) => terms.get(year)?.updatedAt;
 const fileDateAttributes = (path: string, updatedAtMap?: Record<string, string>) => {
   // Prefer the upload time recorded by the admin panel; fall back to git history.
@@ -115,11 +116,12 @@ const fileDateAttributes = (path: string, updatedAtMap?: Record<string, string>)
                             <a
                               class={`resource-link resource-link--${resource.kind}`}
                               href={publicHref(resource.path)}
+                              {...externalAttrs(resource.path)}
                               {...(resource.kind === 'slide' ? fileDateAttributes(resource.path, updatedAtOf(year)) : {})}
                             >
                               {resource.showKindLabel !== false && <span>{resourceKind[lang][resource.kind]}</span>}
                               {resource.kind === 'slide'
-                                ? resource.path.split('/').pop()?.replace(/\.pdf$/i, '')
+                                ? decodeURIComponent(resource.path.split('/').pop() ?? '').replace(/\.pdf$/i, '')
                                 : resource.label[lang]}
                             </a>
                           ))}
@@ -132,7 +134,7 @@ const fileDateAttributes = (path: string, updatedAtMap?: Record<string, string>)
                       {(week.labPaths?.length || week.labPath) ? (
                         <div class="resource-list">
                           {(week.labPaths ?? [week.labPath!]).map((path) => (
-                            <a class="lab-link" href={publicHref(path)} download {...fileDateAttributes(path, updatedAtOf(year))}>
+                            <a class="lab-link" href={publicHref(path)} download={!/^https?:\/\//.test(path) || undefined} {...externalAttrs(path)} {...fileDateAttributes(path, updatedAtOf(year))}>
                               {path.split('/').pop()} <span aria-hidden="true">↓</span>
                             </a>
                           ))}
