@@ -184,15 +184,15 @@ weeks:
         kind: reading
         showKindLabel: false
       - label:
-          zh: 讲义 PDF
-          en: Slides PDF
-        path: course/cse5026/2026/slides/07-lm.pdf
-        kind: slide
-      - label:
           zh: Eye Tracking and NLP (ACL 2025 Tutorial)
           en: Eye Tracking and NLP (ACL 2025 Tutorial)
         path: https://acl2025-eyetracking-and-nlp.github.io/slides/Eye%20Tracking%20and%20NLP%20ACL%202025%20Tutorial%20no%20builds.pdf
         kind: reading
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/07-lm.pdf
+        kind: slide
   - week: 10
     dates:
       zh: 理论 11/10 · 实验 11/11
@@ -375,4 +375,4 @@ updatedAt:
   course/cse5026/2026/slides/06-lang_syn2.pdf: 2026-10-26T11:08:21.025Z
   course/cse5026/2026/labs/lab_w8_dep-parse.zip: 2026-10-27T14:59:28.399Z
   course/cse5026/2026/labs/data.zip: 2026-10-27T15:00:19.609Z
-  course/cse5026/2026/slides/07-lm.pdf: 2026-11-02T14:21:32.865Z
+  course/cse5026/2026/slides/07-lm.pdf: 2026-11-03T03:14:44.173Z
