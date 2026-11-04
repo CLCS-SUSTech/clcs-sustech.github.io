@@ -193,6 +193,9 @@ weeks:
           en: Slides PDF
         path: course/cse5026/2026/slides/07-lm.pdf
         kind: slide
+    labPaths:
+      - course/cse5026/2026/labs/lab_w9_lm.ipynb
+      - course/cse5026/2026/labs/paragraph_word_fixation_times.json
   - week: 10
     dates:
       zh: 理论 11/10 · 实验 11/11
@@ -376,3 +379,5 @@ updatedAt:
   course/cse5026/2026/labs/lab_w8_dep-parse.zip: 2026-10-27T14:59:28.399Z
   course/cse5026/2026/labs/data.zip: 2026-10-27T15:00:19.609Z
   course/cse5026/2026/slides/07-lm.pdf: 2026-11-03T03:14:44.173Z
+  course/cse5026/2026/labs/lab_w9_lm.ipynb: 2026-11-04T02:28:07.838Z
+  course/cse5026/2026/labs/paragraph_word_fixation_times.json: 2026-11-04T02:28:51.559Z
