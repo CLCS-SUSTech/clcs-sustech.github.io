@@ -7,12 +7,23 @@ authors:
 venue: "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026, Main Conference)"
 featured: true
 isNew: true
-paper: "https://arxiv.org/abs/2510.24020"
+paper: "https://aclanthology.org/2026.emnlp-main.243/"
 bibtex: |-
-  @article{an-xu-2026-fiscore,
-    title = "Teaching {LLMs} to Abstain via Fine-Grained Semantic Confidence Reward ({FiSCoRe})",
-    author = "An, Hao  and Xu, Yang",
-    year = "2026",
-    journal = "arXiv preprint arXiv:2510.24020",
-    url = "https://arxiv.org/abs/2510.24020",
+  @inproceedings{an-xu-2026-teaching,
+      title = "Teaching {LLM}s to Abstain via Fine-Grained Semantic Confidence Reward",
+      author = "An, Hao  and
+        Xu, Yang",
+      editor = "Lee, Hung-Yi  and
+        Dev, Sunipa  and
+        Li, Junyi Jessy  and
+        Elliott, Desmond",
+      booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+      month = oct,
+      year = "2026",
+      address = "Budapest, Hungary",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2026.emnlp-main.243/",
+      doi = "10.18653/2026.emnlp-main.243",
+      pages = "5546--5566",
+      ISBN = "979-8-89176-459-0"
   }
