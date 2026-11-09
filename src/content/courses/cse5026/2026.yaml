@@ -222,6 +222,11 @@ weeks:
         path: course/cse5026/2026/readings/Miller_1956_Magical.pdf
         kind: reading
         showKindLabel: false
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/08-memory_i.pdf
+        kind: slide
   - week: 11
     dates:
       zh: 理论 11/17 · 实验 11/18
@@ -381,3 +386,4 @@ updatedAt:
   course/cse5026/2026/slides/07-lm.pdf: 2026-11-03T03:14:44.173Z
   course/cse5026/2026/labs/lab_w9_lm.ipynb: 2026-11-04T02:28:07.838Z
   course/cse5026/2026/labs/paragraph_word_fixation_times.json: 2026-11-04T02:28:51.559Z
+  course/cse5026/2026/slides/08-memory_i.pdf: 2026-11-09T15:00:10.192Z
