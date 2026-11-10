@@ -227,6 +227,11 @@ weeks:
           en: Slides PDF
         path: course/cse5026/2026/slides/08-memory_i.pdf
         kind: slide
+      - label:
+          zh: Sperling (1960) Visual sensory memory
+          en: Sperling (1960) Visual sensory memory
+        path: https://static.aminer.cn/upload/pdf/1640/847/939/53e9ba33b7602d9704643b64_0.pdf
+        kind: reading
   - week: 11
     dates:
       zh: 理论 11/17 · 实验 11/18
