@@ -232,6 +232,8 @@ weeks:
           en: Sperling (1960) Visual sensory memory
         path: https://static.aminer.cn/upload/pdf/1640/847/939/53e9ba33b7602d9704643b64_0.pdf
         kind: reading
+    labPaths:
+      - course/cse5026/2026/labs/lab_w10_memory.zip
   - week: 11
     dates:
       zh: 理论 11/17 · 实验 11/18
@@ -392,3 +394,4 @@ updatedAt:
   course/cse5026/2026/labs/lab_w9_lm.ipynb: 2026-11-04T02:28:07.838Z
   course/cse5026/2026/labs/paragraph_word_fixation_times.json: 2026-11-04T02:28:51.559Z
   course/cse5026/2026/slides/08-memory_i.pdf: 2026-11-10T01:15:41.580Z
+  course/cse5026/2026/labs/lab_w10_memory.zip: 2026-11-11T01:04:00.655Z
