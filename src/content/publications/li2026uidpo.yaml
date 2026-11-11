@@ -7,18 +7,14 @@ authors:
   - "Yongyuan Li"
   - "Yang Xu"
 venue: "Conference on Language Modeling (COLM 2026)"
-status:
-  zh: "已接收"
-  en: "Accepted"
-paper: "https://arxiv.org/abs/2610.14578"
+paper: "https://proceedings.colm.cc/paper_files/paper/2026/hash/50d277e84b2bcbaadcd84548a87e8cc4-Abstract-Conference.html"
+preprint: "https://arxiv.org/abs/2610.14578"
 code: "https://github.com/CLCS-SUSTech/UIDPO"
-# Provisional citation; replace with the official citation when available.
 bibtex: |-
   @inproceedings{li-xu-2026-uidpo,
     title = {Uniform Information Density-Based Preference Optimization},
     author = {Li, Yongyuan and Xu, Yang},
     booktitle = {Conference on Language Modeling},
     year = {2026},
-    url = {https://arxiv.org/abs/2610.14578},
-    note = {Accepted for presentation at COLM 2026}
+    url = {https://proceedings.colm.cc/paper_files/paper/2026/hash/50d277e84b2bcbaadcd84548a87e8cc4-Abstract-Conference.html}
   }

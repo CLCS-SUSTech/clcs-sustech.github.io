@@ -27,6 +27,9 @@ const bibPanelId = 'bib-' + publication.slug;
       {publication.paper
         ? <a href={publication.paper} target="_blank" rel="noreferrer">Paper</a>
         : <span class="is-disabled" aria-disabled="true">Paper</span>}
+      {publication.preprint && (
+        <a href={publication.preprint} target="_blank" rel="noreferrer">Preprint</a>
+      )}
       {publication.bibtex
         ? (
           <button
@@ -100,9 +103,9 @@ const bibPanelId = 'bib-' + publication.slug;
 
   h3 {
     margin: 0 0 8px;
-    font-family: var(--sans);
+    font-family: Georgia, 'Times New Roman', 'Songti SC', 'SimSun', serif;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.35;
   }
 

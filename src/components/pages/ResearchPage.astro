@@ -19,7 +19,7 @@ const publicationYears = [...new Set(publications.map((entry) => entry.data.year
   <section class="content-section publications-section">
     <div class="container">
       <div class="section-intro publication-heading">
-        <h2>{lang === 'zh' ? '已发表论文' : 'Publications'}</h2>
+        <h3>{lang === 'zh' ? '已发表论文' : 'Publications'}</h3>
       </div>
       <div class="publication-years">
         {publicationYears.map((year) => (
@@ -46,10 +46,10 @@ const publicationYears = [...new Set(publications.map((entry) => entry.data.year
     margin-bottom: 30px;
   }
 
-  .section-intro h2 {
+  .section-intro h3 {
     margin: 0;
     font-family: var(--serif);
-    font-size: clamp(1.55rem, 2.5vw, 2rem);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
     font-weight: 500;
   }
 

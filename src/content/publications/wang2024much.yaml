@@ -7,10 +7,23 @@ authors:
   - "Gabriel Skantze"
   - "Hendrik Buschmeier"
 venue: "Findings of the Association for Computational Linguistics: ACL 2024"
+paper: "https://aclanthology.org/2024.findings-acl.210/"
 bibtex: |-
-  @inproceedings{wang2024much,
-    title = {How Much Does Nonverbal Communication Conform to Entropy Rate Constancy?: A Case Study on Listener Gaze in Interaction},
-    author = {Wang, Yu and Xu, Yang and Skantze, Gabriel and Buschmeier, Hendrik},
-    booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
-    year = {2024},
+  @inproceedings{wang-etal-2024-much,
+      title = "How Much Does Nonverbal Communication Conform to Entropy Rate Constancy?: A Case Study on Listener Gaze in Interaction",
+      author = "Wang, Yu  and
+        Xu, Yang  and
+        Skantze, Gabriel  and
+        Buschmeier, Hendrik",
+      editor = "Ku, Lun-Wei  and
+        Martins, Andre  and
+        Srikumar, Vivek",
+      booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2024",
+      month = aug,
+      year = "2024",
+      address = "Bangkok, Thailand",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2024.findings-acl.210/",
+      doi = "10.18653/v1/2024.findings-acl.210",
+      pages = "3533--3545"
   }

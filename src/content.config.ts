@@ -97,6 +97,7 @@ const publications = defineCollection({
     status: localizedString.optional(),
     tags: localizedStrings.default({ zh: [], en: [] }),
     paper: z.url().optional(),
+    preprint: z.url().optional(),
     bib: z.url().optional(),
     bibtex: z.string().optional(),
     code: z.url().optional(),
