@@ -265,6 +265,9 @@ weeks:
           en: Slides PDF
         path: course/cse5026/2026/slides/09-memory_ii.pdf
         kind: slide
+    labPaths:
+      - course/cse5026/2026/labs/lab_forgetting_curve.ipynb
+      - course/cse5026/2026/labs/Murre2015data.zip
   - week: 12
     dates:
       zh: 理论 11/24 · 实验 11/25
@@ -401,3 +404,5 @@ updatedAt:
   course/cse5026/2026/slides/08-memory_i.pdf: 2026-11-10T01:15:41.580Z
   course/cse5026/2026/labs/lab_w10_memory.zip: 2026-11-11T01:04:00.655Z
   course/cse5026/2026/slides/09-memory_ii.pdf: 2026-11-16T14:03:05.966Z
+  course/cse5026/2026/labs/lab_forgetting_curve.ipynb: 2026-11-17T15:29:53.178Z
+  course/cse5026/2026/labs/Murre2015data.zip: 2026-11-17T15:29:58.774Z
