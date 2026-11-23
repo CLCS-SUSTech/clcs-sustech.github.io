@@ -274,7 +274,7 @@ weeks:
       en: Lecture 11/24 · Lab 11/25
     topic:
       zh: 学习（Learning）
-      en: Learning and Memory Systems
+      en: Learning
     resources:
       - label:
           zh: Kumaran et al.（2016）
@@ -294,6 +294,11 @@ weeks:
         path: course/cse5026/2026/readings/hopfield-1982-neural-networks.pdf
         kind: reading
         showKindLabel: false
+      - label:
+          zh: 讲义 PDF
+          en: Slides PDF
+        path: course/cse5026/2026/slides/10-learning.pdf
+        kind: slide
   - week: 13
     dates:
       zh: 理论 12/01 · 实验 12/02
@@ -406,3 +411,4 @@ updatedAt:
   course/cse5026/2026/slides/09-memory_ii.pdf: 2026-11-16T14:03:05.966Z
   course/cse5026/2026/labs/lab_forgetting_curve.ipynb: 2026-11-17T15:29:53.178Z
   course/cse5026/2026/labs/Murre2015data.zip: 2026-11-17T15:29:58.774Z
+  course/cse5026/2026/slides/10-learning.pdf: 2026-11-23T16:18:23.225Z
