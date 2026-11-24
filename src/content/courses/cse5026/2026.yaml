@@ -299,6 +299,11 @@ weeks:
           en: Slides PDF
         path: course/cse5026/2026/slides/10-learning.pdf
         kind: slide
+      - label:
+          zh: CheeseBench paper
+          en: CheeseBench paper
+        path: https://arxiv.org/pdf/2604.10825v2
+        kind: reading
     labPaths:
       - course/cse5026/2026/labs/lab_operant_chamber.ipynb
       - course/cse5026/2026/labs/operant_lab.py
