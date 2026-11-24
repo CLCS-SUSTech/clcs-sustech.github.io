@@ -307,6 +307,8 @@ weeks:
     labPaths:
       - course/cse5026/2026/labs/lab_operant_chamber.ipynb
       - course/cse5026/2026/labs/operant_lab.py
+      - course/cse5026/2026/labs/w12/README_en.md
+      - course/cse5026/2026/labs/w12/README_zh.md
   - week: 13
     dates:
       zh: 理论 12/01 · 实验 12/02
@@ -422,3 +424,5 @@ updatedAt:
   course/cse5026/2026/slides/10-learning.pdf: 2026-11-23T16:18:23.225Z
   course/cse5026/2026/labs/lab_operant_chamber.ipynb: 2026-11-24T15:41:53.675Z
   course/cse5026/2026/labs/operant_lab.py: 2026-11-24T15:42:00.951Z
+  course/cse5026/2026/labs/w12/README_en.md: 2026-11-24T15:57:04.337Z
+  course/cse5026/2026/labs/w12/README_zh.md: 2026-11-24T15:57:11.000Z
