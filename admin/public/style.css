@@ -358,6 +358,10 @@ main {
   line-height: 1.6;
 }
 
+.conflict-warning {
+  color: #a05a17;
+}
+
 .dialog-actions {
   display: flex;
   gap: 10px;

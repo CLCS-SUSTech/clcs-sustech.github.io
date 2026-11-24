@@ -93,6 +93,21 @@
     </form>
   </dialog>
 
+  <dialog id="conflict-dialog" class="dialog">
+    <form method="dialog">
+      <h2>文件已存在</h2>
+      <p class="dialog-note" id="conflict-message"></p>
+      <p class="dialog-note conflict-warning" id="conflict-warning"></p>
+      <label>重命名为<input id="conflict-name" type="text"></label>
+      <div class="dialog-actions">
+        <button id="conflict-overwrite" type="button" class="btn btn-danger">覆盖旧文件</button>
+        <span class="spacer"></span>
+        <button value="cancel" class="btn">取消</button>
+        <button id="conflict-rename" type="button" class="btn btn-primary">重命名上传</button>
+      </div>
+    </form>
+  </dialog>
+
   <div id="toast" class="toast" hidden></div>
 
   <script src="/app.js"></script>

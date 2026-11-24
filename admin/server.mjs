@@ -96,6 +96,28 @@ function validateTerm(data) {
   return null;
 }
 
+/** Which weeks of a term reference the given public path (resources, labPath, labPaths)? */
+function findReferencingWeeks(course, year, publicPath) {
+  const file = termFile(course, year);
+  if (!existsSync(file)) return [];
+  try {
+    const term = parse(readFileSync(file, 'utf8'));
+    const weeks = (term.weeks ?? [])
+      .filter((week) => {
+        const paths = [
+          week.labPath,
+          ...(week.labPaths ?? []),
+          ...(week.resources ?? []).map((resource) => resource.path),
+        ].filter(Boolean);
+        return paths.includes(publicPath);
+      })
+      .map((week) => week.week);
+    return { weeks, inReadingPool: (term.readingPool ?? []).includes(basename(publicPath)) };
+  } catch {
+    return { weeks: [], inReadingPool: false };
+  }
+}
+
 function backupTerm(file, course, year) {
   if (!existsSync(file)) return;
   mkdirSync(BACKUP_DIR, { recursive: true });
@@ -180,10 +202,28 @@ async function handleApi(req, res, url) {
     if (!validCourse(course ?? '') || !validYear(year ?? '') || !KINDS.has(kind) || !name || name.startsWith('.')) {
       return sendJson(res, 400, { error: '参数无效' });
     }
-    const dir = join(PUBLIC_DIR, 'course', course, year, kind);
+    // Week-scoped uploads land in labs/w<N>/ etc., so different weeks may reuse
+    // common names (README_en.md, data.zip, utils.py). Pool uploads stay flat.
+    const week = /^\d+$/.test(params.week ?? '') ? Number(params.week) : null;
+    const baseDir = join(PUBLIC_DIR, 'course', course, year, kind);
+    const dir = week !== null ? join(baseDir, `w${week}`) : baseDir;
     const target = join(dir, name);
     if (existsSync(target) && params.force !== '1') {
-      return sendJson(res, 409, { error: `文件已存在：${name}` });
+      const weekPrefix = week !== null ? `w${week}/` : '';
+      const publicPath = `course/${course}/${year}/${kind}/${weekPrefix}${name}`;
+      const { weeks: referencedBy, inReadingPool } = findReferencingWeeks(course, year, publicPath);
+      const ext = name.slice(name.replace(/\.[^.]+$/, '').length);
+      const stem = name.slice(0, name.length - ext.length);
+      let suggestion = `${stem}-2${ext}`;
+      for (let i = 3; existsSync(join(dir, suggestion)); i += 1) {
+        suggestion = `${stem}-${i}${ext}`;
+      }
+      return sendJson(res, 409, {
+        error: `文件已存在：${name}`,
+        referencedBy,
+        inReadingPool,
+        suggestion,
+      });
     }
     mkdirSync(dir, { recursive: true });
     const temp = join(dir, `.upload-${process.pid}-${Date.now()}`);
@@ -198,7 +238,7 @@ async function handleApi(req, res, url) {
     const { size } = statSync(target);
     return sendJson(res, 200, {
       ok: true,
-      path: `course/${course}/${year}/${kind}/${name}`,
+      path: `course/${course}/${year}/${kind}/${week !== null ? `w${week}/` : ''}${name}`,
       size,
       uploadedAt: new Date().toISOString(),
     });

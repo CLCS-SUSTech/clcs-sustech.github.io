@@ -255,7 +255,9 @@ function readingPoolSection(term) {
       markDirty();
       renderMain();
       toast(`已上传并加入阅读库：${file.name}`);
-    } catch (error) { toast(error.message, true); }
+    } catch (error) {
+      if (error.message !== '已取消上传') toast(error.message, true);
+    }
   };
   upload.addEventListener('click', () => picker.click());
   picker.addEventListener('change', () => { handle(picker.files[0]); picker.value = ''; });
@@ -332,24 +334,70 @@ function renderAll() {
 
 // ---------- upload ----------
 
-async function uploadFile(kind, file) {
-  const params = new URLSearchParams({
-    course: state.course, year: state.activeYear, kind, name: file.name,
-  });
-  let response = await fetch(`/api/upload?${params}`, { method: 'POST', body: file });
-  if (response.status === 409) {
-    if (!confirm(`文件已存在：${file.name}\n确定覆盖旧版本？`)) throw new Error('已取消上传');
-    params.set('force', '1');
-    response = await fetch(`/api/upload?${params}`, { method: 'POST', body: file });
-  }
+async function uploadAttempt(kind, file, name, { force = false, week = null } = {}) {
+  const params = new URLSearchParams({ course: state.course, year: state.activeYear, kind, name });
+  if (force) params.set('force', '1');
+  if (week !== null) params.set('week', String(week));
+  const response = await fetch(`/api/upload?${params}`, { method: 'POST', body: file });
   const data = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(data.error ?? '上传失败');
-  return data;
+  return { status: response.status, data };
+}
+
+function askConflictResolution(name, info) {
+  return new Promise((resolve) => {
+    const dialog = $('#conflict-dialog');
+    const nameInput = $('#conflict-name');
+    $('#conflict-message').textContent = `「${name}」已存在于本学期的材料目录。`;
+    const refs = [];
+    if (info.referencedBy?.length) refs.push(`第 ${info.referencedBy.join('、')} 周`);
+    if (info.inReadingPool) refs.push('阅读材料库');
+    $('#conflict-warning').textContent = refs.length
+      ? `旧文件正被${refs.join('和')}引用：覆盖会同时改变这些位置的下载内容。若内容不同，请重命名上传。`
+      : '旧文件未被任何周引用，覆盖是安全的。';
+    nameInput.value = info.suggestion ?? name;
+
+    let settled = false;
+    const finish = (result) => {
+      if (settled) return;
+      settled = true;
+      dialog.removeEventListener('close', onClose);
+      resolve(result);
+    };
+    const onClose = () => finish({ action: 'cancel' });
+    dialog.addEventListener('close', onClose);
+    $('#conflict-rename').onclick = () => {
+      const newName = nameInput.value.trim() || name;
+      dialog.close();
+      finish({ action: 'rename', name: newName });
+    };
+    $('#conflict-overwrite').onclick = () => {
+      dialog.close();
+      finish({ action: 'overwrite' });
+    };
+    dialog.showModal();
+  });
+}
+
+async function uploadFile(kind, file, weekNumber = null) {
+  let attempt = await uploadAttempt(kind, file, file.name, { week: weekNumber });
+  if (attempt.status === 409) {
+    const decision = await askConflictResolution(file.name, attempt.data);
+    if (decision.action === 'cancel') throw new Error('已取消上传');
+    attempt = await uploadAttempt(kind, file, decision.name ?? file.name, {
+      force: decision.action === 'overwrite',
+      week: weekNumber,
+    });
+    if (attempt.status === 409) throw new Error(`文件名仍然冲突：${decision.name}，请换一个名字`);
+  }
+  if (attempt.status !== 200 || !attempt.data.ok) {
+    throw new Error(attempt.data.error ?? `上传失败（${attempt.status}）`);
+  }
+  return attempt.data;
 }
 
 async function uploadAndAttach(week, kind, file) {
   try {
-    const { path, uploadedAt } = await uploadFile(kind, file);
+    const { path, uploadedAt } = await uploadFile(kind, file, week.week);
     const term = state.terms[state.activeYear];
     term.updatedAt ??= {};
     term.updatedAt[path] = uploadedAt;
